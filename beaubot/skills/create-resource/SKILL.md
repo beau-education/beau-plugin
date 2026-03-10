@@ -31,7 +31,7 @@ When this skill is invoked, follow these steps:
    - Logical sections with headings
    - **A quiz after every major concept or section** — aim for at least 2-3 quizzes per resource. Quizzes are the primary way students actively engage with the material, and lessons without them feel passive and text-heavy.
    - **At least 1-2 images per resource** — visuals break up text, illustrate concepts, and give the bot something concrete to discuss with the student. A resource with no images is almost always too text-heavy.
-   - Mix quiz types for variety (single choice, multiple choice, open answer, fraction, ordered list)
+   - Mix quiz types for variety (single choice, multiple choice, open answer, fraction, ordered list, matching)
 
 3. **Create Content**: Draft the markdown content following best practices:
    - Write instructions for the bot, not a script
@@ -178,8 +178,8 @@ Use the `beaubot` MCP server tools:
 **create_quiz:**
 - `resourceId` (required): Resource to attach quiz to
 - `question` (required): Question text
-- `questionType` (required): `"single"`, `"multiple"`, `"freetext"`, or `"ordered_list"`
-- `answers` (for single/multiple): Array of `{id, text, isCorrect}`
+- `questionType` (required): `"single"`, `"multiple"`, `"freetext"`, `"ordered_list"`, `"matching"`, or `"fill_in_blank"`
+- `answers` (for single/multiple/ordered_list): Array of `{id, text, isCorrect}`. For matching: `{id, text, isCorrect, matchText}`
 - `expectedAnswer` (for freetext): Correct answer
 - `inputRestriction` (for freetext): `"text"`, `"integer"`, `"decimal"`, or `"fraction"`
 - `numericMin` (optional): Minimum allowed value for numeric inputs (integer, decimal, fraction)
@@ -496,6 +496,51 @@ Students drag and drop items into the correct sequence. The answers array order 
 ```
 Note: `isCorrect` is ignored for ordered_list — the array order IS the correct answer. Minimum 2 items, maximum 10.
 
+### Matching
+Students match items from two columns. The left column shows fixed terms, the right column shows shuffled matches that students drag to align correctly.
+```json
+{
+  "question": "Match each part of speech to its example",
+  "questionType": "matching",
+  "answers": [
+    { "id": "a", "text": "verb", "isCorrect": false, "matchText": "jump" },
+    { "id": "b", "text": "noun", "isCorrect": false, "matchText": "book" },
+    { "id": "c", "text": "adverb", "isCorrect": false, "matchText": "quickly" }
+  ],
+  "hint": "Think about what each word does in a sentence"
+}
+```
+Note: `isCorrect` is ignored for matching — correct state is when each answer's `matchText` is aligned next to its `text`. Each answer needs both `text` (term) and `matchText` (match). Minimum 2 pairs, maximum 10.
+
+### Fill in the Blank
+Students fill in missing words within a sentence. Supports free text input or word bank (dropdown) mode.
+```json
+{
+  "question": "Water freezes at [] degrees Celsius and boils at [] degrees Celsius",
+  "questionType": "fill_in_blank",
+  "answers": [
+    { "id": "a", "text": "0", "isCorrect": true },
+    { "id": "b", "text": "100", "isCorrect": true }
+  ],
+  "hint": "Think about the states of water"
+}
+```
+For word bank mode (dropdown with distractors), set `inputRestriction` to `"word_bank"` and add distractor answers with `isCorrect: false`:
+```json
+{
+  "question": "The [] sat on the []",
+  "questionType": "fill_in_blank",
+  "inputRestriction": "word_bank",
+  "answers": [
+    { "id": "a", "text": "cat", "isCorrect": true },
+    { "id": "b", "text": "mat", "isCorrect": true },
+    { "id": "c", "text": "dog", "isCorrect": false },
+    { "id": "d", "text": "hat", "isCorrect": false }
+  ]
+}
+```
+Note: Use `[]` in the question to mark blank positions. Correct answers (`isCorrect: true`) map in order to blanks. Distractors (`isCorrect: false`) appear as extra options in word bank mode. Minimum 1 blank.
+
 ## Image Creation Speed
 
 **NEVER generate images via Python/code execution** (matplotlib, PIL, etc.) — this is extremely slow, produces poor results, and sends huge base64 payloads through MCP.
@@ -562,7 +607,7 @@ create_resource(name: "...", content: "...", tags: ["maths", "year-3", "number-l
 1. **Write for the bot, not the student** - The bot interprets your instructions and delivers them conversationally
 2. **Use clear headings** - Structure content with `#`, `##`, `###` for pacing
 3. **Keep resources short** - 5-10 minutes is ideal per resource; split longer content into multiple resources within a course
-4. **Include plenty of quizzes** - Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes are the primary way to keep students actively engaged. A resource with fewer than 2 quizzes almost always feels too passive. Use a variety of quiz types (single choice, multiple choice, open answer, fraction, ordered list) to keep things interesting.
+4. **Include plenty of quizzes** - Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes are the primary way to keep students actively engaged. A resource with fewer than 2 quizzes almost always feels too passive. Use a variety of quiz types (single choice, multiple choice, open answer, fraction, ordered list, matching) to keep things interesting.
 5. **Include images in every resource** - Aim for **at least 1-2 images per resource**. Visuals break up text, illustrate concepts, and give the bot concrete material to discuss. Text-only resources feel dry and lecture-like.
 6. **Provide accurate media metadata** - View every image before setting description, question, answer, and hint. Write metadata for what the image actually shows, not what you intended.
 7. **Enable botVisible for important images** - Let the bot see diagrams and charts

@@ -13,7 +13,7 @@ When you create a resource, you're writing instructions for an AI bot that will 
 - **Bot**: The AI that delivers your lesson to students
 - **Resource**: A single learning unit containing content for the bot to deliver
 - **Course**: A collection of resources organized for students to complete
-- **Quiz**: A structured question with automatic correctness checking (supports single choice, multiple choice, open answer, and ordered list)
+- **Quiz**: A structured question with automatic correctness checking (supports single choice, multiple choice, open answer, ordered list, and matching)
 - **Assessment**: The AI-generated summary and grading of a completed resource
 - **Delivery Mode**: How the resource is presented - either as a two-way voice conversation or a one-way presentation
 
@@ -227,7 +227,7 @@ Follow these density guidelines:
 - Add a quick quiz after each concept to check understanding
 - Add an image or diagram to illustrate the key idea in each section
 - Split long explanatory sections into shorter ones with interactivity between them
-- Use a variety of quiz types (single choice for quick checks, open answer for calculations, fraction for math, ordered list for sequencing) to keep things fresh
+- Use a variety of quiz types (single choice for quick checks, open answer for calculations, fraction for math, ordered list for sequencing, matching for pairing concepts) to keep things fresh
 
 ### Recommended Length
 
@@ -428,7 +428,7 @@ PDFs are most effective for:
 
 ## Working with Quizzes
 
-Quizzes provide structured assessment with automatic correctness checking. The platform supports four question types: single choice, multiple choice, open answer, and ordered list.
+Quizzes provide structured assessment with automatic correctness checking. The platform supports six question types: single choice, multiple choice, open answer, ordered list, matching, and fill in the blank.
 
 ### When to Use Quizzes
 
@@ -471,6 +471,19 @@ Quizzes provide structured assessment with automatic correctness checking. The p
 - Items are shuffled for the student; they must arrange them in the correct order
 - Partial credit: score based on how many items are in the correct position
 
+**Matching**: Students match items from two columns by dragging right-side items to align with left-side terms
+- Best for: Vocabulary pairing, definitions, cause-and-effect, categorization
+- Example: "Match each part of speech to its example: verb → jump, noun → book, adverb → quickly"
+- Left column shows fixed terms; right column shows shuffled matches that students drag to reorder
+- Partial credit: score based on how many pairs are correctly matched
+
+**Fill in the Blank**: Students fill in missing words within a sentence
+- Best for: Vocabulary in context, grammar, reading comprehension, factual recall
+- Use [] in the question to mark blank positions (e.g., "The capital of [] is []")
+- Two input modes: **Free text** (student types answers) or **Word bank** (student selects from a dropdown including distractors)
+- Example: "Water freezes at [] degrees Celsius and boils at [] degrees Celsius"
+- Partial credit: score based on how many blanks are filled correctly
+
 ### Adding a Quiz
 
 1. Position your cursor where you want the quiz in the lesson flow
@@ -478,7 +491,7 @@ Quizzes provide structured assessment with automatic correctness checking. The p
 3. Fill in the quiz fields:
    - **Description**: When the bot should use this quiz
    - **Question**: The question text shown to students
-   - **Question Type**: Single choice, Multiple choice, Open answer, or Ordered list
+   - **Question Type**: Single choice, Multiple choice, Open answer, Ordered list, Matching, or Fill in the Blank
    - **Answers** (for choice questions): The answer options
    - **Expected Answer** (for open answer): The correct answer to evaluate against
    - **Input Restriction** (for open answer): Text, Integer, Decimal, or Fraction
@@ -497,7 +510,7 @@ The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't ed
 |-------|---------|
 | **Description** | Tells the bot when and why to present this quiz. The bot uses this to decide the right moment. |
 | **Question** | The actual question text the student sees. Keep it clear and unambiguous. |
-| **Question Type** | "Single" for one answer, "Multiple" for selecting all correct answers, "Open answer" for typed responses, "Ordered list" for drag-and-drop sequencing. |
+| **Question Type** | "Single" for one answer, "Multiple" for selecting all correct answers, "Open answer" for typed responses, "Ordered list" for drag-and-drop sequencing, "Matching" for pairing items. |
 | **Answers** | List of options with correct answers marked. (Single/Multiple choice only) |
 | **Expected Answer** | The correct answer the AI evaluates against. (Open answer only) |
 | **Input Restriction** | What type of input is allowed: "Text" (any text), "Integer" (whole numbers), "Decimal" (numbers with decimals), or "Fraction" (e.g. 1/3). (Open answer only) |
@@ -658,10 +671,10 @@ When the bot displays a quiz:
 - **Include quizzes generously** — aim for at least 2-3 per resource, one after each major concept
 - **Place quizzes after teaching** the relevant content, not before
 - **Start with easier questions** and progress to harder ones
-- **Vary quiz types** for engagement — mix single choice, multiple choice, open answer, fraction, and ordered list questions
+- **Vary quiz types** for engagement — mix single choice, multiple choice, open answer, fraction, ordered list, and matching questions
 - **Provide meaningful hints** that teach, not just hint
 - **Test your quizzes** to ensure the flow feels natural
-- **Match question type to content** — use single choice for quick fact checks, open answer for calculations, fraction for math, ordered list for sequencing
+- **Match question type to content** — use single choice for quick fact checks, open answer for calculations, fraction for math, ordered list for sequencing, matching for pairing concepts
 
 ## Assessment and Questions
 
@@ -828,7 +841,7 @@ For each image or video:
 For each quiz:
 - [ ] Description tells bot when to use it
 - [ ] Question is clear and unambiguous
-- [ ] Question type matches the content (single, multiple, open answer, or ordered list)
+- [ ] Question type matches the content (single, multiple, open answer, ordered list, or matching)
 
 For choice questions:
 - [ ] Correct answer(s) marked appropriately

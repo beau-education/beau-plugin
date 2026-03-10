@@ -505,9 +505,9 @@ For comprehensive guidance on writing effective content and working with media, 
 
 ## Working with Quizzes in Resources
 
-**Quizzes are essential for interactive, engaging lessons.** Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes keep students actively thinking and participating — without them, lessons feel passive and text-heavy. Use a variety of quiz types (single choice, multiple choice, open answer, ordered list) to keep things interesting.
+**Quizzes are essential for interactive, engaging lessons.** Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes keep students actively thinking and participating — without them, lessons feel passive and text-heavy. Use a variety of quiz types (single choice, multiple choice, open answer, ordered list, matching) to keep things interesting.
 
-The platform supports four question types: single choice, multiple choice, open answer, and ordered list.
+The platform supports six question types: single choice, multiple choice, open answer, ordered list, matching, and fill in the blank.
 
 ### Quiz Question Types
 
@@ -530,6 +530,19 @@ The platform supports four question types: single choice, multiple choice, open 
 - Partial credit scoring: score based on how many items are in the correct position
 - Example: "Put these in order from smallest to largest: 3/5, 0.55, 62%, 1/2"
 
+**Matching**: Student matches items from two columns by dragging right-side items to align with left-side terms
+- Best for vocabulary pairing, definitions, cause-and-effect, categorization
+- Left column shows fixed terms; right column shows shuffled matches that students drag to reorder
+- Partial credit scoring: score based on how many pairs are correctly matched
+- Example: "Match each part of speech to its example: verb → jump, noun → book, adverb → quickly"
+
+**Fill in the Blank**: Student fills in missing words within a sentence
+- Best for vocabulary in context, grammar, reading comprehension, factual recall
+- Teacher writes a sentence using [] to mark blank positions (e.g., "The capital of [] is []")
+- Two input modes: **Free text** (student types answers) or **Word bank** (student selects from a dropdown of options including distractors)
+- Partial credit scoring: score based on how many blanks are filled correctly
+- Example: "Water freezes at [] degrees Celsius and boils at [] degrees Celsius"
+
 ### How Quizzes Work
 
 When the AI tutor displays a quiz during a lesson:
@@ -546,7 +559,7 @@ When the AI tutor displays a quiz during a lesson:
 3. Fill in the quiz details:
    - **Description**: Tells the bot when to use this quiz
    - **Question**: The question text shown to students
-   - **Question Type**: Single choice, Multiple choice, Open answer, or Ordered list
+   - **Question Type**: Single choice, Multiple choice, Open answer, Ordered list, or Matching
    - **Answers**: The answer options with correct answers marked (choice questions)
    - **Expected Answer**: The correct answer to evaluate against (open answer)
    - **Input Restriction**: Text, Integer, Decimal, or Fraction (open answer)
@@ -589,7 +602,7 @@ For comprehensive guidance on creating effective quizzes, see the **Resource Gui
 5. **Include plenty of quizzes** - aim for at least 2-3 per resource. Quizzes are the primary way students actively engage with content. Lessons without enough quizzes feel passive and text-heavy.
 6. **Include images in every resource** - aim for at least 1-2 images. Visuals break up text, illustrate concepts, and keep students interested. A text-only resource is almost always too dry.
 7. **Avoid text-heavy sections** - if any section is more than a few sentences without a quiz or image, add interactivity
-8. **Mix quiz types for variety** - use single choice for quick checks, multiple choice for "select all", open answer for calculations, ordered list for sequencing, and fraction for math. Variety keeps students engaged.
+8. **Mix quiz types for variety** - use single choice for quick checks, multiple choice for "select all", open answer for calculations, ordered list for sequencing, matching for pairing concepts, and fraction for math. Variety keeps students engaged.
 9. **Monitor the activity feed** to identify students who may need help
 10. **Test resources and courses** before assigning to students to verify the AI delivers content correctly
 11. **Review session transcripts** periodically to understand how students interact with your content
