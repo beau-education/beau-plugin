@@ -1,6 +1,6 @@
 # Beau Plugin for Claude Code
 
-A Claude Code plugin for creating educational resources on the [Beau](https://tornadolabs.net) platform. This plugin gives Claude the knowledge and tools to author resources, upload images, create quizzes, and organize courses - all delivered by voice to students.
+A Claude Code plugin for creating educational resources on the [Beau](https://beau.bot) platform. This plugin gives Claude the knowledge and tools to author resources, upload images, create quizzes, and organize courses - all delivered by voice to students.
 
 ## What This Plugin Provides
 

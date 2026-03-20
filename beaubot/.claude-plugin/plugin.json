@@ -4,9 +4,9 @@
   "description": "Create educational lessons and evaluate student performance with images, quizzes, and courses for voice delivery to students",
   "author": {
     "name": "Tornado Labs",
-    "url": "https://tornadolabs.net"
+    "url": "https://beau.bot"
   },
-  "homepage": "https://tornadolabs.net",
+  "homepage": "https://beau.bot",
   "license": "MIT",
   "keywords": ["education", "tutoring", "lesson-authoring", "voice-tutor", "voice-learning"]
 }
