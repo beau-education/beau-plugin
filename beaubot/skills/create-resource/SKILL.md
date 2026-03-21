@@ -70,6 +70,7 @@ Use the `beaubot` MCP server tools:
 | `get_resource` | Fetch a resource by ID |
 | `create_resource` | Create a new resource |
 | `update_resource` | Update an existing resource |
+| `get_image` | Download an image by ID — returns the image visually (for inspection) plus metadata |
 | `generate_image` | Generate an AI image from a text prompt and attach to a resource (uses org's OpenAI key, preferred) |
 | `create_text_image` | Render a word/phrase into a PNG image (no AI needed, instant) |
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
@@ -128,6 +129,26 @@ Use the `beaubot` MCP server tools:
 ```
 
 ### Tool Parameters
+
+**get_image:**
+- `imageId` (required): The image ID to download
+- Returns: For images (`image/png`, `image/jpeg`), returns the image visually plus a text label. For PDFs/videos, returns metadata only:
+  ```json
+  {
+    "id": 42,
+    "name": "dog-breeds.png",
+    "mimeType": "image/png",
+    "description": "Common dog breeds",
+    "question": "Can you identify these breeds?",
+    "answer": "Labrador, Poodle, German Shepherd",
+    "hint": "Look at the ear shapes",
+    "botVisible": true,
+    "resource": 15,
+    "organization": 3,
+    "createdAt": "2026-03-15T10:30:00.000Z",
+    "updatedAt": "2026-03-15T10:30:00.000Z"
+  }
+  ```
 
 **create_resource:**
 - `name` (required): Display name for the resource
@@ -554,7 +575,7 @@ Instead, use these server-side tools in order of preference:
 
 ## Image Metadata Accuracy
 
-**View/inspect every image before setting metadata.** AI-generated images may not match your prompt exactly.
+**Use `get_image(imageId)` to inspect every image before setting metadata.** AI-generated images may not match your prompt exactly.
 
 - Write `description`, `question`, `answer`, and `hint` based on what the image ACTUALLY shows, not what you intended
 - If the image doesn't match your intent, regenerate it or adjust the metadata to match reality
