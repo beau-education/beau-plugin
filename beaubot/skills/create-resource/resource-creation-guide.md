@@ -500,6 +500,7 @@ Quizzes provide structured assessment with automatic correctness checking. The p
    - **Evaluation Criteria** (for open answer): Optional guidance for AI grading
    - **Retry Limit**: Number of attempts allowed
    - **Hint**: Guidance for incorrect attempts
+   - **Illustration** (optional): An image shown to the student above the question. Use this when a picture, diagram, or chart helps frame what's being asked. Not visible to the bot.
 4. Click **Save**
 
 The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't edit this text directly.
@@ -519,6 +520,7 @@ The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't ed
 | **Evaluation Criteria** | Optional guidance for the AI on how strictly to evaluate answers. (Open answer only) |
 | **Retry Limit** | How many attempts before moving on. Leave empty for unlimited retries. |
 | **Hint** | What the bot tells students after an incorrect answer to guide them. |
+| **Illustration** | Optional image shown above the question in the player (e.g. a diagram, chart, or photo that the student should look at while answering). Not visible to the bot. |
 
 ### Open Answer Input Restrictions
 
