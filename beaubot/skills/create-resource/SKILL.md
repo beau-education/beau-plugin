@@ -169,7 +169,8 @@ Use the `beaubot` MCP server tools:
 - `resourceId` (required): Resource to attach the image to
 - `text` (required): The word or phrase to render (max 500 chars). Supports inline formatting: `_underline_`, `*italic*`, `**underline+italic**`, `[highlight]`, `{red:colored text}`
 - `color` (optional): Font color as CSS color (e.g. `"#333333"`, `"red"`). Defaults to `"#333333"`
-- `description` (optional): What the image shows (important for bot)
+- `includeLogo` (optional): Include the organization logo at the top of the image. Defaults to `true`
+- `description` (optional): What the image shows (important for bot). Auto-set from the text if not provided
 - `question` (optional): Question to ask about the image
 - `answer` (optional): Expected answer
 - `hint` (optional): Help for students
