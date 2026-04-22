@@ -167,7 +167,7 @@ Use the `beaubot` MCP server tools:
 
 **create_text_image** (preferred for words/phrases):
 - `resourceId` (required): Resource to attach the image to
-- `text` (required): The word or phrase to render (max 500 chars)
+- `text` (required): The word or phrase to render (max 500 chars). Supports inline formatting: `_underline_`, `*italic*`, `**underline+italic**`, `[highlight]`, `{red:colored text}`
 - `color` (optional): Font color as CSS color (e.g. `"#333333"`, `"red"`). Defaults to `"#333333"`
 - `description` (optional): What the image shows (important for bot)
 - `question` (optional): Question to ask about the image
