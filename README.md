@@ -13,7 +13,7 @@ A plugin for creating educational resources and evaluating student performance o
 ### Claude Code (CLI)
 
 ```
-/install-plugin dselman/tutorbot-plugin
+/install-plugin beau-education/beau-plugin
 ```
 
 ### Claude Cowork (Desktop App)
@@ -21,7 +21,7 @@ A plugin for creating educational resources and evaluating student performance o
 1. Open **Customize** panel
 2. Click **+** next to Personal plugins
 3. Select **Add from marketplace**
-4. Paste: `dselman/tutorbot-plugin`
+4. Paste: `beau-education/beau-plugin`
 
 ### Claude Web (MCP Connector only)
 
