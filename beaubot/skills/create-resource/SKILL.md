@@ -12,8 +12,10 @@ This skill helps you create educational resources for the Beau platform. Resourc
 
 When this skill is invoked, follow these steps:
 
-0. **Tag Governance** (before creating anything):
-   a. Call `list_tags(pageSize: 50)` to fetch the organization's tag catalog
+0. **Preflight Check**: Verify the beaubot MCP server is connected by calling `list_tags(pageSize: 1)`. If this fails with a tool error, tell the user: "The Beau MCP server is not connected. Please check your MCP connection and authenticate if prompted." Then stop.
+
+1. **Tag Governance** (before creating anything):
+   a. Call `list_tags(pageSize: 50)` to fetch the full tag catalog
    b. Reuse existing tags where possible — do not create near-duplicates (e.g. "maths" vs "math")
    c. For genuinely new tags: ask the user to confirm, then call `create_tag(name)` to add them
    d. Only use tags that exist in the catalog when calling `create_resource`

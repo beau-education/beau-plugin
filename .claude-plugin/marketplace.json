@@ -1,7 +1,12 @@
 {
-  "name": "beaubot-marketplace",
+  "name": "tutorbot-plugin",
   "owner": {
-    "name": "Beau"
+    "name": "Beau Education Ltd.",
+    "url": "https://beau.bot"
+  },
+  "metadata": {
+    "description": "Authoring and student-evaluation plugins for the Beau voice tutoring platform",
+    "version": "1.0.0"
   },
   "plugins": [
     {

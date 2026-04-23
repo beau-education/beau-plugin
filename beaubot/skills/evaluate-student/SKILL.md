@@ -12,6 +12,10 @@ This skill helps teachers evaluate student performance on the Beau platform. It 
 
 When this skill is invoked, follow these steps:
 
+### 0. Preflight Check
+
+Verify the beaubot MCP server is connected by calling `list_users(pageSize: 1)`. If this fails with a tool error, tell the user: "The Beau MCP server is not connected. Please check your MCP connection and authenticate if prompted." Then stop.
+
 ### 1. Determine Report Type
 
 Ask the user which type of report they need:

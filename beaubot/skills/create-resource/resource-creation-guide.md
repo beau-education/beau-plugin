@@ -16,6 +16,7 @@ When you create a resource, you're writing instructions for an AI bot that will 
 - **Quiz**: A structured question with automatic correctness checking (supports single choice, multiple choice, open answer, ordered list, and matching)
 - **Assessment**: The AI-generated summary and grading of a completed resource
 - **Delivery Mode**: How the resource is presented - either as a two-way voice conversation or a one-way presentation
+- **Cover Image**: An optional image displayed automatically when the lesson starts, before the bot begins speaking. Use it to set the scene or introduce the topic visually.
 
 ### Resources and Courses
 

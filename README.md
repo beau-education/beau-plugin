@@ -1,38 +1,50 @@
-# Beau Plugin for Claude Code
+# Beau Plugin for Claude Code and Cowork
 
-A Claude Code plugin for creating educational resources on the [Beau](https://beau.bot) platform. This plugin gives Claude the knowledge and tools to author resources, upload images, create quizzes, and organize courses - all delivered by voice to students.
+A plugin for creating educational resources and evaluating student performance on the [Beau](https://beau.bot) voice tutoring platform. Gives Claude the knowledge and tools to author resources, upload images, create quizzes, organize courses, and analyse student progress.
 
 ## What This Plugin Provides
 
-- **MCP Server Connection**: Connects to the Beau API for resource management (create/update resources, upload images, create quizzes, manage courses)
-- **Authoring Skill**: The `create-resource` skill teaches Claude how to structure educational resources with proper markdown syntax for embedding images and quizzes
-- **Evaluation Skill**: The `evaluate-student` skill helps analyse student performance across courses
+- **MCP Server Connection**: Connects to the Beau API via OAuth 2.1 for resource and student management
+- **Create Resource Skill** (`/beaubot:create-resource`): Guides Claude through authoring structured educational resources with images, quizzes, and courses
+- **Evaluate Student Skill** (`/beaubot:evaluate-student`): Analyses student performance across courses using transcripts, scores, and progress data
 
 ## Installation
 
-In Claude Code:
+### Claude Code (CLI)
+
 ```
-/install-plugin dselman/beaubot-plugin
+/install-plugin dselman/tutorbot-plugin
 ```
+
+### Claude Cowork (Desktop App)
+
+1. Open **Customize** panel
+2. Click **+** next to Personal plugins
+3. Select **Add from marketplace**
+4. Paste: `dselman/tutorbot-plugin`
+
+### Claude Web (MCP Connector only)
+
+Claude web doesn't support plugins, but you can add the MCP server as a remote Connector to get access to all tools (without skills):
+
+**MCP Server URL**: `https://api.beau.bot/mcp`
+
+Add this as a remote MCP connector. You'll be prompted to authenticate via OAuth with your Beau account. Web users get all 25 tools but not the guided skill workflows.
 
 ## Usage
 
-Once installed, invoke the skills:
+Once installed, invoke the skills in any chat:
+
 ```
-/beaubot:create-resource
-/beaubot:evaluate-student
+/beaubot:create-resource    — Author a new educational resource
+/beaubot:evaluate-student   — Analyse student performance
 ```
 
-Claude will guide you through creating a resource by asking about the topic, audience, delivery mode, and learning objectives. It then uses the MCP tools to create the resource, upload images, create quizzes, and embed everything into the content.
+**Note**: The MCP server must be connected before using tools. If you get tool errors, check your MCP connection and re-authenticate if needed.
 
-## Key Concepts
+## MCP Tools (25)
 
-- **Resource**: A self-contained learning unit with markdown content, images, and quizzes
-- **Course**: A collection of resources organized for students to complete
-- **Delivery Mode**: How the resource is presented - `conversation` (two-way voice) or `presentation` (one-way narration)
-- **Quiz**: Structured assessment with single choice, multiple choice, or open answer questions
-
-## MCP Tools Available
+### Resource Management
 
 | Tool | Description |
 |------|-------------|
@@ -40,19 +52,56 @@ Claude will guide you through creating a resource by asking about the topic, aud
 | `get_resource` | Fetch a resource by ID |
 | `create_resource` | Create a new resource |
 | `update_resource` | Update an existing resource |
-| `create_image` | Upload an image (base64) to a resource |
-| `upload_image_from_url` | Upload an image from URL to a resource |
-| `create_quiz` | Create a quiz for a resource |
-| `list_tags` | List available tags |
 | `export_resource` | Export a resource as a ZIP archive |
 | `import_resource` | Import a resource from a ZIP archive |
+
+### Media
+
+| Tool | Description |
+|------|-------------|
+| `get_image` | Download an image by ID (returns image visually + metadata) |
+| `create_image` | Upload an image (base64) to a resource |
+| `upload_image_from_url` | Upload an image from a public URL |
+| `generate_image` | Generate an AI image from a text prompt |
+| `create_text_image` | Render formatted text into a PNG image |
+
+### Quizzes
+
+| Tool | Description |
+|------|-------------|
+| `create_quiz` | Create a quiz (single/multiple/freetext/ordered_list/matching/fill_in_blank) |
+
+### Tags
+
+| Tool | Description |
+|------|-------------|
+| `list_tags` | List available tags in the organization |
+| `create_tag` | Create a new tag |
+
+### Courses
+
+| Tool | Description |
+|------|-------------|
 | `create_course` | Create a course |
 | `list_courses` | List courses |
 | `add_resource_to_course` | Add a resource to a course |
+| `list_course_resources` | List resources in a course with order and bot details |
+
+### Users & Students
+
+| Tool | Description |
+|------|-------------|
+| `list_users` | List users in the organization |
+| `get_user` | Get user details |
+| `list_enrollments` | List student enrollments |
+| `get_enrollment_progress` | Get detailed progress for an enrollment |
+| `get_student_stats` | Get aggregated statistics for a student |
+| `get_student_activity` | Get recent activity log for a student |
+| `get_transcript` | Get the conversation transcript for a lesson |
 
 ## Authentication
 
-The MCP server uses OAuth 2.1 with Auth0. When you first use a tool, you'll be prompted to authenticate with your Beau account.
+The MCP server uses OAuth 2.1 with Auth0. When you first use a tool, you'll be prompted to authenticate with your Beau account. Your organization's data is scoped to your Auth0 organization.
 
 ## License
 
