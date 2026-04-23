@@ -56,6 +56,7 @@ When this skill is invoked, follow these steps:
    - Upload any media files via `upload_image_from_url` or `create_image`
    - Create quizzes via `create_quiz`
    - **CRITICAL**: Update resource content via `update_resource` to embed image and quiz references using the correct markdown syntax (see below)
+   - **Set a cover image**: pick the most representative image for the resource and set it via `update_resource(id, coverImage: imageId)`. Cover images are shown to students when the lesson starts and make the catalog feel less like a wall of text. Do this in the same `update_resource` call as the content update.
    - Optionally create a course and add the resource to it
 
 6. **Provide Testing Instructions**: Tell the user how to test their resource using the Test Resource button in the admin UI
@@ -78,6 +79,7 @@ Use the `beaubot` MCP server tools:
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
 | `create_image` | Upload an image or PDF (base64 data) to a resource (last resort) |
 | `create_quiz` | Create a quiz for a resource |
+| `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, etc.) |
 | `list_tags` | List available tags in the organization's catalog |
 | `create_tag` | Create a new tag in the organization's tag catalog |
 | `export_resource` | Export a resource as a base64-encoded ZIP (includes all media and quizzes) |
@@ -108,11 +110,16 @@ Use the `beaubot` MCP server tools:
    create_image(resourceId, name, mimeType, data, description, question, answer, hint, botVisible)
    → Uploads base64-encoded image
 
-3. create_quiz(resourceId, question, questionType, answers, ...)
+3. create_quiz(resourceId, question, questionType, answers, image?, ...)
    → Returns quiz with ID
+   → Pass image: <imageId> to attach an illustration (image must be on the same resource)
+   OR
+   update_quiz(resourceId, id, image?, ...)
+   → Update an existing quiz — fix typos or attach an illustration after generating it
 
-4. update_resource(id, content)
+4. update_resource(id, content, coverImage?)
    → CRITICAL: Update content to include image and quiz references
+   → Optionally set coverImage to an image ID to give the resource a cover
 
 5. (Optional) create_course(name, description, tags, progressionType)
    → Returns course with ID
@@ -157,6 +164,14 @@ Use the `beaubot` MCP server tools:
 - `content` (required): Markdown content
 - `tags` (optional): Array of tags — must come from the tag catalog (call `list_tags` first, use `create_tag` for new ones)
 - `deliveryMode` (optional): `"conversation"` or `"presentation"`
+
+**update_resource:**
+- `id` (required): The resource ID to update
+- `name` (optional): New name
+- `content` (optional): New markdown content
+- `tags` (optional): New tags (replaces existing — must come from the catalog)
+- `deliveryMode` (optional): `"conversation"` or `"presentation"`
+- `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `generate_image`, `create_text_image`, `upload_image_from_url`, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
 
 **generate_image** (preferred for custom illustrations):
 - `resourceId` (required): Resource to attach the image to
@@ -213,6 +228,14 @@ Use the `beaubot` MCP server tools:
 - `retryLimit` (optional): Max attempts
 - `hint` (optional): Guidance for wrong answers
 - `description` (optional): When the bot should present this quiz
+- `image` (optional): Illustration image ID — see **Quiz Illustrations** below. The image must already be attached to the same resource.
+
+**update_quiz:**
+- `resourceId` (required): The resource the quiz belongs to
+- `id` (required): The quiz ID to update
+- All other fields from `create_quiz` are optional — omitted fields are left unchanged
+- Use this to fix typos, change answers, or attach an illustration image after the image has been generated
+- Pass `image: null` to remove an existing illustration image
 
 **create_course:**
 - `name` (required): Course name
@@ -564,6 +587,44 @@ For word bank mode (dropdown with distractors), set `inputRestriction` to `"word
 }
 ```
 Note: Use `[]` in the question to mark blank positions. Correct answers (`isCorrect: true`) map in order to blanks. Distractors (`isCorrect: false`) appear as extra options in word bank mode. Minimum 1 blank.
+
+## Quiz Illustrations
+
+A quiz can have an **illustration image** attached to it (separate from the resource's inline images and cover image). The illustration appears alongside the question when the quiz is shown to the student — useful for "what do you see in this picture?"-style questions, diagram labelling, or giving students a visual reference while they answer.
+
+Quiz images are **not** embedded in the resource markdown — they are linked directly to the quiz record via the `image` field. The resource content does NOT need a `![ID](/api/v1/images/ID/data)` reference for quiz illustrations.
+
+### Attaching an illustration
+
+The image must already be attached to the same resource as the quiz. The normal flow is:
+
+```
+# Step 1: Generate or upload the illustration, attached to the resource
+generate_image(resourceId: 42, prompt: "A cross-section of a leaf showing chloroplasts")
+# → { id: 177, ... }
+
+# Step 2a: Create the quiz with the image attached
+create_quiz(
+  resourceId: 42,
+  question: "Which labelled part contains the chloroplasts?",
+  questionType: "freetext",
+  expectedAnswer: "The palisade mesophyll",
+  image: 177
+)
+
+# OR Step 2b: Create the quiz first, then attach the image later
+create_quiz(resourceId: 42, question: "...", questionType: "single", answers: [...])
+# → { id: 99, ... }
+update_quiz(resourceId: 42, id: 99, image: 177)
+```
+
+### When to use a quiz illustration vs. an inline image
+
+- **Quiz illustration (`image` on the quiz)** — when the visual is intrinsic to the question. The image appears next to the question in the quiz UI and cannot be separated from it. Use this for "identify the part", "which one is correct", or "describe what you see".
+- **Inline image (`![ID](/api/v1/images/ID/data)` in the resource content)** — when the visual is part of the lesson narrative rather than tied to one specific question. The bot will display it at the point you place it in the markdown.
+- **Cover image (`coverImage` on the resource)** — a single hero image shown when the lesson starts.
+
+To remove an illustration, call `update_quiz(resourceId, id, image: null)`.
 
 ## Image Creation Speed
 
