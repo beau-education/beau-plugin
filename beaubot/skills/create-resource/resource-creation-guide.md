@@ -679,6 +679,40 @@ When the bot displays a quiz:
 - **Test your quizzes** to ensure the flow feels natural
 - **Match question type to content** — use single choice for quick fact checks, open answer for calculations, fraction for math, ordered list for sequencing, matching for pairing concepts
 
+## On-the-Fly Visuals (Bot Tools)
+
+In addition to pre-authored images, videos, PDFs and quizzes, an **admin** can enable per-bot **Visual Tools** that let the bot generate visuals during the lesson. Unlike images, these are **not** stored in the catalogue — they are created and rendered live when the bot decides one will help.
+
+The available tools (each enabled separately per bot in **Admin > Bots**):
+
+| Tool | What it shows | Typical use |
+|---|---|---|
+| **Math equation** | A formatted equation rendered with KaTeX | Fractions, expressions, sums — when seeing the formula beats hearing it |
+| **Formatted text** | A short word or phrase styled on screen (same `**bold**`, `*italic*`, `_underline_`, `[highlight]`, `{color:text}` formatting as a word-image), but ephemeral | Vocabulary highlights, key terms, single answers |
+| **Number line** | A labelled axis with an optional highlighted point | Position, ordering, decimals, distance |
+| **Fraction (bar or pie)** | A visual fraction | Introducing or comparing fractions |
+| **Grid / table** | Tabular data with optional highlighted cells | Multiplication grids, periodic tables, conjugation tables |
+| **Timeline** | Events on a horizontal time axis | History, story arcs, chronology |
+
+### How this affects authoring
+
+You don't reference these tools by name in your markdown. The bot decides when to use them based on the lesson narrative. Two practical tips for prose that invites the right visual at the right moment:
+
+- **Cue spatial concepts**: "Picture this on a number line", "imagine three-quarters of a pizza", "look at where this falls between 0 and 1" — phrases like these prompt the bot to call the matching tool.
+- **Cue formal expressions**: "Let's write that out: one-half plus one-quarter…" cues a `display_math` call rather than the bot reading the formula aloud.
+
+If the bot has no relevant visual tool enabled it will fall back to verbal explanation — your resource still works.
+
+### What students see
+
+The visual appears in the same area as catalogue images and **replaces** any image currently on screen. The student can't interact with it (it's view-only), so use a quiz immediately afterwards if you want to check understanding.
+
+### What you don't need to do
+
+- **No new tags or markup**. The bot triggers visuals from the prose.
+- **No upload step**. Nothing is stored — the visual disappears when the next one (or an image, video, or quiz) is shown.
+- **No quiz substitution**. Quizzes remain the way to collect student answers. Visual tools are display-only.
+
 ## Assessment and Questions
 
 ### Crafting Good Questions

@@ -626,6 +626,36 @@ update_quiz(resourceId: 42, id: 99, image: 177)
 
 To remove an illustration, call `update_quiz(resourceId, id, image: null)`.
 
+## On-the-Fly Visuals (Bot Tools)
+
+In addition to catalogue media, an admin can enable per-bot **Visual Tools** that the bot triggers live during the lesson. These are **not** authored as resources or stored as images — the bot calls them when its narration cues a need.
+
+| Tool the bot can call | What appears | When to invite it via prose |
+|---|---|---|
+| `display_math` | KaTeX equation | "Let's write that out:" / formal expressions / fractions written in formula form |
+| `display_text` | Styled word/phrase (supports `**bold**`, `*italic*`, `_underline_`, `[highlight]`, `{color:text}`) | Vocabulary highlights, key terms, single one-word answers |
+| `display_number_line` | Labelled axis with optional highlight pin | "Picture this on a number line", ordering, position, distance |
+| `display_fraction` | Visual fraction bar (default) or pie | Introducing or comparing fractions |
+| `display_grid` | Table with optional highlighted cells | Multiplication grids, periodic tables, conjugation/declension |
+| `display_timeline` | Horizontal time axis with events | History, story arcs, multi-step processes over time |
+
+### Authoring implications
+
+You don't reference these tools in markdown. They fire from prose cues. Two practical rules when writing a resource for a bot that has visual tools enabled:
+
+- **Cue spatial concepts**: say "imagine this on a number line", "look at three-quarters of the pie", "where does this sit between 0 and 1?" — the bot picks the matching tool.
+- **Cue formal expressions**: "Let's write that as: one-half plus one-quarter" cues `display_math` rather than the bot reading the formula aloud.
+
+If the bot has no relevant tool enabled it falls back to voice-only explanation — your resource still works on any bot.
+
+### What this does NOT change
+
+- **Don't add new markdown directives.** No `<lesson-numberline>` etc. — the bot decides, not the author.
+- **Don't replace quizzes with `display_text`.** Quizzes remain the only way to capture student input. Visual tools are display-only.
+- **Don't pre-generate fraction/number-line images** to substitute. The dynamic visual is sharper, smaller, and won't clutter the catalogue.
+
+Discover which tools a bot has enabled by inspecting the bot in the dashboard (Admin → Bots → edit → "Visual tools" card). If you're authoring for a bot whose tools haven't been turned on yet, ask the admin to enable the ones that match your subject before relying on the cues above.
+
 ## Image Creation Speed
 
 **NEVER generate images via Python/code execution** (matplotlib, PIL, etc.) — this is extremely slow, produces poor results, and sends huge base64 payloads through MCP.
