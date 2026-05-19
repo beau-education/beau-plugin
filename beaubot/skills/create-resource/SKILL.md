@@ -82,6 +82,8 @@ Use the `beaubot` MCP server tools:
 | `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, etc.) |
 | `list_tags` | List available tags in the organization's catalog |
 | `create_tag` | Create a new tag in the organization's tag catalog |
+| `list_bots` | List the org's bots with their voice and visual-tool flags — call to see which display_* tools (math, text, number-line, fraction, grid, timeline) a bot has enabled before authoring |
+| `get_bot` | Fetch a single bot's full config (including system prompt) by ID |
 | `export_resource` | Export a resource as a base64-encoded ZIP (includes all media and quizzes) |
 | `import_resource` | Import a resource from a base64-encoded ZIP (creates a new resource) |
 | `create_course` | Create a new course (collection of resources) |
@@ -639,6 +641,22 @@ In addition to catalogue media, an admin can enable per-bot **Visual Tools** tha
 | `display_grid` | Table with optional highlighted cells | Multiplication grids, periodic tables, conjugation/declension |
 | `display_timeline` | Horizontal time axis with events | History, story arcs, multi-step processes over time |
 
+### Checking which tools a bot has enabled
+
+Before relying on any visual-tool cues in your prose, **call `list_bots`** to see which display_* flags are on. The MCP `BotResponse` includes:
+
+```
+{ id, name, voice, displayMathEnabled, displayTextEnabled,
+  displayNumberLineEnabled, displayFractionEnabled,
+  displayGridEnabled, displayTimelineEnabled, ... }
+```
+
+Use `get_bot(id)` to also fetch the system prompt content for the bot you're authoring against — useful for matching tone (e.g. don't write formal academic prose for a bot prompted "be playful and silly").
+
+If a target tool is off, either:
+- Ask the admin to enable it (Admin → Bots → edit → "Visual tools" card), or
+- Write the resource without relying on that tool — the bot will fall back to voice-only.
+
 ### Authoring implications
 
 You don't reference these tools in markdown. They fire from prose cues. Two practical rules when writing a resource for a bot that has visual tools enabled:
@@ -653,8 +671,6 @@ If the bot has no relevant tool enabled it falls back to voice-only explanation 
 - **Don't add new markdown directives.** No `<lesson-numberline>` etc. — the bot decides, not the author.
 - **Don't replace quizzes with `display_text`.** Quizzes remain the only way to capture student input. Visual tools are display-only.
 - **Don't pre-generate fraction/number-line images** to substitute. The dynamic visual is sharper, smaller, and won't clutter the catalogue.
-
-Discover which tools a bot has enabled by inspecting the bot in the dashboard (Admin → Bots → edit → "Visual tools" card). If you're authoring for a bot whose tools haven't been turned on yet, ask the admin to enable the ones that match your subject before relying on the cues above.
 
 ## Image Creation Speed
 
