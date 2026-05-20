@@ -77,6 +77,7 @@ Use the `beaubot` MCP server tools:
 | `generate_image` | Generate an AI image from a text prompt and attach to a resource (uses org's OpenAI key, preferred) |
 | `create_text_image` | Render a word/phrase into a PNG image (no AI needed, instant) |
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
+| `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `create_image` | Upload an image or PDF (base64 data) to a resource (last resort) |
 | `create_quiz` | Create a quiz for a resource |
 | `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, etc.) |
@@ -108,6 +109,9 @@ Use the `beaubot` MCP server tools:
    OR
    upload_image_from_url(resourceId, url, description, question, answer, hint, botVisible)
    → Downloads and attaches image from URL
+   OR (for a file on local disk)
+   prepare_image_upload(resourceId) → { uploadUrl }; then `curl -F file=@/path "$uploadUrl"`
+   → Single-use multipart upload, no base64 round-trip
    OR (last resort)
    create_image(resourceId, name, mimeType, data, description, question, answer, hint, botVisible)
    → Uploads base64-encoded image
@@ -173,7 +177,7 @@ Use the `beaubot` MCP server tools:
 - `content` (optional): New markdown content
 - `tags` (optional): New tags (replaces existing — must come from the catalog)
 - `deliveryMode` (optional): `"conversation"` or `"presentation"`
-- `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `generate_image`, `create_text_image`, `upload_image_from_url`, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
+- `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `generate_image`, `create_text_image`, `upload_image_from_url`, `prepare_image_upload` + curl, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
 
 **generate_image** (preferred for custom illustrations):
 - `resourceId` (required): Resource to attach the image to
@@ -681,24 +685,29 @@ Instead, use these tools in order of preference:
 1. **`create_text_image`** (MCP) — for words, phrases, vocabulary cards, sight words, labels, math expressions. Instant, no API key needed, deterministic rendering.
 2. **`generate_image`** (MCP) — for custom educational illustrations, diagrams, scenes. Uses the org's OpenAI API key for server-side AI generation. Fast, no client-side overhead.
 3. **`upload_image_from_url`** (MCP) — for publicly hosted images from Wikimedia, educational sites, etc.
-4. **Multipart endpoint via `curl`** (HTTP, see next section) — for files you already have on disk. Much faster than `create_image` because no base64 round-trip through the LLM.
+4. **`prepare_image_upload`** (MCP) + `curl` (HTTP, see next section) — for files you already have on disk. Much faster than `create_image` because no base64 round-trip through the LLM. Works in any MCP client (Claude Code CLI, Claude Cowork).
 5. **`create_image` (base64)** (MCP) — last resort only, for tiny inline blobs (≤ 1 KB). Avoid for larger files; the LLM has to type out the base64 string which can take many seconds per kilobyte.
 
-### Uploading a local file via multipart (preferred over `create_image`)
+### Uploading a local file via `prepare_image_upload` (preferred over `create_image`)
 
-If you have a local file path (e.g. an image you just produced with another tool), upload it directly through the multipart endpoint using `curl` in a Bash tool call. This avoids the LLM having to encode the bytes as base64:
+If you have a local file path (e.g. an image you just produced with another tool), upload it through the two-step `prepare_image_upload` flow. This avoids the LLM having to encode the bytes as base64, and works without needing the MCP bearer token in your shell environment (the upload URL itself is the credential).
 
-```bash
-curl -X POST \
-  -H "Authorization: Bearer $TOKEN" \
-  -F "file=@/absolute/path/to/image.png" \
-  -F "name=optional-display-name.png" \
-  -F "description=Roots of y = x² − 4x − 5" \
-  -F "question=What are the roots of this quadratic?" \
-  -F "answer=x = -1 and x = 5" \
-  -F "hint=Look where the curve crosses the x-axis" \
-  -F "botVisible=true" \
-  "$API_BASE/api/v1/resources/RESOURCE_ID/images/multipart"
+```
+# Step 1 (MCP): mint a single-use upload URL for the target resource.
+prepare_image_upload(resourceId: 123)
+  → { uploadUrl: "https://api.beau.bot/api/v1/uploads/images/<token>",
+      expiresAt: "..." }
+
+# Step 2 (Bash): POST the file to that URL. NO Authorization header — the
+# token is in the URL path. Single-use, expires in 5 minutes.
+curl -F "file=@/absolute/path/to/image.png" \
+     -F "name=optional-display-name.png" \
+     -F "description=Roots of y = x² − 4x − 5" \
+     -F "question=What are the roots of this quadratic?" \
+     -F "answer=x = -1 and x = 5" \
+     -F "hint=Look where the curve crosses the x-axis" \
+     -F "botVisible=true" \
+     "<uploadUrl from step 1>"
 ```
 
 Form fields:
@@ -710,7 +719,9 @@ Form fields:
 
 Returns the same response shape as `create_image` (id, mimeType, description, etc.), minus the binary `data` field. Use the returned `id` exactly as you would from `create_image` — embed it in the resource content as `![ID](/api/v1/images/ID/data)`.
 
-**Auth note**: the multipart endpoint takes the same bearer token as the MCP server (org-scoped JWT with `write:images`). When you have an active MCP session you already have the right token in your environment.
+**Notes**:
+- Tokens are single-use and expire 5 minutes after issuance. If `curl` returns 401, mint a fresh URL via `prepare_image_upload` and retry.
+- The legacy `POST /api/v1/resources/:id/images/multipart` endpoint (with `Authorization: Bearer`) still works for local Claude Code sessions, but `prepare_image_upload` is preferred because it works identically in hosted clients (Claude Cowork) where the bearer token isn't exposed to the shell.
 
 ## Image Metadata Accuracy
 

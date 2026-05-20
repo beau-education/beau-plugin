@@ -62,6 +62,7 @@ Once installed, invoke the skills in any chat:
 | `get_image` | Download an image by ID (returns image visually + metadata) |
 | `create_image` | Upload an image (base64) to a resource |
 | `upload_image_from_url` | Upload an image from a public URL |
+| `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `generate_image` | Generate an AI image from a text prompt |
 | `create_text_image` | Render formatted text into a PNG image |
 
