@@ -676,12 +676,41 @@ If the bot has no relevant tool enabled it falls back to voice-only explanation 
 
 **NEVER generate images via Python/code execution** (matplotlib, PIL, etc.) — this is extremely slow, produces poor results, and sends huge base64 payloads through MCP.
 
-Instead, use these server-side tools in order of preference:
+Instead, use these tools in order of preference:
 
-1. **`create_text_image`** — for words, phrases, vocabulary cards, sight words, labels, math expressions. Instant, no API key needed, deterministic rendering.
-2. **`generate_image`** — for custom educational illustrations, diagrams, scenes. Uses the org's OpenAI API key for server-side AI generation. Fast, no client-side overhead.
-3. **`upload_image_from_url`** — for publicly hosted images from Wikimedia, educational sites, etc.
-4. **`create_image` (base64)** — last resort only, for user-provided local files.
+1. **`create_text_image`** (MCP) — for words, phrases, vocabulary cards, sight words, labels, math expressions. Instant, no API key needed, deterministic rendering.
+2. **`generate_image`** (MCP) — for custom educational illustrations, diagrams, scenes. Uses the org's OpenAI API key for server-side AI generation. Fast, no client-side overhead.
+3. **`upload_image_from_url`** (MCP) — for publicly hosted images from Wikimedia, educational sites, etc.
+4. **Multipart endpoint via `curl`** (HTTP, see next section) — for files you already have on disk. Much faster than `create_image` because no base64 round-trip through the LLM.
+5. **`create_image` (base64)** (MCP) — last resort only, for tiny inline blobs (≤ 1 KB). Avoid for larger files; the LLM has to type out the base64 string which can take many seconds per kilobyte.
+
+### Uploading a local file via multipart (preferred over `create_image`)
+
+If you have a local file path (e.g. an image you just produced with another tool), upload it directly through the multipart endpoint using `curl` in a Bash tool call. This avoids the LLM having to encode the bytes as base64:
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer $TOKEN" \
+  -F "file=@/absolute/path/to/image.png" \
+  -F "name=optional-display-name.png" \
+  -F "description=Roots of y = x² − 4x − 5" \
+  -F "question=What are the roots of this quadratic?" \
+  -F "answer=x = -1 and x = 5" \
+  -F "hint=Look where the curve crosses the x-axis" \
+  -F "botVisible=true" \
+  "$API_BASE/api/v1/resources/RESOURCE_ID/images/multipart"
+```
+
+Form fields:
+
+- `file` (required) — the binary file. Accepted MIME types: `image/png`, `image/jpeg`, `image/webp`, `image/gif`, `application/pdf`. Max size: 5 MB for images, 20 MB for PDFs.
+- `name` (optional) — display name; defaults to the uploaded filename.
+- `description`, `question`, `answer`, `hint` (optional) — same semantics as `create_image`.
+- `botVisible` (optional, `"true"`/`"false"`) — same as `create_image`.
+
+Returns the same response shape as `create_image` (id, mimeType, description, etc.), minus the binary `data` field. Use the returned `id` exactly as you would from `create_image` — embed it in the resource content as `![ID](/api/v1/images/ID/data)`.
+
+**Auth note**: the multipart endpoint takes the same bearer token as the MCP server (org-scoped JWT with `write:images`). When you have an active MCP session you already have the right token in your environment.
 
 ## Image Metadata Accuracy
 
