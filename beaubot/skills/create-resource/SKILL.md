@@ -647,15 +647,27 @@ In addition to catalogue media, an admin can enable per-bot **Visual Tools** tha
 
 ### Checking which tools a bot has enabled
 
-Before relying on any visual-tool cues in your prose, **call `list_bots`** to see which display_* flags are on. The MCP `BotResponse` includes:
+Before relying on any visual-tool cues in your prose, **call `list_bots`** to see which display_* flags are on AND read the bot's persona. The MCP `BotResponse` returns:
 
 ```
-{ id, name, voice, displayMathEnabled, displayTextEnabled,
+{ id, name, voice,
+  personality,                 // # Personality and Tone (e.g. "warm, patient")
+  languagePolicy,              // # Language (e.g. "British English; light Yorkshire")
+  referencePronunciations,     // [{ word, say }, ...] phonetic respellings
+  content,                     // # Additional Instructions (catch-all)
+  displayMathEnabled, displayTextEnabled,
   displayNumberLineEnabled, displayFractionEnabled,
-  displayGridEnabled, displayTimelineEnabled, ... }
+  displayGridEnabled, displayTimelineEnabled,
+  ... }
 ```
 
-Use `get_bot(id)` to also fetch the system prompt content for the bot you're authoring against — useful for matching tone (e.g. don't write formal academic prose for a bot prompted "be playful and silly").
+Each of `personality / languagePolicy / referencePronunciations / content` maps to a labelled section of the bot's realtime system prompt. Use them to:
+
+- **Match tone**: a bot with `personality: "playful, silly, makes maths jokes"` should not get formal academic prose.
+- **Respect language/accent**: if `languagePolicy` says "British English", spell colour with a "u", say "maths" not "math".
+- **Know specialist words the bot mispronounces**: if `referencePronunciations` lists `{word: "Pythagoras", say: "pie-THAG-oh-russ"}`, you can rely on the bot to say it correctly even though the markdown shows it spelled "Pythagoras".
+
+Use `get_bot(id)` to fetch the same full record for a single bot when you only need one.
 
 If a target tool is off, either:
 - Ask the admin to enable it (Admin → Bots → edit → "Visual tools" card), or
