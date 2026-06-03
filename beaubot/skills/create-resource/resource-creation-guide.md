@@ -267,7 +267,8 @@ Click the image button in the toolbar to open the media dialog. You have three w
 **Word Image** (third tab):
 1. Enter a word or phrase (e.g. "Photosynthesis", "3/4 + 1/2")
 2. Optionally pick a font color
-3. Click **Create** — a clean text image is generated instantly and inserted into your content
+3. Choose a **Font**: *Beginner* (default) and *Comic* use the single-story "a" that children are taught to write — ideal for early readers — while *Standard* uses the plain system font
+4. Click **Create** — a clean text image is generated instantly and inserted into your content
 4. Supports multi-line text (use Shift+Enter for new lines)
 5. Best for: vocabulary cards, sight words, math expressions, labels, flash cards
 
