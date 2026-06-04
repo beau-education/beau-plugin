@@ -250,6 +250,8 @@ Per-`kind` `config` shapes:
 { "text": "cat", "color": "#333333", "font": "beginner" }
 // counters — a single emoji, count 1-99
 { "emoji": "🍎", "count": 5 }
+// clock — 12-hour face; hours 0-23, minutes 0-59; showMinuteTicks optional (default true)
+{ "hours": 3, "minutes": 15, "showMinuteTicks": true }
 ```
 
 **update_visual:**
@@ -697,6 +699,7 @@ Prefer a visual tool over an AI or word image whenever the content is structured
 | `math` | KaTeX equation | Formal expressions, sums, fractions in formula form |
 | `text` | Styled word/phrase (`**bold**` `*italic*` `_underline_` `[highlight]` `{color:text}`, `\n` line breaks) | Vocabulary, key terms, one-word answers, labels |
 | `counters` | A scatter of one repeated emoji (count 1-99) | Counting, "how many?", early number sense |
+| `clock` | Analog clock face set to hours:minutes | Telling the time; reading hours and minutes |
 
 Workflow: `create_visual(resourceId, kind, config)` → get an `id` → put `::visual{#id}` where it belongs in the content → `update_resource`. See **create_visual** under *Tool Parameters* for the per-`kind` `config` shapes and the `"logo": true` option. A visual id can also serve as a quiz illustration (`create_quiz` `image`) or a resource `coverImage`.
 

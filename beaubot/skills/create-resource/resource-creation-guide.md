@@ -348,7 +348,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 
 **Visual tools** are sharp, lightweight graphics you author directly into a lesson — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Unlike uploaded or AI images, they're drawn from a few values (no file, no API key) and render as crisp vector graphics at any size in the player and the editor.
 
-### The seven kinds
+### The eight kinds
 
 | Kind | What it shows | Typical use |
 |------|---------------|-------------|
@@ -359,6 +359,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 | **Math equation** | A formatted equation rendered with KaTeX | Fractions, expressions, sums |
 | **Word / text** | A styled word or phrase (bold, italic, underline, highlight, color, line breaks) | Vocabulary, key terms, labels |
 | **Counters** | A scatter of a repeated emoji | Counting, "how many?", early number sense |
+| **Clock** | An analog clock face set to a time | Telling the time; reading hours and minutes |
 
 ### Adding a visual
 
@@ -378,7 +379,7 @@ A visual can also be a resource's **cover image** or a **quiz's illustration**:
 ### Visual tools vs. images
 
 - Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
-- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the seven kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
+- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the eight kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
 
 ## Working with Videos
 
