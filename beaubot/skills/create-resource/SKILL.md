@@ -229,9 +229,9 @@ Use the `beaubot` MCP server tools:
 
 **create_visual** (authored visual tool — renders as crisp SVG, no AI):
 - `resourceId` (required): Resource to attach the visual to
-- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`
+- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`
 - `config` (required): Kind-specific JSON object (shapes below). Add `"logo": true` to render the org logo above the visual.
-- `description`, `question`, `answer`, `hint`, `botVisible` (optional): same meaning as for images; `description` is auto-summarized from the config if omitted
+- `question`, `answer`, `hint` (optional): let the bot quiz the student on the visual, exactly like an image. **Do not set a description** — the bot is given one regenerated from the `config` every lesson, so it always matches what's drawn; and there is no `botVisible` (a vector/text visual is always legible).
 - Returns an image ID — **embed it in the content with `::visual{#id}`** (mirrors `::quiz{#id}`). A visual ID can also be passed as a `create_quiz` `image` or a `update_resource` `coverImage`.
 
 Per-`kind` `config` shapes:
@@ -257,7 +257,7 @@ Per-`kind` `config` shapes:
 **update_visual:**
 - `resourceId` (required), `imageId` (required)
 - `config` (optional): replaces the whole config; must match the visual's existing `kind` (kind is immutable — delete and recreate to change it)
-- `name`, `description`, `question`, `answer`, `hint`, `botVisible` (optional)
+- `name`, `question`, `answer`, `hint` (optional). No `description`/`botVisible` — see create_visual.
 
 **create_quiz:**
 - `resourceId` (required): Resource to attach quiz to

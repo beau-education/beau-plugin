@@ -366,6 +366,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 1. In the editor, open the **Insert** menu and pick a kind under **Visual**. The visual is inserted as a `::visual{#id}` block and selected.
 2. Its settings open in the right-hand panel. Fill in the values for that kind (for example a number line's range and marks) — changes **autosave** and the inline preview updates live.
 3. Toggle **Show logo** to render your organization's logo above the visual (off by default).
+4. *(Body visuals only)* Optionally add a **Question**, **Answer**, and **Hint**. Just like an image, these let the bot quiz the student on the visual. You don't write a description — the bot is given one generated from the visual's own settings, so it always matches what's on screen and can never go stale. (Cover images and quiz illustrations show only the settings, not these fields.)
 
 Because a visual is referenced by the `::visual{#id}` directive, the bot displays it exactly where it sits in your prose — the same way images and quizzes appear.
 

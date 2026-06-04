@@ -503,6 +503,14 @@ You can also attach PDF files to resources for worksheets, reference materials, 
 
 For comprehensive guidance on writing effective content and working with media, see the **Resource Guide**.
 
+## Working with Visual Tools in Resources
+
+Alongside uploaded images, you can author **visual tools** — crisp, lightweight diagrams drawn from a few settings: number lines, fractions, grids, timelines, math equations, styled word cards, counters, and analog clocks. Insert one from the editor's **Insert ▸ Visual** menu; it drops a `::visual{#id}` block that you edit in the right-hand panel (settings autosave, with a live preview), and the bot shows it at that point in the lesson. A visual can also serve as a cover image or a quiz illustration.
+
+For a visual placed in the **lesson body**, you can optionally add a **Question**, **Answer**, and **Hint** in its settings panel — these let the bot quiz the student on the visual, exactly like an image. You never write a description for a visual: the bot is automatically given one based on the visual's settings, so it always matches what's on screen. (Cover images and quiz illustrations show only the settings.)
+
+Reach for a visual tool whenever the content is structured data the platform can draw (a fraction, a number line, a clock face); use an uploaded or AI image for photos and rich illustrations. See the **Resource Guide** for the full list of kinds and when to use each.
+
 ## Working with Quizzes in Resources
 
 **Quizzes are essential for interactive, engaging lessons.** Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes keep students actively thinking and participating — without them, lessons feel passive and text-heavy. Use a variety of quiz types (single choice, multiple choice, open answer, ordered list, matching) to keep things interesting.
