@@ -76,6 +76,8 @@ Use the `beaubot` MCP server tools:
 | `get_image` | Download an image by ID — returns the image visually (for inspection) plus metadata |
 | `generate_image` | Generate an AI image from a text prompt and attach to a resource (uses org's OpenAI key, preferred) |
 | `create_text_image` | Render a word/phrase into a PNG image (no AI needed, instant) |
+| `create_visual` | Create a teacher-authored visual tool — number line, fraction, grid, timeline, math equation, word/text card, or counters — from a small JSON config (no AI, renders as crisp SVG). Embed with `::visual{#id}` |
+| `update_visual` | Update an existing visual tool's config or metadata |
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
 | `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `create_image` | Upload an image or PDF (base64 data) to a resource (last resort) |
@@ -83,7 +85,7 @@ Use the `beaubot` MCP server tools:
 | `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, etc.) |
 | `list_tags` | List available tags in the organization's catalog |
 | `create_tag` | Create a new tag in the organization's tag catalog |
-| `list_bots` | List the org's bots with their voice and visual-tool flags — call to see which display_* tools (math, text, number-line, fraction, grid, timeline) a bot has enabled before authoring |
+| `list_bots` | List the org's bots with their voice, avatar, and persona — call to pick a bot whose persona suits the subject |
 | `get_bot` | Fetch a single bot's full config (including system prompt) by ID |
 | `export_resource` | Export a resource as a base64-encoded ZIP (includes all media and quizzes) |
 | `import_resource` | Import a resource from a base64-encoded ZIP (creates a new resource) |
@@ -115,6 +117,11 @@ Use the `beaubot` MCP server tools:
    OR (last resort)
    create_image(resourceId, name, mimeType, data, description, question, answer, hint, botVisible)
    → Uploads base64-encoded image
+
+2b. create_visual(resourceId, kind, config, ...)
+   → Authored visual tool (number line, fraction, grid, timeline, math, text, counters)
+   → Renders as crisp SVG; embed in content with ::visual{#id}. Prefer this over an image
+     whenever the content is structured data the platform can draw.
 
 3. create_quiz(resourceId, question, questionType, answers, image?, ...)
    → Returns quiz with ID
@@ -219,6 +226,36 @@ Use the `beaubot` MCP server tools:
 - `answer` (optional): Expected answer
 - `hint` (optional): Help for students
 - `botVisible` (optional): If true, bot can see the image
+
+**create_visual** (authored visual tool — renders as crisp SVG, no AI):
+- `resourceId` (required): Resource to attach the visual to
+- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`
+- `config` (required): Kind-specific JSON object (shapes below). Add `"logo": true` to render the org logo above the visual.
+- `description`, `question`, `answer`, `hint`, `botVisible` (optional): same meaning as for images; `description` is auto-summarized from the config if omitted
+- Returns an image ID — **embed it in the content with `::visual{#id}`** (mirrors `::quiz{#id}`). A visual ID can also be passed as a `create_quiz` `image` or a `update_resource` `coverImage`.
+
+Per-`kind` `config` shapes:
+```jsonc
+// number_line — marks/highlight may be numbers or strings
+{ "from": 0, "to": 10, "marks": [0, 2, 4, 6, 8, 10], "highlight": 6 }
+// fraction — style: "bar" | "circle"
+{ "num": 3, "den": 4, "style": "bar" }
+// grid — rows of cells; optional header per row; optional highlighted cells
+{ "cols": ["1", "2", "3"], "rows": [{ "header": "x2", "cells": [2, 4, 6] }], "highlight": [{ "row": 0, "col": 1 }] }
+// timeline
+{ "events": [{ "date": "1969", "label": "Moon landing" }, { "date": "1989", "label": "Web invented" }] }
+// math — KaTeX / LaTeX
+{ "tex": "\\frac{1}{2} + \\frac{1}{3}" }
+// text — font: "beginner" | "comic" | "standard"; inline formatting _u_ *i* **both** [hl] {red:color}; \n for line breaks
+{ "text": "cat", "color": "#333333", "font": "beginner" }
+// counters — a single emoji, count 1-99
+{ "emoji": "🍎", "count": 5 }
+```
+
+**update_visual:**
+- `resourceId` (required), `imageId` (required)
+- `config` (optional): replaces the whole config; must match the visual's existing `kind` (kind is immutable — delete and recreate to change it)
+- `name`, `description`, `question`, `answer`, `hint`, `botVisible` (optional)
 
 **create_quiz:**
 - `resourceId` (required): Resource to attach quiz to
@@ -431,6 +468,19 @@ Example: If `create_quiz` returns `{ id: 28 }`, insert:
 ::quiz{#28}
 ```
 
+### Visual Reference Syntax
+
+```markdown
+::visual{#VISUAL_ID}
+```
+
+Example: If `create_visual` returns `{ id: 91 }`, insert:
+```markdown
+::visual{#91}
+```
+
+The bot displays the visual via `display_media` when it reaches this point in the prose — exactly like images and quizzes.
+
 ### Complete Example
 
 ```
@@ -632,32 +682,34 @@ update_quiz(resourceId: 42, id: 99, image: 177)
 
 To remove an illustration, call `update_quiz(resourceId, id, image: null)`.
 
-## On-the-Fly Visuals (Bot Tools)
+## Visual Tools
 
-In addition to catalogue media, an admin can enable per-bot **Visual Tools** that the bot triggers live during the lesson. These are **not** authored as resources or stored as images — the bot calls them when its narration cues a need.
+**Visual tools** are crisp, lightweight graphics you author directly into a resource — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Create them with `create_visual` (they're stored as image rows with no binary data, just a small JSON config) and embed them with `::visual{#id}`. The bot shows the visual via `display_media` when it reaches that point in the prose. There is nothing to enable per bot — **any bot can display them**.
 
-| Tool the bot can call | What appears | When to invite it via prose |
+Prefer a visual tool over an AI or word image whenever the content is structured data the platform can draw:
+
+| Kind | What it draws | Reach for it when |
 |---|---|---|
-| `display_math` | KaTeX equation | "Let's write that out:" / formal expressions / fractions written in formula form |
-| `display_text` | Styled word/phrase (supports `**bold**`, `*italic*`, `_underline_`, `[highlight]`, `{color:text}`) | Vocabulary highlights, key terms, single one-word answers |
-| `display_number_line` | Labelled axis with optional highlight pin | "Picture this on a number line", ordering, position, distance |
-| `display_fraction` | Visual fraction bar (default) or pie | Introducing or comparing fractions |
-| `display_grid` | Table with optional highlighted cells | Multiplication grids, periodic tables, conjugation/declension |
-| `display_timeline` | Horizontal time axis with events | History, story arcs, multi-step processes over time |
+| `number_line` | Labelled axis with optional highlight | Position, ordering, decimals, distance |
+| `fraction` | Bar or circle split into parts | Introducing or comparing fractions |
+| `grid` | Rows/cols table with optional highlighted cells | Multiplication grids, periodic tables, conjugation |
+| `timeline` | Horizontal time axis with events | History, story arcs, multi-step processes |
+| `math` | KaTeX equation | Formal expressions, sums, fractions in formula form |
+| `text` | Styled word/phrase (`**bold**` `*italic*` `_underline_` `[highlight]` `{color:text}`, `\n` line breaks) | Vocabulary, key terms, one-word answers, labels |
+| `counters` | A scatter of one repeated emoji (count 1-99) | Counting, "how many?", early number sense |
 
-### Checking which tools a bot has enabled
+Workflow: `create_visual(resourceId, kind, config)` → get an `id` → put `::visual{#id}` where it belongs in the content → `update_resource`. See **create_visual** under *Tool Parameters* for the per-`kind` `config` shapes and the `"logo": true` option. A visual id can also serve as a quiz illustration (`create_quiz` `image`) or a resource `coverImage`.
 
-Before relying on any visual-tool cues in your prose, **call `list_bots`** to see which display_* flags are on AND read the bot's persona. The MCP `BotResponse` returns:
+### Picking a bot's persona
+
+Call `list_bots` (or `get_bot(id)`) to read each bot's persona before authoring, so the prose matches the tutor's voice. `BotResponse` returns:
 
 ```
-{ id, name, voice,
+{ id, name, voice, avatarUrl,
   personality,                 // # Personality and Tone (e.g. "warm, patient")
   languagePolicy,              // # Language (e.g. "British English; light Yorkshire")
   referencePronunciations,     // [{ word, say }, ...] phonetic respellings
   content,                     // # Additional Instructions (catch-all)
-  displayMathEnabled, displayTextEnabled,
-  displayNumberLineEnabled, displayFractionEnabled,
-  displayGridEnabled, displayTimelineEnabled,
   ... }
 ```
 
@@ -665,28 +717,12 @@ Each of `personality / languagePolicy / referencePronunciations / content` maps 
 
 - **Match tone**: a bot with `personality: "playful, silly, makes maths jokes"` should not get formal academic prose.
 - **Respect language/accent**: if `languagePolicy` says "British English", spell colour with a "u", say "maths" not "math".
-- **Know specialist words the bot mispronounces**: if `referencePronunciations` lists `{word: "Pythagoras", say: "pie-THAG-oh-russ"}`, you can rely on the bot to say it correctly even though the markdown shows it spelled "Pythagoras".
-
-Use `get_bot(id)` to fetch the same full record for a single bot when you only need one.
-
-If a target tool is off, either:
-- Ask the admin to enable it (Admin → Bots → edit → "Visual tools" card), or
-- Write the resource without relying on that tool — the bot will fall back to voice-only.
-
-### Authoring implications
-
-You don't reference these tools in markdown. They fire from prose cues. Two practical rules when writing a resource for a bot that has visual tools enabled:
-
-- **Cue spatial concepts**: say "imagine this on a number line", "look at three-quarters of the pie", "where does this sit between 0 and 1?" — the bot picks the matching tool.
-- **Cue formal expressions**: "Let's write that as: one-half plus one-quarter" cues `display_math` rather than the bot reading the formula aloud.
-
-If the bot has no relevant tool enabled it falls back to voice-only explanation — your resource still works on any bot.
+- **Know specialist words the bot mispronounces**: if `referencePronunciations` lists `{word: "Pythagoras", say: "pie-THAG-oh-russ"}`, you can rely on the bot to say it correctly even though the markdown spells it "Pythagoras".
 
 ### What this does NOT change
 
-- **Don't add new markdown directives.** No `<lesson-numberline>` etc. — the bot decides, not the author.
-- **Don't replace quizzes with `display_text`.** Quizzes remain the only way to capture student input. Visual tools are display-only.
-- **Don't pre-generate fraction/number-line images** to substitute. The dynamic visual is sharper, smaller, and won't clutter the catalogue.
+- **Quizzes still capture input.** Visual tools are display-only — keep using quizzes to check understanding.
+- **No per-bot setup.** Unlike the retired live "display" tools, authored visuals work on any bot with no flags to enable.
 
 ## Image Creation Speed
 
@@ -794,7 +830,7 @@ create_resource(name: "...", content: "...", tags: ["maths", "year-3", "number-l
 5. **Include images in every resource** - Aim for **at least 1-2 images per resource**. Visuals break up text, illustrate concepts, and give the bot concrete material to discuss. Text-only resources feel dry and lecture-like.
 6. **Provide accurate media metadata** - View every image before setting description, question, answer, and hint. Write metadata for what the image actually shows, not what you intended.
 7. **Enable botVisible for important images** - Let the bot see diagrams and charts
-8. **Always embed references** - Images need `![ID](/api/v1/images/ID/data)` and quizzes need `::quiz{#ID}` in the content
+8. **Always embed references** - Images need `![ID](/api/v1/images/ID/data)`, quizzes need `::quiz{#ID}`, and visuals need `::visual{#ID}` in the content
 9. **Design resources to be self-contained** - Each resource should make sense on its own and be reusable across courses
 10. **Avoid text-heavy content** - If any section of your resource is more than a few sentences without a quiz or image, it's probably too text-heavy. Add interactivity.
 11. **Test your resources** - Use the Test Resource feature in the admin UI before assigning to students

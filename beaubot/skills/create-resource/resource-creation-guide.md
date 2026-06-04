@@ -344,6 +344,42 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 - **Test your lesson** to ensure the image discussion flows naturally
 - **Don't skip images** — even if the topic seems abstract, a diagram, chart, or illustration almost always helps
 
+## Working with Visual Tools
+
+**Visual tools** are sharp, lightweight graphics you author directly into a lesson — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Unlike uploaded or AI images, they're drawn from a few values (no file, no API key) and render as crisp vector graphics at any size in the player and the editor.
+
+### The seven kinds
+
+| Kind | What it shows | Typical use |
+|------|---------------|-------------|
+| **Number line** | A labelled axis with optional highlighted point | Position, ordering, decimals, distance |
+| **Fraction** | A bar or pie split into parts | Introducing or comparing fractions |
+| **Grid / table** | Rows and columns with optional highlighted cells | Multiplication grids, periodic tables, conjugation |
+| **Timeline** | Events on a horizontal time axis | History, story arcs, chronology |
+| **Math equation** | A formatted equation rendered with KaTeX | Fractions, expressions, sums |
+| **Word / text** | A styled word or phrase (bold, italic, underline, highlight, color, line breaks) | Vocabulary, key terms, labels |
+| **Counters** | A scatter of a repeated emoji | Counting, "how many?", early number sense |
+
+### Adding a visual
+
+1. In the editor, open the **Insert** menu and pick a kind under **Visual**. The visual is inserted as a `::visual{#id}` block and selected.
+2. Its settings open in the right-hand panel. Fill in the values for that kind (for example a number line's range and marks) — changes **autosave** and the inline preview updates live.
+3. Toggle **Show logo** to render your organization's logo above the visual (off by default).
+
+Because a visual is referenced by the `::visual{#id}` directive, the bot displays it exactly where it sits in your prose — the same way images and quizzes appear.
+
+### Using a visual as a cover image or quiz illustration
+
+A visual can also be a resource's **cover image** or a **quiz's illustration**:
+
+- **Cover**: in the cover-image picker choose the **Visual** tab and pick a kind; click the cover afterwards to edit it in the sidebar.
+- **Quiz**: in a quiz's illustration control choose the **Visual** tab; edit it inline in the quiz panel.
+
+### Visual tools vs. images
+
+- Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
+- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the seven kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
+
 ## Working with Videos
 
 Videos work similarly to images: **the bot cannot watch videos**. It relies entirely on your metadata.
@@ -680,40 +716,6 @@ When the bot displays a quiz:
 - **Test your quizzes** to ensure the flow feels natural
 - **Match question type to content** — use single choice for quick fact checks, open answer for calculations, fraction for math, ordered list for sequencing, matching for pairing concepts
 
-## On-the-Fly Visuals (Bot Tools)
-
-In addition to pre-authored images, videos, PDFs and quizzes, an **admin** can enable per-bot **Visual Tools** that let the bot generate visuals during the lesson. Unlike images, these are **not** stored in the catalogue — they are created and rendered live when the bot decides one will help.
-
-The available tools (each enabled separately per bot in **Admin > Bots**):
-
-| Tool | What it shows | Typical use |
-|---|---|---|
-| **Math equation** | A formatted equation rendered with KaTeX | Fractions, expressions, sums — when seeing the formula beats hearing it |
-| **Formatted text** | A short word or phrase styled on screen (same `**bold**`, `*italic*`, `_underline_`, `[highlight]`, `{color:text}` formatting as a word-image), but ephemeral | Vocabulary highlights, key terms, single answers |
-| **Number line** | A labelled axis with an optional highlighted point | Position, ordering, decimals, distance |
-| **Fraction (bar or pie)** | A visual fraction | Introducing or comparing fractions |
-| **Grid / table** | Tabular data with optional highlighted cells | Multiplication grids, periodic tables, conjugation tables |
-| **Timeline** | Events on a horizontal time axis | History, story arcs, chronology |
-
-### How this affects authoring
-
-You don't reference these tools by name in your markdown. The bot decides when to use them based on the lesson narrative. Two practical tips for prose that invites the right visual at the right moment:
-
-- **Cue spatial concepts**: "Picture this on a number line", "imagine three-quarters of a pizza", "look at where this falls between 0 and 1" — phrases like these prompt the bot to call the matching tool.
-- **Cue formal expressions**: "Let's write that out: one-half plus one-quarter…" cues a `display_math` call rather than the bot reading the formula aloud.
-
-If the bot has no relevant visual tool enabled it will fall back to verbal explanation — your resource still works.
-
-### What students see
-
-The visual appears in the same area as catalogue images and **replaces** any image currently on screen. The student can't interact with it (it's view-only), so use a quiz immediately afterwards if you want to check understanding.
-
-### What you don't need to do
-
-- **No new tags or markup**. The bot triggers visuals from the prose.
-- **No upload step**. Nothing is stored — the visual disappears when the next one (or an image, video, or quiz) is shown.
-- **No quiz substitution**. Quizzes remain the way to collect student answers. Visual tools are display-only.
-
 ## Assessment and Questions
 
 ### Crafting Good Questions
@@ -855,8 +857,9 @@ Exported ZIPs are fully self-contained. Videos are stored as binary files in the
 - [ ] Content organized with headings
 - [ ] Steps are digestible (not too long)
 - [ ] **At least 2-3 quizzes** included (one after each major concept)
-- [ ] **At least 1-2 images** included (no text-only resources)
-- [ ] No section is more than a few sentences without a quiz or image
+- [ ] **At least 1-2 images or visual tools** included (no text-only resources)
+- [ ] Visual tools (number line, fraction, grid, etc.) used where structured data beats prose
+- [ ] No section is more than a few sentences without a quiz, image, or visual
 - [ ] All images have complete metadata
 - [ ] All videos have complete metadata
 - [ ] Quizzes placed at appropriate checkpoints
