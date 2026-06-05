@@ -348,7 +348,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 
 **Visual tools** are sharp, lightweight graphics you author directly into a lesson — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Unlike uploaded or AI images, they're drawn from a few values (no file, no API key) and render as crisp vector graphics at any size in the player and the editor.
 
-### The fifteen kinds
+### The twenty-two kinds
 
 | Kind | What it shows | Typical use |
 |------|---------------|-------------|
@@ -367,6 +367,13 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 | **Phoneme frame** | Sound buttons under each grapheme | Phonics — segmenting words into sounds |
 | **Place value chart** | Digits in labelled place columns | Place value, reading large numbers |
 | **Chart (advanced)** | Any chart from a pasted Chart.js JSON spec | Richer data viz (line/pie/scatter…), for power users & AI |
+| **Function graph** | Plot y = f(x) on Cartesian axes | Graphing functions (KS3–A-level) |
+| **Geometry** | Labelled polygon (angles, sides, right angles) | Pythagoras, trig, angle rules |
+| **Coordinate grid** | Plot points and lines on x/y axes | Coordinates, plotting |
+| **Box plot** | Box-and-whisker on a number scale | GCSE statistics |
+| **Probability tree** | Branching tree with probabilities | GCSE probability |
+| **Atom (Bohr)** | Nucleus + electron shells | Atomic structure (chemistry/physics) |
+| **pH scale** | Coloured 0–14 scale with a marker | Acids and alkalis |
 
 ### Adding a visual
 
@@ -387,7 +394,7 @@ A visual can also be a resource's **cover image** or a **quiz's illustration**:
 ### Visual tools vs. images
 
 - Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
-- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the fifteen kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
+- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the twenty-two kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
 
 ## Working with Videos
 

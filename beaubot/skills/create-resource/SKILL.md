@@ -229,7 +229,7 @@ Use the `beaubot` MCP server tools:
 
 **create_visual** (authored visual tool — renders as crisp SVG, no AI):
 - `resourceId` (required): Resource to attach the visual to
-- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`
+- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`, `"function_graph"`, `"geometry"`, `"coordinate_grid"`, `"box_plot"`, `"probability_tree"`, `"atom"`, `"ph_scale"`
 - `config` (required): Kind-specific JSON object (shapes below). Add `"logo": true` to render the org logo above the visual.
 - `question`, `answer`, `hint` (optional): let the bot quiz the student on the visual, exactly like an image. **Do not set a description** — the bot is given one regenerated from the `config` every lesson, so it always matches what's drawn; and there is no `botVisible` (a vector/text visual is always legible).
 - Returns an image ID — **embed it in the content with `::visual{#id}`** (mirrors `::quiz{#id}`). A visual ID can also be passed as a `create_quiz` `image` or a `update_resource` `coverImage`.
@@ -267,6 +267,20 @@ Per-`kind` `config` shapes:
 // chart — a full Chart.js spec (the most flexible kind). type one of
 //   bar|line|pie|doughnut|radar|polarArea|scatter|bubble. Pure data only: no URLs, max 50KB.
 { "spec": { "type": "bar", "data": { "labels": ["Jan", "Feb"], "datasets": [{ "label": "Rain", "data": [42, 35] }] }, "options": {} } }
+// function_graph — plot y=f(x); explicit * (2*x); funcs sin cos tan sqrt abs exp ln log; consts pi e
+{ "functions": ["x^2", "2*x+1"], "xMin": -5, "xMax": 5 }
+// geometry — labelled polygon; coords auto-scale; rightAngles = vertex indices
+{ "vertices": [{ "x": 0, "y": 0, "label": "A" }, { "x": 4, "y": 0, "label": "B" }, { "x": 0, "y": 3, "label": "C" }], "sideLabels": ["4 cm", "5 cm", "3 cm"], "rightAngles": [0] }
+// coordinate_grid — plot points/segments; xMin/xMax/yMin/yMax optional
+{ "points": [{ "x": 2, "y": 3, "label": "A" }], "segments": [{ "from": [0, 0], "to": [2, 3] }] }
+// box_plot — five-number summary
+{ "min": 2, "q1": 5, "median": 7, "q3": 10, "max": 14, "label": "Scores" }
+// probability_tree — recursive branches with probabilities
+{ "branches": [{ "label": "Red", "prob": "1/2", "branches": [{ "label": "Red", "prob": "1/2" }, { "label": "Blue", "prob": "1/2" }] }] }
+// atom — Bohr model; electrons per shell
+{ "protons": 11, "neutrons": 12, "electrons": [2, 8, 1] }
+// ph_scale — 0-14
+{ "value": 7 }
 ```
 
 **update_visual:**
@@ -722,6 +736,13 @@ Prefer a visual tool over an AI or word image whenever the content is structured
 | `phoneme_frame` | Sound buttons per grapheme | Phonics — segmenting words into sounds |
 | `place_value` | Digits in labelled place columns | Place value, reading large numbers |
 | `chart` | Any Chart.js chart from a JSON spec | Richer data viz (line/pie/scatter…) — the flexible power tool |
+| `function_graph` | Plot y = f(x) on Cartesian axes | Graphing functions (KS3–A-level) |
+| `geometry` | Labelled polygon (angles/sides/right angles) | Pythagoras, trig, angle rules |
+| `coordinate_grid` | Points & lines on x/y axes | Coordinates, plotting |
+| `box_plot` | Box-and-whisker plot | GCSE statistics |
+| `probability_tree` | Branching tree with probabilities | GCSE probability |
+| `atom` | Bohr model: nucleus + electron shells | Atomic structure |
+| `ph_scale` | Coloured 0–14 scale with a marker | Acids and alkalis |
 
 Workflow: `create_visual(resourceId, kind, config)` → get an `id` → put `::visual{#id}` where it belongs in the content → `update_resource`. See **create_visual** under *Tool Parameters* for the per-`kind` `config` shapes and the `"logo": true` option. A visual id can also serve as a quiz illustration (`create_quiz` `image`) or a resource `coverImage`.
 
