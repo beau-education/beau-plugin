@@ -505,7 +505,7 @@ For comprehensive guidance on writing effective content and working with media, 
 
 ## Working with Visual Tools in Resources
 
-Alongside uploaded images, you can author **visual tools** — crisp, lightweight diagrams drawn from a few settings: number lines, fractions, grids, timelines, math equations, styled word cards, counters, and analog clocks. Insert one from the editor's **Insert ▸ Visual** menu; it drops a `::visual{#id}` block that you edit in the right-hand panel (settings autosave, with a live preview), and the bot shows it at that point in the lesson. A visual can also serve as a cover image or a quiz illustration.
+Alongside uploaded images, you can author **visual tools** — crisp, lightweight diagrams drawn from a few settings: number lines, fractions, grids, timelines, math equations, styled word cards, counters, analog clocks, ten frames, bar charts, base-ten blocks, money, phoneme frames, place-value charts, and (for richer data) an advanced Chart.js chart. Insert one from the editor's **Insert ▸ Visual** menu; it drops a `::visual{#id}` block that you edit in the right-hand panel (settings autosave, with a live preview), and the bot shows it at that point in the lesson. A visual can also serve as a cover image or a quiz illustration.
 
 For a visual placed in the **lesson body**, you can optionally add a **Question**, **Answer**, and **Hint** in its settings panel — these let the bot quiz the student on the visual, exactly like an image. You never write a description for a visual: the bot is automatically given one based on the visual's settings, so it always matches what's on screen. (Cover images and quiz illustrations show only the settings.)
 

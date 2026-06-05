@@ -348,7 +348,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 
 **Visual tools** are sharp, lightweight graphics you author directly into a lesson — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Unlike uploaded or AI images, they're drawn from a few values (no file, no API key) and render as crisp vector graphics at any size in the player and the editor.
 
-### The eight kinds
+### The fifteen kinds
 
 | Kind | What it shows | Typical use |
 |------|---------------|-------------|
@@ -360,6 +360,13 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 | **Word / text** | A styled word or phrase (bold, italic, underline, highlight, color, line breaks) | Vocabulary, key terms, labels |
 | **Counters** | A scatter of a repeated emoji | Counting, "how many?", early number sense |
 | **Clock** | An analog clock face set to a time | Telling the time; reading hours and minutes |
+| **Ten frame** | A 2×5 frame filled with counters | Number bonds, "make 10", counting to 20 |
+| **Bar chart** | Simple bars comparing quantities | Data handling, comparing amounts |
+| **Base ten blocks** | Hundreds/tens/ones Dienes blocks | Place value, partitioning |
+| **Money** | Coins and notes to count | Counting money, change, money problems |
+| **Phoneme frame** | Sound buttons under each grapheme | Phonics — segmenting words into sounds |
+| **Place value chart** | Digits in labelled place columns | Place value, reading large numbers |
+| **Chart (advanced)** | Any chart from a pasted Chart.js JSON spec | Richer data viz (line/pie/scatter…), for power users & AI |
 
 ### Adding a visual
 
@@ -380,7 +387,7 @@ A visual can also be a resource's **cover image** or a **quiz's illustration**:
 ### Visual tools vs. images
 
 - Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
-- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the eight kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
+- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the fifteen kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
 
 ## Working with Videos
 

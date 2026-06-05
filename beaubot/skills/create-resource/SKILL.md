@@ -229,7 +229,7 @@ Use the `beaubot` MCP server tools:
 
 **create_visual** (authored visual tool — renders as crisp SVG, no AI):
 - `resourceId` (required): Resource to attach the visual to
-- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`
+- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`
 - `config` (required): Kind-specific JSON object (shapes below). Add `"logo": true` to render the org logo above the visual.
 - `question`, `answer`, `hint` (optional): let the bot quiz the student on the visual, exactly like an image. **Do not set a description** — the bot is given one regenerated from the `config` every lesson, so it always matches what's drawn; and there is no `botVisible` (a vector/text visual is always legible).
 - Returns an image ID — **embed it in the content with `::visual{#id}`** (mirrors `::quiz{#id}`). A visual ID can also be passed as a `create_quiz` `image` or a `update_resource` `coverImage`.
@@ -252,6 +252,21 @@ Per-`kind` `config` shapes:
 { "emoji": "🍎", "count": 5 }
 // clock — 12-hour face; hours 0-23, minutes 0-59; showMinuteTicks optional (default true)
 { "hours": 3, "minutes": 15, "showMinuteTicks": true }
+// ten_frame — 0-20 counters in a 2x5 frame (two frames above 10); color optional
+{ "count": 7, "color": "#E53935" }
+// bar_chart — simple guided bars; unit + color optional
+{ "bars": [{ "label": "Cats", "value": 4 }, { "label": "Dogs", "value": 6 }], "unit": "children" }
+// base_ten — Dienes blocks for place value, 0-999
+{ "value": 124 }
+// money — coins/notes in MINOR units (pence/cents); currency GBP|USD|EUR (default GBP)
+{ "coins": [200, 200, 20, 20, 5], "currency": "GBP" }
+// phoneme_frame — one grapheme per sound (phonics sound buttons)
+{ "graphemes": ["sh", "i", "p"] }
+// place_value — digits in place columns; columns optional (derived if omitted)
+{ "value": 3406, "columns": ["Th", "H", "T", "O"] }
+// chart — a full Chart.js spec (the most flexible kind). type one of
+//   bar|line|pie|doughnut|radar|polarArea|scatter|bubble. Pure data only: no URLs, max 50KB.
+{ "spec": { "type": "bar", "data": { "labels": ["Jan", "Feb"], "datasets": [{ "label": "Rain", "data": [42, 35] }] }, "options": {} } }
 ```
 
 **update_visual:**
@@ -700,6 +715,13 @@ Prefer a visual tool over an AI or word image whenever the content is structured
 | `text` | Styled word/phrase (`**bold**` `*italic*` `_underline_` `[highlight]` `{color:text}`, `\n` line breaks) | Vocabulary, key terms, one-word answers, labels |
 | `counters` | A scatter of one repeated emoji (count 1-99) | Counting, "how many?", early number sense |
 | `clock` | Analog clock face set to hours:minutes | Telling the time; reading hours and minutes |
+| `ten_frame` | A 2×5 frame filled with counters | Number bonds, "make 10", counting to 20 |
+| `bar_chart` | Simple guided bar chart | Data handling, comparing amounts |
+| `base_ten` | Hundreds/tens/ones Dienes blocks | Place value, partitioning |
+| `money` | Coins/notes (minor units) to count | Counting money, change |
+| `phoneme_frame` | Sound buttons per grapheme | Phonics — segmenting words into sounds |
+| `place_value` | Digits in labelled place columns | Place value, reading large numbers |
+| `chart` | Any Chart.js chart from a JSON spec | Richer data viz (line/pie/scatter…) — the flexible power tool |
 
 Workflow: `create_visual(resourceId, kind, config)` → get an `id` → put `::visual{#id}` where it belongs in the content → `update_resource`. See **create_visual** under *Tool Parameters* for the per-`kind` `config` shapes and the `"logo": true` option. A visual id can also serve as a quiz illustration (`create_quiz` `image`) or a resource `coverImage`.
 
