@@ -558,7 +558,7 @@ Quizzes provide structured assessment with automatic correctness checking. The p
    - **Evaluation Criteria** (for open answer): Optional guidance for AI grading
    - **Retry Limit**: Number of attempts allowed
    - **Hint**: Guidance for incorrect attempts
-   - **Illustration** (optional): An image shown to the student above the question. Use this when a picture, diagram, or chart helps frame what's being asked. Not visible to the bot.
+   - **Illustration** (optional): An image shown to the student above the question. Use this whenever the student needs to *see a figure while answering* — a diagram to measure, a shape to label, a chart to read. The illustration and the question stay on screen together. **Prefer this over placing the figure inline in the lesson body before the quiz**: an inline image is shown earlier as the bot narrates, so by the time the student answers it may be off screen. A visual tool can be an illustration too (Visual tab). Not visible to the bot.
 4. Click **Save**
 
 The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't edit this text directly.

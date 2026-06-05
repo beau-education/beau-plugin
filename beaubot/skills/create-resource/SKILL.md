@@ -40,6 +40,7 @@ When this skill is invoked, follow these steps:
    - Use "the student" with they/them pronouns
    - Keep sections digestible
    - **IMPORTANT: Avoid text-heavy resources.** Every section should either have a quiz, an image, or both. If a section is just text with no interactivity, consider adding a quick quiz to check understanding or an image to illustrate the concept. Students learn best when they actively participate, not passively listen.
+   - **If a quiz refers to a figure, attach that figure to the quiz** (its `image` field), don't just place it inline before `::quiz{#id}`. Then the diagram and the question are on screen together while the student answers. See *Quiz Illustrations*.
 
 4. **Source Media**: Find or create visuals for the resource. **Every resource should have images** — they are essential for engagement, not optional decoration.
    - **Do NOT generate images via Python/code** — this is too slow and produces poor results
@@ -692,7 +693,11 @@ Note: Use `[]` in the question to mark blank positions. Correct answers (`isCorr
 
 ## Quiz Illustrations
 
-A quiz can have an **illustration image** attached to it (separate from the resource's inline images and cover image). The illustration appears alongside the question when the quiz is shown to the student — useful for "what do you see in this picture?"-style questions, diagram labelling, or giving students a visual reference while they answer.
+A quiz can have an **illustration image** attached to it (separate from the resource's inline images and cover image). The illustration appears **alongside the question, on the same screen**, when the quiz is shown to the student.
+
+**This is the preferred way to give a quiz a supporting figure.** If a question refers to a diagram — "find the missing side of *this* triangle", "label the parts of *this* cell", "which angle is *x*?" — attach that figure to the quiz via its `image` field. Because the picture and the question render together and stay together, the student can read the diagram while they answer. **Do not** instead drop the figure inline in the content just before `::quiz{#id}`: the bot shows an inline image earlier, as it narrates that part of the lesson, so by the time the student is answering the quiz the picture may no longer be on screen. A quiz that depends on a figure should *own* that figure.
+
+A quiz illustration can be any image kind — an uploaded/AI image, a `create_svg` drawing, or a `create_visual` visual tool (pass the visual's `id` as the quiz `image`). For maths/science diagrams, prefer a `create_visual` (e.g. `geometry`, `coordinate_grid`, `function_graph`) or a `create_svg` so it stays crisp.
 
 Quiz images are **not** embedded in the resource markdown — they are linked directly to the quiz record via the `image` field. The resource content does NOT need a `![ID](/api/v1/images/ID/data)` reference for quiz illustrations.
 
@@ -722,9 +727,19 @@ update_quiz(resourceId: 42, id: 99, image: 177)
 
 ### When to use a quiz illustration vs. an inline image
 
-- **Quiz illustration (`image` on the quiz)** — when the visual is intrinsic to the question. The image appears next to the question in the quiz UI and cannot be separated from it. Use this for "identify the part", "which one is correct", or "describe what you see".
-- **Inline image (`![ID](/api/v1/images/ID/data)` in the resource content)** — when the visual is part of the lesson narrative rather than tied to one specific question. The bot will display it at the point you place it in the markdown.
+- **Quiz illustration (`image` on the quiz)** — when the student needs to *see the figure while answering*. The image renders next to the question and stays with it, so the diagram and the question are on screen together. Use this for diagram-based maths/science questions ("find the missing side of this triangle"), "identify the part", "which one is correct", or "describe what you see". **When in doubt, if a quiz mentions a specific figure, attach it here.**
+- **Inline image (`![ID](/api/v1/images/ID/data)` in the resource content)** — when the visual is part of the lesson *narrative* (a worked example the bot talks through), not tied to one specific question the student must answer against it. The bot displays it at the point you place it in the markdown, then moves on.
 - **Cover image (`coverImage` on the resource)** — a single hero image shown when the lesson starts.
+
+Worked example — a Pythagoras quiz with its own triangle:
+```
+# 1. Draw the triangle as a visual on the resource
+create_visual(resourceId: 42, kind: "geometry", config: { vertices: [...], sideLabels: ["6 cm","?","8 cm"], rightAngles: [0] })
+# → { id: 201 }
+# 2. Attach it to the quiz — NOT inline before ::quiz
+create_quiz(resourceId: 42, question: "Find the hypotenuse of the triangle shown.", questionType: "freetext", expectedAnswer: "10", image: 201)
+```
+The student sees the triangle and the question side by side. Had the triangle instead been placed inline before `::quiz{#id}`, the bot would have shown it earlier and the student would answer with no picture in view.
 
 To remove an illustration, call `update_quiz(resourceId, id, image: null)`.
 
@@ -894,6 +909,7 @@ create_resource(name: "...", content: "...", tags: ["maths", "year-3", "number-l
 6. **Provide accurate media metadata** - View every image before setting description, question, answer, and hint. Write metadata for what the image actually shows, not what you intended.
 7. **Enable botVisible for important images** - Let the bot see diagrams and charts
 8. **Always embed references** - Images need `![ID](/api/v1/images/ID/data)`, quizzes need `::quiz{#ID}`, and visuals need `::visual{#ID}` in the content
+   - **Exception: a figure a quiz tests against belongs on the quiz**, via its `image` field — not inline before `::quiz{#ID}`. That keeps the diagram and the question on screen together. See *Quiz Illustrations*.
 9. **Design resources to be self-contained** - Each resource should make sense on its own and be reusable across courses
 10. **Avoid text-heavy content** - If any section of your resource is more than a few sentences without a quiz or image, it's probably too text-heavy. Add interactivity.
 11. **Test your resources** - Use the Test Resource feature in the admin UI before assigning to students
