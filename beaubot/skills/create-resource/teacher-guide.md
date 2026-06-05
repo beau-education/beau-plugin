@@ -497,7 +497,7 @@ For details on how bots deliver lessons and how to write effective content for A
 **Every resource should include at least 1-2 images.** Images are essential for engagement — they break up text, illustrate concepts, and give the bot concrete material to discuss with the student. A resource with no images will feel text-heavy and lecture-like, even with great written content.
 
 When creating resources, the media dialog offers three ways to add images:
-- **Upload File** — upload PNG/JPEG images (max 5 MB), videos (max 100 MB), or PDFs (max 20 MB)
+- **Upload File** — upload PNG/JPEG/SVG images (max 5 MB), videos (max 100 MB), or PDFs (max 20 MB). SVG is ideal for crisp, scalable diagrams.
 - **AI Image** — enter a text prompt to generate a custom illustration using AI (requires an OpenAI API key configured for your organization)
 - **Word Image** — type a word or phrase to instantly render it as a clean text image (great for vocabulary cards, sight words, math expressions). Supports multi-line text via Shift+Enter. Pick a **Font** — the default *Beginner* face (and *Comic*) use the single-story "a" children are taught to write.
 

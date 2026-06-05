@@ -257,7 +257,7 @@ Click the image button in the toolbar to open the media dialog. You have three w
 
 **Upload File** (first tab):
 1. Click **Choose Image, Video, or PDF**
-2. Select a file — **PNG** and **JPEG** images (max 5 MB), videos (max 100 MB), or PDFs (max 20 MB)
+2. Select a file — **PNG**, **JPEG**, or **SVG** images (max 5 MB), videos (max 100 MB), or PDFs (max 20 MB). SVG is great for crisp diagrams and logos; for charts and standard diagrams, a **visual tool** is usually the better choice (see *Working with Visual Tools*).
 3. The file is uploaded and inserted into your content
 
 **AI Image** (second tab):

@@ -78,6 +78,7 @@ Use the `beaubot` MCP server tools:
 | `create_text_image` | Render a word/phrase into a PNG image (no AI needed, instant) |
 | `create_visual` | Create a teacher-authored visual tool — number line, fraction, grid, timeline, math equation, word/text card, or counters — from a small JSON config (no AI, renders as crisp SVG). Embed with `::visual{#id}` |
 | `update_visual` | Update an existing visual tool's config or metadata |
+| `create_svg` | Draw a scalable SVG image from raw markup (crisp, responsive, no AI). Best when no `create_visual` kind fits but it can be drawn with shapes/lines/text. Embed with `![id](…)` |
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
 | `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `create_image` | Upload an image or PDF (base64 data) to a resource (last resort) |
@@ -93,6 +94,16 @@ Use the `beaubot` MCP server tools:
 | `list_courses` | List existing courses |
 | `add_resource_to_course` | Add a resource to a course |
 | `list_course_resources` | List resources already in a course (with details) |
+
+### Choosing how to show something visual
+
+When a lesson needs a picture or diagram, pick the **most specific** option — in this order. Going higher up the list gives crisper, more responsive, more editable results, so don't drop to a raster image out of habit.
+
+1. **A dedicated visual tool — `create_visual` (best).** If the concept maps to a built-in kind, use it: number line, fraction, grid, timeline, math (KaTeX), word/text, counters, clock, ten frame, bar chart, base-ten blocks, money, phoneme frame, place value, **Chart.js chart**, function graph, geometry, coordinate grid, box plot, probability tree, atom (Bohr), pH scale, syllable split, onset/rime. These are purpose-built, teacher-editable, and render responsively. For arbitrary data charts the `chart` kind (Chart.js) covers bar/line/pie/scatter/etc.
+2. **A hand-drawn SVG — `create_svg` (good fallback).** If **no** visual kind fits but the thing can be expressed with shapes, lines and text — a labelled diagram, a custom illustration, a flowchart, a simple map, a process diagram — write an SVG. It stays sharp at any size and is lightweight. **Prefer this over a raster image.**
+3. **A raster image (last resort).** Only when you truly need a *photograph* or a richly detailed picture that can't be vector-drawn: `generate_image` (AI) or `prepare_image_upload` / `create_image` (an existing file). Supported raster uploads: PNG and JPEG. (SVG uploads are supported too, but use `create_svg` rather than uploading SVG by hand.)
+
+All of these embed the same way in the content — `![ID](/api/v1/images/ID/data)` for images and SVGs, `::visual{#ID}` for visual tools.
 
 ### Workflow
 
@@ -219,7 +230,7 @@ Use the `beaubot` MCP server tools:
 **create_image:**
 - `resourceId` (required): Resource to attach image to
 - `name` (required): Image filename
-- `mimeType` (required): Only `"image/png"`, `"image/jpeg"`, or `"application/pdf"` are supported
+- `mimeType` (required): `"image/png"`, `"image/jpeg"`, `"image/svg+xml"`, or `"application/pdf"`. For SVG, prefer the dedicated `create_svg` tool (it takes raw markup, no base64).
 - `data` (required): Base64-encoded image data
 - `description` (optional): What the image shows (important for bot)
 - `question` (optional): Question to ask about the image
