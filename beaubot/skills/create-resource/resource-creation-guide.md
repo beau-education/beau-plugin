@@ -198,6 +198,8 @@ on completing the lesson.
 
 Notice how this example includes an image or quiz (or both) in **every section**. This is essential for keeping students engaged. A section that is only text with no interactivity will feel like a lecture.
 
+> **Tip:** your headings also power the editor's **Outline view** (the list icon at the left of the editor) — click any heading to jump straight to it. You can also **Print** a resource (toolbar button) as a clean take-home worksheet, with quizzes rendered as blank questions; see the Teacher Guide for details.
+
 ### Lesson Flow
 
 A well-structured lesson typically includes:

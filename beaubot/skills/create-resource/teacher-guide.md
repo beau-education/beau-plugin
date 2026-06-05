@@ -122,6 +122,22 @@ During testing, you'll experience the lesson exactly as a student would - includ
 - Is the difficulty level appropriate?
 - Does the lesson flow naturally?
 
+### The Outline View
+
+While editing, click the **outline** icon at the left edge of the editor to open a navigable outline built from your headings (H1/H2/H3). It updates as you type, and clicking any entry scrolls straight to that heading — handy for longer lessons. Click the hide icon to collapse it.
+
+### Printing a Resource (Take-Home Worksheet)
+
+Click **Print** in the editor toolbar to produce a clean, printable version of the resource — useful for take-home exercises or a paper backup. The printout includes the cover image, your text and headings, all images and visual tools (number lines, fractions, charts, etc.), and a header with the lesson title plus Name/Date lines.
+
+Quizzes print as **blank worksheet questions** for students to answer on paper:
+- multiple-choice options become tick boxes,
+- open-answer questions get ruled answer lines,
+- fill-in-the-blank shows the sentence with blanks (plus a word bank where relevant),
+- "put in order" and matching questions are shown scrambled, with space to answer.
+
+Use your browser's print dialog to print directly or **Save as PDF** (the file is named after the resource).
+
 ## Managing Courses
 
 Courses are collections of resources organized for students to complete. Navigate to **Teaching > Courses**.
