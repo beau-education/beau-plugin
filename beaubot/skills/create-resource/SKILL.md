@@ -229,7 +229,7 @@ Use the `beaubot` MCP server tools:
 
 **create_visual** (authored visual tool — renders as crisp SVG, no AI):
 - `resourceId` (required): Resource to attach the visual to
-- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`, `"function_graph"`, `"geometry"`, `"coordinate_grid"`, `"box_plot"`, `"probability_tree"`, `"atom"`, `"ph_scale"`
+- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`, `"function_graph"`, `"geometry"`, `"coordinate_grid"`, `"box_plot"`, `"probability_tree"`, `"atom"`, `"ph_scale"`, `"syllable_split"`, `"onset_rime"`
 - `config` (required): Kind-specific JSON object (shapes below). Add `"logo": true` to render the org logo above the visual.
 - `question`, `answer`, `hint` (optional): let the bot quiz the student on the visual, exactly like an image. **Do not set a description** — the bot is given one regenerated from the `config` every lesson, so it always matches what's drawn; and there is no `botVisible` (a vector/text visual is always legible).
 - Returns an image ID — **embed it in the content with `::visual{#id}`** (mirrors `::quiz{#id}`). A visual ID can also be passed as a `create_quiz` `image` or a `update_resource` `coverImage`.
@@ -281,6 +281,10 @@ Per-`kind` `config` shapes:
 { "protons": 11, "neutrons": 12, "electrons": [2, 8, 1] }
 // ph_scale — 0-14
 { "value": 7 }
+// syllable_split — phonics: one chunk per syllable
+{ "syllables": ["but", "ter", "fly"] }
+// onset_rime — phonics: onset may be empty (e.g. "at")
+{ "onset": "str", "rime": "ing" }
 ```
 
 **update_visual:**
@@ -743,6 +747,8 @@ Prefer a visual tool over an AI or word image whenever the content is structured
 | `probability_tree` | Branching tree with probabilities | GCSE probability |
 | `atom` | Bohr model: nucleus + electron shells | Atomic structure |
 | `ph_scale` | Coloured 0–14 scale with a marker | Acids and alkalis |
+| `syllable_split` | Word split into syllables with arcs | Phonics — syllable counting |
+| `onset_rime` | Word split into onset + rime | Phonics — rhyming, word families |
 
 Workflow: `create_visual(resourceId, kind, config)` → get an `id` → put `::visual{#id}` where it belongs in the content → `update_resource`. See **create_visual** under *Tool Parameters* for the per-`kind` `config` shapes and the `"logo": true` option. A visual id can also serve as a quiz illustration (`create_quiz` `image`) or a resource `coverImage`.
 

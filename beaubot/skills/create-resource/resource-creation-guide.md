@@ -348,7 +348,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 
 **Visual tools** are sharp, lightweight graphics you author directly into a lesson — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Unlike uploaded or AI images, they're drawn from a few values (no file, no API key) and render as crisp vector graphics at any size in the player and the editor.
 
-### The twenty-two kinds
+### The twenty-four kinds
 
 | Kind | What it shows | Typical use |
 |------|---------------|-------------|
@@ -374,6 +374,8 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 | **Probability tree** | Branching tree with probabilities | GCSE probability |
 | **Atom (Bohr)** | Nucleus + electron shells | Atomic structure (chemistry/physics) |
 | **pH scale** | Coloured 0–14 scale with a marker | Acids and alkalis |
+| **Syllable split** | A word split into syllables with arcs | Phonics — clapping/counting syllables |
+| **Onset & rime** | A word split into onset + rime | Phonics — rhyming, word families |
 
 ### Adding a visual
 
@@ -394,7 +396,7 @@ A visual can also be a resource's **cover image** or a **quiz's illustration**:
 ### Visual tools vs. images
 
 - Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
-- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the twenty-two kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
+- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the twenty-four kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
 
 ## Working with Videos
 
