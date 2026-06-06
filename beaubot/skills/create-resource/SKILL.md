@@ -44,8 +44,8 @@ When this skill is invoked, follow these steps:
 
 4. **Source Media**: Find or create visuals for the resource. **Every resource should have images** — they are essential for engagement, not optional decoration.
    - **Do NOT generate images via Python/code** — this is too slow and produces poor results
-   - **Use `create_text_image`** for vocabulary cards, sight words, labels, math expressions — instant, no API key needed
-   - **Use `generate_image`** for custom educational illustrations — server-side AI generation, fast, no base64 overhead
+   - **Use the `text` visual** (`create_visual` with `kind: "text"`) for vocabulary cards, sight words, labels and key terms, and the **`math` visual** for equations — these are instant, vector (crisp at any size), and teacher-editable. **`create_text_image` is deprecated — never use it.**
+   - **Use `generate_image`** only for custom educational illustrations / photoreal scenes — server-side AI generation; slower, so reserve it for when a real raster picture is genuinely needed
    - **Use `upload_image_from_url`** for existing public images (Wikimedia, educational sites)
    - **Use `create_image` (base64) only as a last resort** for user-provided local files
    - **Verify every image**: After generation/upload, view the image to confirm it matches intent
@@ -76,7 +76,7 @@ Use the `beaubot` MCP server tools:
 | `update_resource` | Update an existing resource |
 | `get_image` | Download an image by ID — returns the image visually (for inspection) plus metadata |
 | `generate_image` | Generate an AI image from a text prompt and attach to a resource (uses org's OpenAI key, preferred) |
-| `create_text_image` | Render a word/phrase into a PNG image (no AI needed, instant) |
+| `create_text_image` | **DEPRECATED — do not use.** For words/phrases/labels use the `text` visual (`create_visual` with `kind: "text"`) — vector, instant, editable. |
 | `create_visual` | Create a teacher-authored visual tool — number line, fraction, grid, timeline, math equation, word/text card, or counters — from a small JSON config (no AI, renders as crisp SVG). Embed with `::visual{#id}` |
 | `update_visual` | Update an existing visual tool's config or metadata |
 | `create_svg` | Draw a scalable SVG image from raw markup (crisp, responsive, no AI). Best when no `create_visual` kind fits but it can be drawn with shapes/lines/text. Embed with `![id](…)` |
@@ -115,11 +115,12 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 1. create_resource(name, content, tags, deliveryMode)
    → Returns resource with ID (tags must come from the catalog)
 
-2. generate_image(resourceId, prompt, description, question, answer, hint, botVisible)
-   → AI-generated image attached to resource (preferred for illustrations)
+2. create_visual(resourceId, kind, config)
+   → Vector visual — use kind "text" for words/labels/vocabulary, "math" for equations,
+     or any other kind for diagrams. Instant, editable. PREFERRED for words. Embed with ::visual{#id}.
    OR
-   create_text_image(resourceId, text, color, description, question, answer, hint, botVisible)
-   → Renders word/phrase into PNG (preferred for vocabulary/labels)
+   generate_image(resourceId, prompt, description, question, answer, hint, botVisible)
+   → AI-generated image — only for photoreal illustrations/scenes
    OR
    upload_image_from_url(resourceId, url, description, question, answer, hint, botVisible)
    → Downloads and attaches image from URL
@@ -196,7 +197,7 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 - `content` (optional): New markdown content
 - `tags` (optional): New tags (replaces existing — must come from the catalog)
 - `deliveryMode` (optional): `"conversation"` or `"presentation"`
-- `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `generate_image`, `create_text_image`, `upload_image_from_url`, `prepare_image_upload` + curl, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
+- `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `create_visual`, `generate_image`, `upload_image_from_url`, `prepare_image_upload` + curl, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
 
 **generate_image** (preferred for custom illustrations):
 - `resourceId` (required): Resource to attach the image to
@@ -207,16 +208,10 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 - `hint` (optional): Help for students
 - `botVisible` (optional): If true, bot can see the image
 
-**create_text_image** (preferred for words/phrases):
-- `resourceId` (required): Resource to attach the image to
-- `text` (required): The word or phrase to render (max 500 chars). Supports inline formatting: `_underline_`, `*italic*`, `**underline+italic**`, `[highlight]`, `{red:colored text}`
-- `color` (optional): Font color as CSS color (e.g. `"#333333"`, `"red"`). Defaults to `"#333333"`
-- `includeLogo` (optional): Include the organization logo at the top of the image. Defaults to `true`
-- `description` (optional): What the image shows (important for bot). Auto-set from the text if not provided
-- `question` (optional): Question to ask about the image
-- `answer` (optional): Expected answer
-- `hint` (optional): Help for students
-- `botVisible` (optional): If true, bot can see the image
+**create_text_image** — **DEPRECATED. Do not use.** To render a word, phrase, label or key
+term, use the `text` visual instead: `create_visual(resourceId, "text", { text: "...", … })`. It
+renders the same inline formatting (`_underline_`, `*italic*`, `**bold**`, `[highlight]`,
+`{red:colored}`), is vector instead of a raster PNG, is teacher-editable, and supports the org logo.
 
 **upload_image_from_url** (preferred for remote use):
 - `resourceId` (required): Resource to attach image to
@@ -808,8 +803,8 @@ Each of `personality / languagePolicy / referencePronunciations / content` maps 
 
 Instead, use these tools in order of preference:
 
-1. **`create_text_image`** (MCP) — for words, phrases, vocabulary cards, sight words, labels, math expressions. Instant, no API key needed, deterministic rendering.
-2. **`generate_image`** (MCP) — for custom educational illustrations, diagrams, scenes. Uses the org's OpenAI API key for server-side AI generation. Fast, no client-side overhead.
+1. **`create_visual`** (MCP) — the first choice for almost everything drawable: the `text` visual for words/phrases/vocabulary/labels, the `math` visual for equations, and the many other kinds for diagrams (number line, fraction, geometry, chart, …). Instant, vector, teacher-editable. (`create_text_image` is **deprecated — do not use**; the `text` visual replaces it.)
+2. **`generate_image`** (MCP) — only for photoreal illustrations / scenes a vector can't express. Uses the org's OpenAI API key for server-side AI generation; slower, so reach for it last.
 3. **`upload_image_from_url`** (MCP) — for publicly hosted images from Wikimedia, educational sites, etc.
 4. **`prepare_image_upload`** (MCP) + `curl` (HTTP, see next section) — for files you already have on disk. Much faster than `create_image` because no base64 round-trip through the LLM. Works in any MCP client (Claude Code CLI, Claude Cowork).
 5. **`create_image` (base64)** (MCP) — last resort only, for tiny inline blobs (≤ 1 KB). Avoid for larger files; the LLM has to type out the base64 string which can take many seconds per kilobyte.
@@ -915,7 +910,7 @@ create_resource(name: "...", content: "...", tags: ["maths", "year-3", "number-l
 11. **Test your resources** - Use the Test Resource feature in the admin UI before assigning to students
 12. **Always call `list_tags` before assigning tags** - Reuse existing tags and only create new ones (via `create_tag`) with user confirmation.
 13. **Verify image content before writing metadata** - AI-generated images may not match your prompt exactly. View the image first.
-14. **Never run Python or other code to generate images** - Use `create_text_image` for words/phrases, `generate_image` for custom illustrations, `upload_image_from_url` for public images.
+14. **Never run Python or other code to generate images** - Use the `text` visual (`create_visual`) for words/phrases, other `create_visual` kinds for diagrams, `generate_image` for photoreal illustrations, `upload_image_from_url` for public images. (`create_text_image` is deprecated — do not use.)
 
 ## Additional Resources
 

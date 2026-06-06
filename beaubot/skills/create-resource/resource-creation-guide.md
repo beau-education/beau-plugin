@@ -266,13 +266,9 @@ Click the image button in the toolbar to open the media dialog. You have three w
 3. This uses your organization's OpenAI API key
 4. Best for: custom illustrations, diagrams, educational scenes
 
-**Word Image** (third tab):
-1. Enter a word or phrase (e.g. "Photosynthesis", "3/4 + 1/2")
-2. Optionally pick a font color
-3. Choose a **Font**: *Beginner* (default) and *Comic* use the single-story "a" that children are taught to write — ideal for early readers — while *Standard* uses the plain system font
-4. Click **Create** — a clean text image is generated instantly and inserted into your content
-4. Supports multi-line text (use Shift+Enter for new lines)
-5. Best for: vocabulary cards, sight words, math expressions, labels, flash cards
+To render a **word, phrase, label or key term**, don't use an image at all — add a **Visual** and
+choose the **Word / text** kind (see *Visual Tools* below). It's crisp vector, editable later, and
+supports formatting and the org logo.
 
 After inserting any image:
 1. Click the image in the editor to open the settings panel
@@ -337,7 +333,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 ### Image Best Practices
 
 - **Include at least 1-2 images per resource** — every resource should have visuals. Text-only resources feel dry and lecture-like.
-- **Use the right tool for the job**: Use **Word Image** for vocabulary and labels (instant, no API key needed). Use **AI Image** for custom illustrations and diagrams. Use **Upload** for existing files.
+- **Use the right tool for the job**: Use a **Visual** — the **Word / text** kind for vocabulary, labels and key terms, **Math** for equations, and other kinds for diagrams (all vector and editable). Use **AI Image** only for photoreal illustrations a vector can't express. Use **Upload** for existing files.
 - **Use clear, simple images** that focus on one concept
 - **Write detailed descriptions** even if Bot Vision is enabled
 - **Enable Bot Vision** for images where visual details matter
@@ -398,7 +394,7 @@ A visual can also be a resource's **cover image** or a **quiz's illustration**:
 ### Visual tools vs. images
 
 - Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
-- Use an **image** (Upload / AI Image / Word Image) for photos, rich illustrations, or anything outside the twenty-four kinds. (The **Word Image** still exists for a rasterised word card; the **Word / text** visual is the vector equivalent and also supports the org logo.)
+- Use an **image** (Upload / AI Image) for photos, rich illustrations, or anything outside the twenty-four kinds. For words, labels and key terms use the **Word / text** visual (vector, editable) rather than a raster image.
 
 ## Working with Videos
 
