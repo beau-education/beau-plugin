@@ -2,6 +2,11 @@
 
 A plugin for creating educational resources and evaluating student performance on the [Beau](https://beau.bot) voice tutoring platform. Gives Claude the knowledge and tools to author resources, upload images, create quizzes, organize courses, and analyse student progress.
 
+This repo is the **single source of truth** for Beau's skills **and** user guides. The same skills run in two places, so the experiences stay in lockstep:
+
+- **Claude Code / Cowork** — installs this plugin and runs the skills directly.
+- **The Beau dashboard's built-in AI assistant** — an **OpenAI-backed** agent (not Claude) that loads `SKILL.md` from this repo at runtime. The dashboard also fetches the human user guides (below) from this repo at runtime instead of bundling them.
+
 ## What This Plugin Provides
 
 - **MCP Server Connection**: Connects to the Beau API via OAuth 2.1 for resource and student management
@@ -99,6 +104,21 @@ Once installed, invoke the skills in any chat:
 | `get_student_stats` | Get aggregated statistics for a student |
 | `get_student_activity` | Get recent activity log for a student |
 | `get_transcript` | Get the conversation transcript for a lesson |
+
+## User guides (source of truth)
+
+The Beau dashboard's in-app help and role dashboards fetch these guides from this repo at runtime (via the API), so there are no duplicated copies in the app — **edit them here**.
+
+| Guide | Path | `audience` |
+|-------|------|------------|
+| Admin | `guides/admin-guide.md` | `[admin]` (human) |
+| Student | `guides/student-guide.md` | `[student]` (human) |
+| Teacher | `beaubot/skills/create-resource/teacher-guide.md` | `[teacher, admin]` (human) |
+| Resource (authoring) | `beaubot/skills/create-resource/resource-creation-guide.md` | `[teacher, admin, agent]` (human + AI) |
+
+Each guide carries `audience` / `title` frontmatter (stripped before display). `audience` lists the dashboard roles a guide is for, plus `agent` for guides the AI authoring assistant should treat as reference. Human-UI guides (`guides/`) live outside `skills/` so skill discovery ignores them.
+
+**Keep in sync:** the guides, the skill instructions (`SKILL.md`), and the API's MCP tool descriptions all describe the same capabilities — when a tool gains a capability (e.g. a new visual kind or quiz type), update all of them together.
 
 ## Authentication
 
