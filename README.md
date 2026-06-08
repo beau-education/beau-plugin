@@ -34,7 +34,7 @@ Claude web doesn't support plugins, but you can add the MCP server as a remote C
 
 **MCP Server URL**: `https://api.beau.bot/mcp`
 
-Add this as a remote MCP connector. You'll be prompted to authenticate via OAuth with your Beau account. Web users get all 25 tools but not the guided skill workflows.
+Add this as a remote MCP connector. You'll be prompted to authenticate via OAuth with your Beau account. Web users get all 32 tools but not the guided skill workflows.
 
 ## Usage
 
@@ -47,7 +47,7 @@ Once installed, invoke the skills in any chat:
 
 **Note**: The MCP server must be connected before using tools. If you get tool errors, check your MCP connection and re-authenticate if needed.
 
-## MCP Tools (25)
+## MCP Tools (32)
 
 ### Resource Management
 
@@ -69,13 +69,24 @@ Once installed, invoke the skills in any chat:
 | `upload_image_from_url` | Upload an image from a public URL |
 | `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `generate_image` | Generate an AI image from a text prompt |
-| `create_text_image` | Render formatted text into a PNG image |
+| `create_svg` | Add a hand-authored SVG diagram to a resource |
+| `create_text_image` | _(Deprecated)_ Render text into a PNG — prefer `create_visual` kind `text` |
+
+### Visuals
+
+Teacher-authored diagrams rendered as crisp SVG/HTML (stored as a media type, shown via `display_media`).
+
+| Tool | Description |
+|------|-------------|
+| `create_visual` | Create a visual (number line, fraction, grid, chart, geometry, clock, … 24+ kinds) |
+| `update_visual` | Update an existing visual's config (kind is immutable) |
 
 ### Quizzes
 
 | Tool | Description |
 |------|-------------|
 | `create_quiz` | Create a quiz (single/multiple/freetext/ordered_list/matching/fill_in_blank) |
+| `update_quiz` | Update an existing quiz |
 
 ### Tags
 
@@ -92,6 +103,13 @@ Once installed, invoke the skills in any chat:
 | `list_courses` | List courses |
 | `add_resource_to_course` | Add a resource to a course |
 | `list_course_resources` | List resources in a course with order and bot details |
+
+### Bots
+
+| Tool | Description |
+|------|-------------|
+| `list_bots` | List the org's AI tutor bots (persona, voice, avatar) |
+| `get_bot` | Get a bot's details |
 
 ### Users & Students
 
