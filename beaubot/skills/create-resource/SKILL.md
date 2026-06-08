@@ -8,6 +8,13 @@ user_invocable: true
 
 This skill helps you create educational resources for the Beau platform. Resources are the building blocks of your curriculum - each is a self-contained learning unit delivered to students as a voice conversation, a narrated presentation, or a no-bot worksheet (self-paced screens / printable handout written for the student). Resources are grouped into courses.
 
+## Reference guides
+
+This skill folder ships two markdown guides. They have different audiences (see each file's `audience` frontmatter):
+
+- **`resource-creation-guide.md`** (`audience: assistant`) — your **authoring reference**. Follow it when designing and writing resources.
+- **`teacher-guide.md`** (`audience: human-ui`) — **end-user documentation** for the Beau dashboard UI, written for human teachers. Useful background for terminology and workflow, but it is **not** authoring rules — don't treat its UI walkthroughs as instructions to you. (The repo's top-level `guides/` folder holds the human-facing admin and student guides; those are not part of this skill.)
+
 ## Instructions for Claude
 
 When this skill is invoked, follow these steps:

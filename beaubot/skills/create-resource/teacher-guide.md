@@ -1,3 +1,12 @@
+---
+audience: [teacher, admin]
+title: Teacher Guide
+note: >-
+  Human UI documentation for the Beau dashboard, for teachers (and admins).
+  Useful background for the agent, but NOT authoring rules — see
+  resource-creation-guide.md for those.
+---
+
 # Teacher Guide
 
 This guide covers how to create resources, build courses, manage student enrollments, and monitor progress.
@@ -144,6 +153,32 @@ Quizzes print as **blank worksheet questions** for students to answer on paper:
 - "put in order" and matching questions are shown scrambled, with space to answer.
 
 Use your browser's print dialog to print directly or **Save as PDF** (the file is named after the resource).
+
+**Students can print it too.** In **Worksheet** mode the lesson screen has a **Print** button in the header, so a student who prefers paper can print the same blank worksheet and work on it offline. (They can still complete it on screen — printing is just an option.)
+
+### Sharing a Resource Publicly
+
+Use share links to let people **without** a platform account take a lesson — useful for demos to prospective schools, parent showcases, or sending a resource for off-platform feedback.
+
+1. Open the resource editor
+2. Click **Share** in the toolbar
+3. Click **Create share link**
+4. (Optional) Add a **label** to remember which audience the link is for (e.g. "Year 6 parents", "Investor demo")
+5. Choose the **bot** that will deliver the lesson (if you have multiple)
+6. Click **Create link** — the share URL appears in the list above
+7. Click the copy icon next to the link to copy it to your clipboard
+
+Anyone with that URL can open the lesson and start a voice conversation with the bot, no sign-in required. You can revoke any link instantly by clicking the trash icon next to it; revoked links return 404 immediately.
+
+**What happens during a share-link session:**
+- The visitor sees a voice-driven lesson identical to what a student would see
+- The bot is told this is an anonymous demo — it won't ask for personal details
+- **Nothing is saved**: no transcript, no enrollment, no progress, no quiz scores
+- The visitor's session ends when they close the tab; nothing carries over
+
+**Cost**: share-link sessions consume your organization's OpenAI quota. Your admin can configure a separate OpenAI API key for share traffic with its own spend cap (Admin → Settings → OpenAI → Share-link key).
+
+**If a link leaks**: revoke it from this dialog, or ask your admin to use the org-wide kill switch ("Allow share links" toggle in Settings → Sharing) to disable every share URL at once.
 
 ## Managing Courses
 
@@ -501,15 +536,9 @@ For details on how bots deliver lessons and how to write effective content for A
 
 ## Working with Images in Resources
 
-**Every resource should include at least 1-2 images.** Images are essential for engagement — they break up text, illustrate concepts, and give the bot concrete material to discuss with the student. A resource with no images will feel text-heavy and lecture-like, even with great written content.
+**Every resource should include at least 1-2 images.** Images are essential for engagement — they break up text, illustrate concepts, and give the bot concrete material to discuss with the student. A resource with no images will feel text-heavy and lecture-like, even with great written content. **PNG**, **JPEG**, and **SVG** image formats are supported (max 5 MB). SVG is ideal for crisp, scalable diagrams.
 
-When creating resources, the media dialog offers two ways to add images:
-- **Upload File** — upload PNG/JPEG/SVG images (max 5 MB), videos (max 100 MB), or PDFs (max 20 MB). SVG is ideal for crisp, scalable diagrams.
-- **AI Image** — enter a text prompt to generate a custom illustration using AI (requires an OpenAI API key configured for your organization)
-
-To render a **word, phrase, label or key term**, add a **Visual** and choose the **Word / text** kind instead of an image — it's crisp vector, editable later, and supports formatting and the org logo.
-
-By default, the AI bot relies on text descriptions you provide for each image.
+When creating resources, you can add images to enhance learning. By default, the AI bot relies on text descriptions you provide for each image.
 
 ### Bot Vision Feature
 
@@ -629,7 +658,7 @@ For comprehensive guidance on creating effective quizzes, see the **Resource Gui
 
 1. **Use clear resource names** that describe what students will learn
 2. **Apply tags consistently** to make resources easy to find
-3. **Choose the right delivery mode** - conversation for interactive lessons, presentation for lecture-style narration, or worksheet for a no-bot, self-paced/printable handout written for the student
+3. **Choose the right delivery mode** - conversation for interactive lessons, presentation for lecture-style narration, or worksheet for a no-bot, self-paced/printable handout written directly for the student
 4. **Choose the right progression type** - sequential for prerequisite content, flexible for independent topics
 5. **Include plenty of quizzes** - aim for at least 2-3 per resource. Quizzes are the primary way students actively engage with content. Lessons without enough quizzes feel passive and text-heavy.
 6. **Include images in every resource** - aim for at least 1-2 images. Visuals break up text, illustrate concepts, and keep students interested. A text-only resource is almost always too dry.
@@ -640,3 +669,61 @@ For comprehensive guidance on creating effective quizzes, see the **Resource Gui
 11. **Review session transcripts** periodically to understand how students interact with your content
 12. **Enable Bot Vision** for images where the AI needs to see visual details
 13. **Provide helpful quiz hints** that guide students without giving away the answer
+
+---
+
+## Using Claude AI to Create Resources
+
+You can use **Claude Code** (CLI), **Claude Cowork** (desktop app), or **Claude web** to interact with the Beau platform directly through AI. This lets you create resources, generate images, build courses, and evaluate students by having a conversation with Claude instead of using the dashboard UI.
+
+### What You Can Do
+
+- **Create complete resources** — describe a topic and audience, and Claude will draft the content, create quizzes, generate images, and assemble everything into a ready-to-use resource
+- **Generate images** — ask Claude to create AI illustrations or formatted text images for your lessons
+- **Build courses** — organise resources into courses with the right progression type
+- **Evaluate students** — ask Claude to analyse a student's progress, scores, and transcripts to generate detailed performance reports with recommendations
+
+### Getting Started
+
+#### Claude Code or Cowork (Plugin)
+
+1. Install the Beau plugin: `/install-plugin beau-education/beau-plugin`
+2. Authenticate when prompted (uses your Beau account via Auth0)
+3. Invoke a skill:
+   - `/beaubot:create-resource` — Claude guides you through creating a resource step by step
+   - `/beaubot:evaluate-student` — Claude analyses student performance and generates reports
+
+#### Claude Web (MCP Connector)
+
+1. Add the Beau MCP server as a remote Connector: `https://api.beau.bot/mcp`
+2. Authenticate via OAuth when prompted
+3. You get access to all 25 tools (but not the guided skill workflows)
+
+### Example Workflows
+
+**Creating a resource with Claude:**
+> "Create a Year 6 maths resource about adding fractions with different denominators. Use conversation mode, include diagrams and at least 3 quizzes."
+
+Claude will:
+1. Check your existing tags and reuse them
+2. Draft structured markdown content with learning objectives
+3. Generate AI images or text images for key concepts
+4. Create quizzes (mix of types) embedded at appropriate points
+5. Optionally create a course and add the resource
+
+**Evaluating a student:**
+> "How is Harry doing in the Prepositions course? Are there any areas where he's struggling?"
+
+Claude will:
+1. Look up Harry's enrollments and progress
+2. Analyse quiz scores, attempt counts, and completion rates
+3. Review lesson transcripts for engagement patterns
+4. Generate a structured report with specific recommendations
+
+### Tips
+
+- Be specific about the **audience** (age, year group, ability level) — this shapes the content difficulty and language
+- Mention the **delivery mode** you want (conversation for interactive, presentation for narration, or worksheet for a no-bot self-paced/printable handout written for the student)
+- Ask Claude to **test the resource** after creation to verify it works
+- Use `/beaubot:evaluate-student` regularly to identify students who may need intervention
+- Claude can **export and import resources** as ZIP files for backup or sharing between organisations

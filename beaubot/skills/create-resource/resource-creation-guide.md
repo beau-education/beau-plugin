@@ -1,3 +1,12 @@
+---
+audience: [teacher, admin, agent]
+title: Resource Guide
+note: >-
+  Primarily human documentation for teachers/admins (shown in the dashboard
+  help) on how to author resources the bot delivers — and also useful context
+  for the AI agent / create-resource skill. Keep accurate for both.
+---
+
 # Resource Guide
 
 This guide explains how to create effective resources for delivery by AI bots. Understanding how the bot interprets your content is essential for creating engaging, educational lessons.
@@ -15,7 +24,7 @@ When you create a resource, you're writing instructions for an AI bot that will 
 - **Course**: A collection of resources organized for students to complete
 - **Quiz**: A structured question with automatic correctness checking (supports single choice, multiple choice, open answer, ordered list, and matching)
 - **Assessment**: The AI-generated summary and grading of a completed resource
-- **Delivery Mode**: How the resource reaches the student - a two-way voice conversation, a one-way narrated presentation, or a no-bot worksheet of self-paced screens (printable, written for the student)
+- **Delivery Mode**: How the resource reaches the student - a two-way voice conversation, a one-way narrated presentation, or a no-bot worksheet of self-paced screens
 - **Cover Image**: An optional image displayed automatically when the lesson starts, before the bot begins speaking. Use it to set the scene or introduce the topic visually.
 
 ### Resources and Courses
@@ -35,13 +44,13 @@ When creating resources, design them to be:
 
 ### Delivery Modes
 
-Resources can be delivered in three modes, which you select when creating the resource. **The mode changes who you are writing for** — get this right first.
+Resources can be delivered in three modes, which you select when creating the resource. **The mode changes who you are writing for** — this is the most important thing to get right.
 
 **Conversation Mode** (default) — *written for the bot*:
 - Two-way voice interaction between the student and AI tutor
 - The student speaks to the bot and receives spoken responses
 - Requires microphone access
-- Write **instructions for the bot**, referring to "the student" in the third person
+- Write **instructions for the bot** (what to teach and how), referring to "the student" in the third person
 - Ideal for: Interactive lessons, Q&A, discussion-based learning, personalized tutoring
 
 **Presentation Mode** — *written for the bot to narrate*:
@@ -54,7 +63,7 @@ Resources can be delivered in three modes, which you select when creating the re
 **Worksheet Mode** — *written for the student*:
 - **There is no bot.** The student reads the content themselves as a self-paced sequence of screens (each heading is a screen), then works through the quizzes; their answers and score are recorded just like a lesson.
 - Write the content **directly to the student** (e.g. "Read the passage below, then answer the questions") — not as instructions to a bot. Make instructions and questions self-explanatory, since no tutor is there to clarify.
-- The same resource can be **printed (or, later, emailed as a PDF)** as a take-home worksheet.
+- The same resource can be **printed** as a take-home worksheet — by you from the editor toolbar (**Print**), or by the **student from the worksheet screen** (a **Print** button in the header) if they'd rather work on paper. (Email-as-PDF is planned.)
 - Ideal for: independent practice, homework, printable handouts, assessments, and any time you want a written record without a voice session.
 
 ### How the Bot Works
@@ -231,7 +240,7 @@ Follow these density guidelines:
 - Add a quick quiz after each concept to check understanding
 - Add an image or diagram to illustrate the key idea in each section
 - Split long explanatory sections into shorter ones with interactivity between them
-- Use a variety of quiz types (single choice for quick checks, open answer for calculations, fraction for math, ordered list for sequencing, matching for pairing concepts) to keep things fresh
+- Use a variety of quiz types (single choice for quick checks, open answer for calculations, fraction for math) to keep things fresh
 
 ### Recommended Length
 
@@ -267,9 +276,10 @@ Click the image button in the toolbar to open the media dialog. You have three w
 3. This uses your organization's OpenAI API key
 4. Best for: custom illustrations, diagrams, educational scenes
 
-To render a **word, phrase, label or key term**, don't use an image at all — add a **Visual** and
-choose the **Word / text** kind (see *Visual Tools* below). It's crisp vector, editable later, and
-supports formatting and the org logo.
+To render a **word, phrase, label or key term**, don't use an image — add a **Visual** and choose the
+**Word / text** kind (see *Visual Tools* below). It renders the same inline formatting (`_underline_`,
+`*italic*`, `**bold**`, `[highlight]`, `{red:colored}`) as crisp vector, is editable later, and
+supports the org logo.
 
 After inserting any image:
 1. Click the image in the editor to open the settings panel
@@ -448,7 +458,7 @@ PDFs allow you to attach downloadable documents to your lessons — worksheets, 
 Upload PDFs through the media dialog (same as images and videos):
 
 1. Click the image button in the toolbar, then use the **Upload** tab
-2. Select a PDF file (maximum 20 MB)
+2. Click **Choose Image, Video, or PDF** and select a PDF file (maximum 20 MB)
 3. The PDF will appear in the editor with a distinctive red border and PDF icon
 4. Click on it to open the side panel and configure metadata
 
@@ -556,7 +566,7 @@ Quizzes provide structured assessment with automatic correctness checking. The p
    - **Evaluation Criteria** (for open answer): Optional guidance for AI grading
    - **Retry Limit**: Number of attempts allowed
    - **Hint**: Guidance for incorrect attempts
-   - **Illustration** (optional): An image shown to the student above the question. Use this whenever the student needs to *see a figure while answering* — a diagram to measure, a shape to label, a chart to read. The illustration and the question stay on screen together. **Prefer this over placing the figure inline in the lesson body before the quiz**: an inline image is shown earlier as the bot narrates, so by the time the student answers it may be off screen. A visual tool can be an illustration too (Visual tab). Not visible to the bot.
+   - **Illustration** (optional): An image shown to the student above the question. Use this whenever the student needs to *see a figure while answering* — a diagram to measure, a shape to label, a chart to read. The illustration and the question stay on screen together. **Prefer this over placing the figure inline in the lesson body before the quiz**: an inline image is shown earlier as the bot narrates, so by the time the student answers it may be off screen. Click **Add image** on the quiz block in the editor (or in the quiz panel) to upload one (a visual tool works too, via the Visual tab), and the **×** button on the thumbnail to remove it. Illustrations are only shown to the student — the bot does not see them.
 4. Click **Save**
 
 The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't edit this text directly.
@@ -729,10 +739,10 @@ When the bot displays a quiz:
 - **Include quizzes generously** — aim for at least 2-3 per resource, one after each major concept
 - **Place quizzes after teaching** the relevant content, not before
 - **Start with easier questions** and progress to harder ones
-- **Vary quiz types** for engagement — mix single choice, multiple choice, open answer, fraction, ordered list, and matching questions
+- **Vary quiz types** for engagement — mix single choice, multiple choice, open answer, ordered list, matching, and fraction questions
 - **Provide meaningful hints** that teach, not just hint
 - **Test your quizzes** to ensure the flow feels natural
-- **Match question type to content** — use single choice for quick fact checks, open answer for calculations, fraction for math, ordered list for sequencing, matching for pairing concepts
+- **Match question type to content** — use single choice for quick fact checks, open answer for calculations, ordered list for sequencing, matching for pairing concepts, fraction for math
 
 ## Assessment and Questions
 
