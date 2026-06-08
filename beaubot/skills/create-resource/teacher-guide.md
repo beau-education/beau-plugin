@@ -31,6 +31,7 @@ Resources are individual learning units that students complete. Navigate to **Te
 3. Select a **Delivery Mode**:
    - **Conversation**: Two-way voice interaction (requires student microphone)
    - **Presentation**: One-way narration (student clicks to advance)
+   - **Worksheet**: No bot — self-paced screens of info + quizzes the student reads and completes (results recorded); also printable as a take-home
 4. Add **Content** using the rich text editor
 5. Apply **Tags** to organize the resource
 6. Click **Save**
@@ -48,6 +49,12 @@ Resources are individual learning units that students complete. Navigate to **Te
 - Students who can't use a microphone
 - Information-heavy content
 - Consistent delivery across all students
+
+**Worksheet Mode** is best for:
+- Independent practice and homework
+- Printable handouts / take-home sheets
+- Assessments where you want a written record
+- Any time a voice session isn't wanted — the content is written directly to the student, who reads the screens and completes the quizzes
 
 ### Resource List Features
 
@@ -622,7 +629,7 @@ For comprehensive guidance on creating effective quizzes, see the **Resource Gui
 
 1. **Use clear resource names** that describe what students will learn
 2. **Apply tags consistently** to make resources easy to find
-3. **Choose the right delivery mode** - conversation for interactive lessons, presentation for lecture-style content
+3. **Choose the right delivery mode** - conversation for interactive lessons, presentation for lecture-style narration, or worksheet for a no-bot, self-paced/printable handout written for the student
 4. **Choose the right progression type** - sequential for prerequisite content, flexible for independent topics
 5. **Include plenty of quizzes** - aim for at least 2-3 per resource. Quizzes are the primary way students actively engage with content. Lessons without enough quizzes feel passive and text-heavy.
 6. **Include images in every resource** - aim for at least 1-2 images. Visuals break up text, illustrate concepts, and keep students interested. A text-only resource is almost always too dry.

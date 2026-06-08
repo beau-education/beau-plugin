@@ -15,7 +15,7 @@ When you create a resource, you're writing instructions for an AI bot that will 
 - **Course**: A collection of resources organized for students to complete
 - **Quiz**: A structured question with automatic correctness checking (supports single choice, multiple choice, open answer, ordered list, and matching)
 - **Assessment**: The AI-generated summary and grading of a completed resource
-- **Delivery Mode**: How the resource is presented - either as a two-way voice conversation or a one-way presentation
+- **Delivery Mode**: How the resource reaches the student - a two-way voice conversation, a one-way narrated presentation, or a no-bot worksheet of self-paced screens (printable, written for the student)
 - **Cover Image**: An optional image displayed automatically when the lesson starts, before the bot begins speaking. Use it to set the scene or introduce the topic visually.
 
 ### Resources and Courses
@@ -35,26 +35,27 @@ When creating resources, design them to be:
 
 ### Delivery Modes
 
-Resources can be delivered in two modes, which you select when creating the resource:
+Resources can be delivered in three modes, which you select when creating the resource. **The mode changes who you are writing for** — get this right first.
 
-**Conversation Mode** (default):
+**Conversation Mode** (default) — *written for the bot*:
 - Two-way voice interaction between the student and AI tutor
 - The student speaks to the bot and receives spoken responses
 - Requires microphone access
+- Write **instructions for the bot**, referring to "the student" in the third person
 - Ideal for: Interactive lessons, Q&A, discussion-based learning, personalized tutoring
 
-**Presentation Mode**:
+**Presentation Mode** — *written for the bot to narrate*:
 - One-way narration where the AI reads your content aloud
 - No microphone required from the student
 - Students click "Next" to advance through sections
+- Organize content into clear sections using headings — each heading becomes a "slide" the student advances through; the bot narrates the content under each heading; quizzes pause until the student answers; keep sections concise for pacing
 - Ideal for: Lecture-style content, information delivery, accessibility (students who can't use a microphone), passive learning
 
-When writing content for presentation mode:
-- Organize content into clear sections using headings
-- Each heading becomes a "slide" that the student advances through
-- The bot narrates the content under each heading
-- Quizzes pause the presentation until the student answers
-- Keep each section concise for better pacing
+**Worksheet Mode** — *written for the student*:
+- **There is no bot.** The student reads the content themselves as a self-paced sequence of screens (each heading is a screen), then works through the quizzes; their answers and score are recorded just like a lesson.
+- Write the content **directly to the student** (e.g. "Read the passage below, then answer the questions") — not as instructions to a bot. Make instructions and questions self-explanatory, since no tutor is there to clarify.
+- The same resource can be **printed (or, later, emailed as a PDF)** as a take-home worksheet.
+- Ideal for: independent practice, homework, printable handouts, assessments, and any time you want a written record without a voice session.
 
 ### How the Bot Works
 
@@ -346,7 +347,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 
 **Visual tools** are sharp, lightweight graphics you author directly into a lesson — number lines, fractions, grids, timelines, math equations, styled word cards, and counters. Unlike uploaded or AI images, they're drawn from a few values (no file, no API key) and render as crisp vector graphics at any size in the player and the editor.
 
-### The twenty-four kinds
+### The twenty-five kinds
 
 | Kind | What it shows | Typical use |
 |------|---------------|-------------|
@@ -374,6 +375,7 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 | **pH scale** | Coloured 0–14 scale with a marker | Acids and alkalis |
 | **Syllable split** | A word split into syllables with arcs | Phonics — clapping/counting syllables |
 | **Onset & rime** | A word split into onset + rime | Phonics — rhyming, word families |
+| **Student writing area** | Blank ruled lines for a written answer (size: sentence / paragraph / multiple paragraphs) | Worksheets — space for the student to write; prints as a take-home |
 
 ### Adding a visual
 
@@ -394,7 +396,7 @@ A visual can also be a resource's **cover image** or a **quiz's illustration**:
 ### Visual tools vs. images
 
 - Use a **visual tool** when the content is structured data the platform can draw (a fraction, a number line, an equation, a labelled word, a count of objects). They stay crisp at any size and need no upload or API key.
-- Use an **image** (Upload / AI Image) for photos, rich illustrations, or anything outside the twenty-four kinds. For words, labels and key terms use the **Word / text** visual (vector, editable) rather than a raster image.
+- Use an **image** (Upload / AI Image) for photos, rich illustrations, or anything outside the twenty-five kinds. For words, labels and key terms use the **Word / text** visual (vector, editable) rather than a raster image.
 
 ## Working with Videos
 

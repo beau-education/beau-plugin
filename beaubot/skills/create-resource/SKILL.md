@@ -6,7 +6,7 @@ user_invocable: true
 
 # Create Resource Skill
 
-This skill helps you create educational resources for the Beau platform. Resources are the building blocks of your curriculum - each is a self-contained learning unit delivered by AI bots to students via voice conversation or presentation mode. Resources are grouped into courses.
+This skill helps you create educational resources for the Beau platform. Resources are the building blocks of your curriculum - each is a self-contained learning unit delivered to students as a voice conversation, a narrated presentation, or a no-bot worksheet (self-paced screens / printable handout written for the student). Resources are grouped into courses.
 
 ## Instructions for Claude
 
@@ -23,7 +23,7 @@ When this skill is invoked, follow these steps:
 1. **Gather Requirements**: Ask the user about:
    - Topic/subject for the resource
    - Target audience (age, skill level)
-   - Delivery mode preference (conversation or presentation)
+   - Delivery mode preference: conversation (two-way voice), presentation (one-way narration), or worksheet (no bot — self-paced screens / printable, written FOR THE STUDENT). This changes who the content is written for: conversation/presentation are written for the bot; a worksheet is written directly to the student.
    - Desired length (default: 5-10 minutes)
    - Any specific learning objectives
    - Whether they want AI-generated images or have URLs to images/PDFs
@@ -189,14 +189,14 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 - `name` (required): Display name for the resource
 - `content` (required): Markdown content
 - `tags` (optional): Array of tags — must come from the tag catalog (call `list_tags` first, use `create_tag` for new ones)
-- `deliveryMode` (optional): `"conversation"` or `"presentation"`
+- `deliveryMode` (optional): `"conversation"`, `"presentation"`, or `"worksheet"`
 
 **update_resource:**
 - `id` (required): The resource ID to update
 - `name` (optional): New name
 - `content` (optional): New markdown content
 - `tags` (optional): New tags (replaces existing — must come from the catalog)
-- `deliveryMode` (optional): `"conversation"` or `"presentation"`
+- `deliveryMode` (optional): `"conversation"`, `"presentation"`, or `"worksheet"`
 - `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `create_visual`, `generate_image`, `upload_image_from_url`, `prepare_image_upload` + curl, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
 
 **generate_image** (preferred for custom illustrations):
@@ -236,7 +236,7 @@ renders the same inline formatting (`_underline_`, `*italic*`, `**bold**`, `[hig
 
 **create_visual** (authored visual tool — renders as crisp SVG, no AI):
 - `resourceId` (required): Resource to attach the visual to
-- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`, `"function_graph"`, `"geometry"`, `"coordinate_grid"`, `"box_plot"`, `"probability_tree"`, `"atom"`, `"ph_scale"`, `"syllable_split"`, `"onset_rime"`
+- `kind` (required): One of `"number_line"`, `"fraction"`, `"grid"`, `"timeline"`, `"math"`, `"text"`, `"counters"`, `"clock"`, `"ten_frame"`, `"bar_chart"`, `"base_ten"`, `"money"`, `"phoneme_frame"`, `"place_value"`, `"chart"`, `"function_graph"`, `"geometry"`, `"coordinate_grid"`, `"box_plot"`, `"probability_tree"`, `"atom"`, `"ph_scale"`, `"syllable_split"`, `"onset_rime"`, `"writing_area"`
 - `config` (required): Kind-specific JSON object (shapes below). Add `"logo": true` to render the org logo above the visual.
 - `question`, `answer`, `hint` (optional): let the bot quiz the student on the visual, exactly like an image. **Do not set a description** — the bot is given one regenerated from the `config` every lesson, so it always matches what's drawn; and there is no `botVisible` (a vector/text visual is always legible).
 - Returns an image ID — **embed it in the content with `::visual{#id}`** (mirrors `::quiz{#id}`). A visual ID can also be passed as a `create_quiz` `image` or a `update_resource` `coverImage`.
@@ -292,6 +292,8 @@ Per-`kind` `config` shapes:
 { "syllables": ["but", "ter", "fly"] }
 // onset_rime — phonics: onset may be empty (e.g. "at")
 { "onset": "str", "rime": "ing" }
+// writing_area — WORKSHEET blank answer space (size: "sentence" | "paragraph" | "multi_paragraph"; label optional). Print-first.
+{ "size": "paragraph", "label": "Your answer" }
 ```
 
 **update_visual:**
@@ -466,7 +468,7 @@ Courses group related resources together for students to complete. When creating
 - **Use flexible progression** when resources cover independent topics within a theme
 - **Set resource order** carefully for sequential courses - use the `order` parameter in `add_resource_to_course`
 - **Override the bot** for specific resources if a different AI persona or expertise is needed
-- **Override delivery mode** per resource if some topics work better as conversation vs presentation
+- **Override delivery mode** per resource if some topics work better as conversation, presentation, or worksheet
 - **Keep courses focused** - 3-8 resources per course is a good range
 - **Use consistent tags** across resources and courses for easy organization
 
@@ -770,6 +772,7 @@ Prefer a visual tool over an AI or word image whenever the content is structured
 | `ph_scale` | Coloured 0–14 scale with a marker | Acids and alkalis |
 | `syllable_split` | Word split into syllables with arcs | Phonics — syllable counting |
 | `onset_rime` | Word split into onset + rime | Phonics — rhyming, word families |
+| `writing_area` | Blank ruled lines for a written answer (size: sentence/paragraph/multi_paragraph) | Worksheets — space for the student to write; print-first |
 
 Workflow: `create_visual(resourceId, kind, config)` → get an `id` → put `::visual{#id}` where it belongs in the content → `update_resource`. See **create_visual** under *Tool Parameters* for the per-`kind` `config` shapes and the `"logo": true` option. A visual id can also serve as a quiz illustration (`create_quiz` `image`) or a resource `coverImage`.
 
