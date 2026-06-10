@@ -142,6 +142,22 @@ During testing, you'll experience the lesson exactly as a student would - includ
 
 While editing, click the **outline** icon at the left edge of the editor to open a navigable outline built from your headings (H1/H2/H3). It updates as you type, and clicking any entry scrolls straight to that heading — handy for longer lessons. Click the hide icon to collapse it.
 
+### Version History
+
+Beau keeps a history of a resource's content so you can look back and recover earlier work. Open it with the **clock icon** in the editor toolbar. There are two kinds of version:
+
+- **🕐 Auto-saves** — recorded automatically as you edit (about one every 5 minutes), tagged with your name and the time. The most recent **50** are kept; older auto-saves are pruned automatically.
+- **📷 Snapshots** — explicit, **named** checkpoints you create yourself with **"Save snapshot"** (e.g. "Before big revision"). Snapshots capture the **whole resource** — content **plus its quizzes and media** — and are **never auto-pruned**.
+
+In the dialog you can:
+
+- **Preview** any version on the right — it renders like the lesson (headings, images, and visuals), with quizzes shown as placeholders.
+- **Restore an auto-save** — replaces the current **content** with that version's. This is content-only: your quizzes and media are left as they are now. It's reversible — the current state is saved as a new version first, so you can restore back.
+- **Download a snapshot** as a `.zip` — the full portable bundle (the same format as Export). To fully roll back to a snapshot, download it and re-import it (see *Exporting and Importing*).
+- **Delete** any version you don't want to keep.
+
+**Good to know:** auto-saves track your *text* edits — they don't snapshot quizzes or media (those are separate and can change independently). When you want a complete, faithful checkpoint of a resource (content + quizzes + media together), **save a snapshot**.
+
 ### Printing a Resource (Take-Home Worksheet)
 
 Click **Print** in the editor toolbar to produce a clean, printable version of the resource — useful for take-home exercises or a paper backup. The printout includes the cover image, your text and headings, all images and visual tools (number lines, fractions, charts, etc.), and a header with the lesson title plus Name/Date lines.
