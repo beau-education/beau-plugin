@@ -1,6 +1,7 @@
 ---
 name: optimize-delivery
 description: Platform/superadmin workflow for hill-climbing voice-lesson DELIVERY quality. Reads per-lesson delivery config, responsiveness telemetry, transcripts, and an LLM quality judge to find what to improve and to compare experiment arms. Not a teacher tool.
+audience: [superadmin]
 user_invocable: true
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: evaluate-student
 description: Evaluate student performance by analyzing course progress, quiz scores, and conversation transcripts. Generates evidence-based reports with pedagogical analysis and intervention recommendations for teachers.
+audience: [teacher, admin]
 user_invocable: true
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: create-resource
 description: Create educational content (resources and courses) for the Beau platform. Use when the user wants to create resources, courses, quizzes, or upload images/PDFs for voice delivery.
+audience: [teacher, admin]
 user_invocable: true
 ---
 
