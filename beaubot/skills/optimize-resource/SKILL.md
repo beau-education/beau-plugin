@@ -28,7 +28,9 @@ Ask which resource to optimize (name, or let them pick from `list_resources`). R
   - completion + score (avg/median),
   - per-quiz **first-attempt pass rate**, **ever-correct rate**, **avg attempts**, and **most common wrong answers**,
   - feedback themes (👍/👎, issue tags, comments),
-  - `attemptsToReview`: progress ids (lowest scores first).
+  - `attemptsToReview`: progress ids (lowest scores first), each with the **`resourceVersion`** it ran on,
+  - **`currentVersionId`**: the resource's latest version — compare to each attempt's `resourceVersion` to spot evidence from since-edited content.
+- **`get_resource_version(resourceId, versionId)`** — read-only: the exact content a run used. Use it when an attempt's `resourceVersion` ≠ `currentVersionId` to see what actually ran vs the current resource.
 - **`get_transcript(progressId)`** on **a few** of the lowest-scoring `attemptsToReview` (e.g. 3–5) — read the qualitative story: where students hesitated, asked "what?", said they couldn't see something, or went off track. The transcript is a timestamped, interleaved log of bot/student messages, «MEDIA shown», «QUIZ shown», and answers — so you can see *when* confusion happened relative to a media/quiz.
   - Prefer **real** attempts for learning signals; test attempts are fine for spotting broken content (a confusing quiz is confusing regardless).
 
@@ -42,10 +44,18 @@ Look for, and cite the signal for, each:
 | 👎 feedback + issue tags / comments | Read them literally; they often name the problem. |
 | Long section with drop-off / low completion | Trim or split; front-load the point. |
 
-### 4. Suggest (always first)
-Present a short, prioritized list. For each: **what** to change, **where** (section/quiz id), **why** (the evidence — a pass rate, a wrong-answer cluster, a transcript quote), and the **proposed new text/answer/hint or media**. Be specific enough that the teacher can say yes/no.
+### 4. Reconcile against the CURRENT resource (critical)
+The teacher edits the **current** resource, but your evidence comes from past runs that may have used **older content**. Don't suggest a fix they've already made.
+- For each finding, check the attempt's **`resourceVersion`** against **`currentVersionId`**.
+  - **Same** → the evidence reflects current content; suggest directly.
+  - **Different** (content edited since) → read what actually ran with **`get_resource_version(resourceId, resourceVersion)`** and compare to the current resource (`get_resource`). Only suggest a change if the problem **still exists** in the current content. If the relevant section/quiz has already changed, **drop the suggestion** or flag it: "this confused students on v5, but you've since edited that section — confirm it still applies."
+- Prefer current-version evidence; treat older-version signals as weaker and always re-validate against current content before proposing an edit.
+- Note: per-quiz stats pool attempts across versions (a quiz id is stable even if reworded), so a pass-rate that spans an edit is muddy — say so rather than over-trusting it.
 
-### 5. Offer to apply — only on explicit approval
+### 5. Suggest (always first)
+Present a short, prioritized list. For each: **what** to change, **where** (section/quiz id), **why** (the evidence — a pass rate, a wrong-answer cluster, a transcript quote, **and which version it came from**), and the **proposed new text/answer/hint or media**. Be specific enough that the teacher can say yes/no.
+
+### 6. Offer to apply — only on explicit approval
 Ask which suggestions to apply. For each approved one, use the authoring tools:
 - Content/markdown → **`update_resource`**.
 - Quiz wording/answers/hint → **`update_quiz`**.
