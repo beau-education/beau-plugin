@@ -65,8 +65,15 @@ When a finding suggests a delivery change, turn it into a live A/B — **as data
 
 Always include a **control** arm; pre-register ONE primary metric; **never auto-launch** — confirm with the user. To stop: `set_experiment_status(done)`.
 
+## Evaluate — compare the arms
+Once arms have runs, **`compare_experiment_arms(experimentId)`** returns per-arm metrics segmented **pooled / real / test**: n, first-audio latency p50/p95, interruption/nudge/turn averages, completion rate, cost, and the judge summary (avg `overall`, avg per-dimension scores, flag counts like `display_timing`/`confusion`).
+- Read the **responsiveness primary metric (first-audio latency) on POOLED** — it's population-independent, so teacher tests add power.
+- Read **learning-outcome guardrails (completion) on REAL only** — the test population is biased.
+- **Gate on n + a confidence flag**; report against the ONE pre-registered primary metric — don't fish across metrics with thin samples.
+- **Promotion is manual** — no tool changes the default; recommend promote/keep/iterate and let the user act. Stop a finished experiment with `set_experiment_status(done)`.
+
 ## Current limitations
-- **Reading results:** a dedicated `compare_experiment_arms` tool isn't built yet. Until then, compare arms via **`get_delivery_baseline`** (segmented **per arm**) + `judge_lesson` / `get_lesson_quality` on each arm's attempts.
-- **Model/voice arms don't apply yet:** prompt overrides and session config (turn detection / transcription / temperature) take effect; an arm that changes `realtimeModel`/`voice` is stamped but not yet wired to the session mint — so vary **prompt + turn-detection** for now.
+- **Model arms don't apply yet:** prompt overrides + session config (turn detection / transcription / temperature) take effect; an arm that sets `realtimeModel` is stamped but not yet wired to the session mint — so vary **prompt + turn-detection** for now. (Voice is a per-bot setting, not an arm dimension.)
+- `compare_experiment_arms` doesn't yet aggregate **quiz eventual-correct**, and `latencyMeasuredRatio` is a proxy (sessions with p50>0) until per-sample counts are captured.
 - The judge uses the platform OpenAI key (gpt-4o); `judge_lesson` costs a few cents per lesson — judge deliberately, not in bulk.
 - Bump `JUDGE_VERSION` in the API when the rubric changes so old/new judgements stay distinct (`get_lesson_quality` returns per-version).
