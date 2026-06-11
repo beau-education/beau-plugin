@@ -252,17 +252,17 @@ renders the same inline formatting (`_underline_`, `*italic*`, `**bold**`, `[hig
 
 Per-`kind` `config` shapes:
 ```jsonc
-// number_line — marks/highlight may be numbers or strings
-{ "from": 0, "to": 10, "marks": [0, 2, 4, 6, 8, 10], "highlight": 6 }
-// fraction — style: "bar" | "circle"
-{ "num": 3, "den": 4, "style": "bar" }
+// number_line — marks may be numbers or strings; highlights = up to 4 points, auto-coloured red/blue/green/pink in order (legacy single "highlight" still works)
+{ "from": 0, "to": 10, "marks": [0, 2, 4, 6, 8, 10], "highlights": [3, 7] }
+// fraction — style: "bar" | "circle"; showValue:false hides the n/d label (name-the-fraction quiz)
+{ "num": 3, "den": 4, "style": "bar", "showValue": true }
 // grid — rows of cells; optional header per row; optional highlighted cells
 { "cols": ["1", "2", "3"], "rows": [{ "header": "x2", "cells": [2, 4, 6] }], "highlight": [{ "row": 0, "col": 1 }] }
 // timeline
 { "events": [{ "date": "1969", "label": "Moon landing" }, { "date": "1989", "label": "Web invented" }] }
 // math — KaTeX / LaTeX
 { "tex": "\\frac{1}{2} + \\frac{1}{3}" }
-// text — font: "beginner" | "comic" | "standard"; inline formatting _u_ *i* **both** [hl] {red:color}; \n for line breaks
+// text — font: "beginner" | "comic" | "standard"; inline _u_ *i* **both** [hl] {red:color}. ONE word/phrase/label only — NO newlines or multi-line lists; a literal \n will NOT break the line (use separate text visuals or a grid for several lines)
 { "text": "cat", "color": "#333333", "font": "beginner" }
 // counters — a single emoji, count 1-99
 { "emoji": "🍎", "count": 5 }
@@ -270,12 +270,12 @@ Per-`kind` `config` shapes:
 { "hours": 3, "minutes": 15, "showMinuteTicks": true }
 // ten_frame — 0-20 counters in a 2x5 frame (two frames above 10); color optional
 { "count": 7, "color": "#E53935" }
-// bar_chart — simple guided bars; unit + color optional
-{ "bars": [{ "label": "Cats", "value": 4 }, { "label": "Dogs", "value": 6 }], "unit": "children" }
+// bar_chart — unit + color optional; showValues:false hides value labels (read heights off the axis) for a quiz
+{ "bars": [{ "label": "Cats", "value": 4 }, { "label": "Dogs", "value": 6 }], "unit": "children", "showValues": true }
 // base_ten — Dienes blocks for place value, 0-999
 { "value": 124 }
-// money — coins/notes in MINOR units (pence/cents); currency GBP|USD|EUR (default GBP)
-{ "coins": [200, 200, 20, 20, 5], "currency": "GBP" }
+// money — coins/notes in MINOR units (pence/cents); currency GBP|USD|EUR (default GBP); showTotal:false hides the total (adding-up quiz)
+{ "coins": [200, 200, 20, 20, 5], "currency": "GBP", "showTotal": true }
 // phoneme_frame — one grapheme per sound (phonics sound buttons)
 { "graphemes": ["sh", "i", "p"] }
 // place_value — digits in place columns; columns optional (derived if omitted)
@@ -772,18 +772,18 @@ Prefer a visual tool over an AI or word image whenever the content is structured
 
 | Kind | What it draws | Reach for it when |
 |---|---|---|
-| `number_line` | Labelled axis with optional highlight | Position, ordering, decimals, distance |
-| `fraction` | Bar or circle split into parts | Introducing or comparing fractions |
+| `number_line` | Labelled axis; up to 4 auto-coloured highlights | Position, ordering, decimals, distance, comparing points |
+| `fraction` | Bar or circle split into parts (`showValue:false` for a name-the-fraction quiz) | Introducing or comparing fractions |
 | `grid` | Rows/cols table with optional highlighted cells | Multiplication grids, periodic tables, conjugation |
 | `timeline` | Horizontal time axis with events | History, story arcs, multi-step processes |
 | `math` | KaTeX equation | Formal expressions, sums, fractions in formula form |
-| `text` | Styled word/phrase (`**bold**` `*italic*` `_underline_` `[highlight]` `{color:text}`, `\n` line breaks) | Vocabulary, key terms, one-word answers, labels |
+| `text` | Styled **single** word/phrase (`**bold**` `*italic*` `_underline_` `[highlight]` `{color:text}`) — no newlines/multi-line | Vocabulary, key terms, one-word answers, labels |
 | `counters` | A scatter of one repeated emoji (count 1-99) | Counting, "how many?", early number sense |
 | `clock` | Analog clock face set to hours:minutes | Telling the time; reading hours and minutes |
 | `ten_frame` | A 2×5 frame filled with counters | Number bonds, "make 10", counting to 20 |
-| `bar_chart` | Simple guided bar chart | Data handling, comparing amounts |
+| `bar_chart` | Simple guided bar chart (`showValues:false` to read heights off the axis) | Data handling, comparing amounts |
 | `base_ten` | Hundreds/tens/ones Dienes blocks | Place value, partitioning |
-| `money` | Coins/notes (minor units) to count | Counting money, change |
+| `money` | Coins/notes (minor units) to count (`showTotal:false` for an adding-up quiz) | Counting money, change |
 | `phoneme_frame` | Sound buttons per grapheme | Phonics — segmenting words into sounds |
 | `place_value` | Digits in labelled place columns | Place value, reading large numbers |
 | `chart` | Any Chart.js chart from a JSON spec | Richer data viz (line/pie/scatter…) — the flexible power tool |

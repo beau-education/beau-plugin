@@ -361,18 +361,18 @@ Even with Bot Vision enabled, you should still provide a good description, quest
 
 | Kind | What it shows | Typical use |
 |------|---------------|-------------|
-| **Number line** | A labelled axis with optional highlighted point | Position, ordering, decimals, distance |
-| **Fraction** | A bar or pie split into parts | Introducing or comparing fractions |
+| **Number line** | A labelled axis; highlight up to 4 points (auto-coloured red, blue, green, pink) | Position, ordering, decimals, distance, comparing points |
+| **Fraction** | A bar or pie split into parts; turn off the value label to make a "name the fraction" quiz | Introducing or comparing fractions |
 | **Grid / table** | Rows and columns with optional highlighted cells | Multiplication grids, periodic tables, conjugation |
 | **Timeline** | Events on a horizontal time axis | History, story arcs, chronology |
 | **Math equation** | A formatted equation rendered with KaTeX | Fractions, expressions, sums |
-| **Word / text** | A styled word or phrase (bold, italic, underline, highlight, color, line breaks) | Vocabulary, key terms, labels |
+| **Word / text** | A styled single word or phrase (bold, italic, underline, highlight, color) — one line, no line breaks | Vocabulary, key terms, labels |
 | **Counters** | A scatter of a repeated emoji | Counting, "how many?", early number sense |
 | **Clock** | An analog clock face set to a time | Telling the time; reading hours and minutes |
 | **Ten frame** | A 2×5 frame filled with counters | Number bonds, "make 10", counting to 20 |
-| **Bar chart** | Simple bars comparing quantities | Data handling, comparing amounts |
+| **Bar chart** | Simple bars comparing quantities; hide the value labels so students read heights off the axis for a quiz | Data handling, comparing amounts |
 | **Base ten blocks** | Hundreds/tens/ones Dienes blocks | Place value, partitioning |
-| **Money** | Coins and notes to count | Counting money, change, money problems |
+| **Money** | Coins and notes to count; hide the total for an adding-up quiz | Counting money, change, money problems |
 | **Phoneme frame** | Sound buttons under each grapheme | Phonics — segmenting words into sounds |
 | **Place value chart** | Digits in labelled place columns | Place value, reading large numbers |
 | **Chart (advanced)** | Any chart from a pasted Chart.js JSON spec | Richer data viz (line/pie/scatter…), for power users & AI |
