@@ -53,7 +53,20 @@ Tie findings back to **config**: which `experimentArm` / model / voice / turn-de
 4. `get_evaluation_bundle` → reason about media/quiz timing vs. the transcript.
 5. Recommend a config/prompt change to test next.
 
+## Act — create + launch an experiment (Insight → Action)
+When a finding suggests a delivery change, turn it into a live A/B — **as data, no code deploy**. Suggest first; only create/launch on the user's explicit approval.
+
+1. **Propose** control vs variant: the hypothesis, the section/rule to change, the **one** primary metric, and the split.
+2. **`create_prompt_template`** — author the variant's prompt change. Prefer **`appendRules`** to *add* a rule (e.g. "When showing media, say the task in one sentence, then display it, then ask the student what to do"); use **`sections`** (`conversationFlow` / `toolGuidance` / `verbosity`) to fully replace a section. Safety and tool registration can't be overridden.
+3. **`create_experiment`** (optionally `targetDeliveryMode` / `targetResource`) — starts in `draft`.
+4. **`add_experiment_arm`** at least twice: a **control** arm (no template, default config) and the **variant** arm (the template + any `turnDetection`/`temperature` changes), with `weight`s (e.g. 50/50).
+5. **`set_experiment_status(active)`** to launch. Runs are then assigned to arms — **sticky** for real students, **per-attempt** for tests — and stamped on each transcript.
+6. **QA one arm** by opening the player with **`?armId=<id>`** (forced; excluded from analysis).
+
+Always include a **control** arm; pre-register ONE primary metric; **never auto-launch** — confirm with the user. To stop: `set_experiment_status(done)`.
+
 ## Current limitations
-- **One arm today** (`none:default`) — there's nothing to A/B yet. Phase 2 adds an experiment registry + resolver so arms actually vary; a `compare_experiment_arms` tool will follow. Until then this skill measures the baseline and finds qualitative issues.
+- **Reading results:** a dedicated `compare_experiment_arms` tool isn't built yet. Until then, compare arms via **`get_delivery_baseline`** (segmented **per arm**) + `judge_lesson` / `get_lesson_quality` on each arm's attempts.
+- **Model/voice arms don't apply yet:** prompt overrides and session config (turn detection / transcription / temperature) take effect; an arm that changes `realtimeModel`/`voice` is stamped but not yet wired to the session mint — so vary **prompt + turn-detection** for now.
 - The judge uses the platform OpenAI key (gpt-4o); `judge_lesson` costs a few cents per lesson — judge deliberately, not in bulk.
 - Bump `JUDGE_VERSION` in the API when the rubric changes so old/new judgements stay distinct (`get_lesson_quality` returns per-version).
