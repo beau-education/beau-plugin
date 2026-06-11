@@ -532,6 +532,16 @@ Quizzes provide structured assessment with automatic correctness checking. The p
 - Provides intelligent feedback even for partially correct answers
 - **Exact match (spelling & dictation)**: toggle **Exact match** on an open-answer question to grade it *deterministically* — capitalisation and punctuation count — with specific feedback ("Check your capital letters", "You forgot the full stop", "You got 2 letters wrong"). Skips AI grading. Pair it with an **audio prompt** (the question illustration's **Audio** tab, or `generate_audio` then attach as the quiz `image`) so the student hears a word/sentence and types it. The spoken text is never shown — keep the answer in the expected answer.
 
+#### Recipe: spelling / dictation quiz (LLM, end-to-end)
+
+The student **hears** a word or sentence and **types** it; grading is exact. Three steps, all via MCP tools:
+
+1. **`generate_audio`** `{ resourceId, text: "<word or sentence>" }` → returns the audio media `id`. The text is spoken but never shown to the student or sent to the bot (leak-safe).
+2. **`create_quiz`** `{ resourceId, questionType: "freetext", inputRestriction: "text", exactMatch: true, expectedAnswer: "<same word or sentence, exact capitals + punctuation>", question: "Listen and type what you hear.", image: <audio id>, retryLimit: null }`.
+3. Embed `::quiz{#<quiz id>}` in the content.
+
+For a full **dictation lesson**, repeat per phrase (one audio + one quiz each) under `## Phrase 1`, `## Phrase 2`, … and let the bot read the instruction and play each clip. `exactMatch` works for both single words and whole sentences (it reports capitalisation / punctuation / letter / word errors specifically).
+
 **Ordered List**: Students drag and drop items into the correct sequence
 - Best for: Ordering events, ranking items, sequencing steps, comparing values
 - Example: "Put these in order from smallest to largest: 3/5, 0.55, 62%, 1/2"

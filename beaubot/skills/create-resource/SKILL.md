@@ -324,7 +324,22 @@ Per-`kind` `config` shapes:
 - `retryLimit` (optional): Max attempts
 - `hint` (optional): Guidance for wrong answers
 - `description` (optional): When the bot should present this quiz
+- `exactMatch` (freetext only): grade the answer EXACTLY against `expectedAnswer` (case + punctuation count) with deterministic feedback, instead of lenient AI grading. **This is the flag that turns a freetext quiz into a spelling/dictation quiz** — see the recipe below.
 - `image` (optional): Illustration image ID — see **Quiz Illustrations** below. The image must already be attached to the same resource.
+
+#### Recipe: a spelling or dictation quiz (end-to-end)
+
+A spelling/dictation quiz = the student **hears** a word or sentence and **types** it; grading is exact. Build it in three steps:
+
+1. **Make the audio prompt** — `generate_audio({ resourceId, text: "<the word or sentence>", name: "..." })`. Returns an image id. The `text` is the answer spoken aloud; it is never shown to the student and never sent to the bot, so it can't leak.
+2. **Create the quiz** — `create_quiz({ resourceId, questionType: "freetext", inputRestriction: "text", exactMatch: true, expectedAnswer: "<the word or sentence>", question: "Listen and type what you hear.", image: <audio id from step 1>, retryLimit: <null for unlimited, or a number> })`. `expectedAnswer` MUST match the audio text exactly (the capitalisation + punctuation you want graded). Leave `evaluationCriteria` off — `exactMatch` ignores it.
+3. **Embed it** — put `::quiz{#<quiz id>}` in the markdown where the dictation should happen.
+
+Notes:
+- **Words vs sentences** both work — for a sentence, include the exact capital letter + full stop in both `text` and `expectedAnswer`; the deterministic feedback calls out "Check your capital letters" / "You forgot the full stop" / "You got N letters wrong".
+- `exactMatch` only applies to `inputRestriction: "text"` (not numeric inputs).
+- Use `retryLimit: null` (unlimited) for practice; a number to cap attempts.
+- To make a whole **dictation lesson**, repeat steps 1–3 per phrase (one audio + one quiz each), under headings like `## Phrase 1`, and the bot reads the instruction, plays each clip, and checks the typed answer.
 
 **update_quiz:**
 - `resourceId` (required): The resource the quiz belongs to
