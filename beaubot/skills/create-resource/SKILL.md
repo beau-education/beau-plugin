@@ -91,8 +91,9 @@ Use the `beaubot` MCP server tools:
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
 | `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `create_image` | Upload an image or PDF (base64 data) to a resource (last resort) |
-| `create_quiz` | Create a quiz for a resource |
-| `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, etc.) |
+| `generate_audio` | Generate a spoken clip (text-to-speech) and attach as audio media. For listening or **spelling/dictation**: attach to a freetext quiz illustration (with `exactMatch: true`) so the student hears it and types the answer. The spoken text isn't shown — keep the answer in `expectedAnswer`. |
+| `create_quiz` | Create a quiz for a resource. For **spelling/dictation**, use `questionType: "freetext"` + `exactMatch: true` (deterministic case/punctuation grading) + attach a `generate_audio` clip as the `image`. |
+| `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, set `exactMatch`, etc.) |
 | `list_tags` | List available tags in the organization's catalog |
 | `create_tag` | Create a new tag in the organization's tag catalog |
 | `list_bots` | List the org's bots with their voice, avatar, and persona — call to pick a bot whose persona suits the subject |

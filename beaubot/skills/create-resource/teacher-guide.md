@@ -600,6 +600,7 @@ The platform supports six question types: single choice, multiple choice, open a
 - Numeric types (Integer, Decimal, Fraction) show an on-screen keypad instead of the native keyboard
 - Fraction input shows a visual numerator/denominator entry
 - Optional min/max range and allow-negative constraints for numeric types
+- **Exact match (spelling & dictation)**: turn on the **Exact match** switch under an Open Answer question to grade the answer *exactly* — capitalisation and punctuation count — with specific feedback ("Check your capital letters", "You forgot the full stop", "You got 2 letters wrong", "2 words are wrong"). This skips AI grading. Pair it with an **audio prompt** to make a spelling or dictation test: on the question's illustration, choose the **Audio** tab, type the word or sentence, pick a voice, and preview it (regenerate if a tricky word like "read" or "lead" sounds wrong). The student hears the clip with a play button and types what they hear — the text itself is never shown.
 
 **Ordered List**: Student arranges items in the correct order using drag and drop
 - Best for sequencing steps, ordering events, ranking values, comparing numbers

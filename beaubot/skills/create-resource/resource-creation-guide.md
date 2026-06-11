@@ -530,6 +530,7 @@ Quizzes provide structured assessment with automatic correctness checking. The p
 - Best for: Numerical answers, short written responses, calculations
 - The AI compares the student's answer against your expected answer
 - Provides intelligent feedback even for partially correct answers
+- **Exact match (spelling & dictation)**: toggle **Exact match** on an open-answer question to grade it *deterministically* — capitalisation and punctuation count — with specific feedback ("Check your capital letters", "You forgot the full stop", "You got 2 letters wrong"). Skips AI grading. Pair it with an **audio prompt** (the question illustration's **Audio** tab, or `generate_audio` then attach as the quiz `image`) so the student hears a word/sentence and types it. The spoken text is never shown — keep the answer in the expected answer.
 
 **Ordered List**: Students drag and drop items into the correct sequence
 - Best for: Ordering events, ranking items, sequencing steps, comparing values
