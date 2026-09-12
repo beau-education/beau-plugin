@@ -349,6 +349,7 @@ Rules:
 - Best in **Presentation** mode (reading aloud, language practice, oral recall, explaining reasoning). Also works in **Conversation** mode — the tutor stays silent while the student records, then responds to what they said.
 - In **Worksheet** mode there is no recorder: the question renders on screen and prints as a "🗣️ Speak your answer aloud" prompt with ruled lines, and is not auto-graded.
 - Both the teacher and the student can play the recording back from the lesson transcript.
+- **The student sees what was transcribed.** After submitting, the words we heard appear on screen under "You said" while the tutor responds, so a misheard student can see that's what happened rather than being confused by feedback that doesn't fit their answer. It's held on a reading-speed estimate from the student's **age**, so an accurate date of birth on the student profile matters here; with none we assume 10.
 
 **Voice vs dictation** — they are opposites, don't confuse them: a voice quiz is *student speaks, AI grades the meaning*; a dictation quiz is *student listens, types, graded exactly*.
 

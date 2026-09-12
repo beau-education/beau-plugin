@@ -642,6 +642,7 @@ Writing voice questions well:
 - **Ask for meaning, not spelling.** Don't use Voice for spelling — transcription can't judge it. Use a dictation quiz (listen and *type*) instead. The **Exact match (spelling)** switch is hidden for voice questions for this reason.
 - **Keep it sayable.** If the expected answer takes more than a minute or two to say, split it into two questions.
 - **Both of you can listen back.** The recording is saved with the lesson transcript, so you can hear how the student actually said it — and so can they. That makes voice questions genuinely useful for pronunciation and fluency review even though the grade is based on meaning.
+- **The student sees the transcription.** After submitting, the words we heard are shown back on screen while the tutor responds, so a student who was misheard can tell that's what happened instead of being confused by feedback that doesn't match their answer. It's held on a reading-speed estimate from the student's age — a one-sentence answer sits on screen for about 15 seconds for a 10-year-old and around 30 for a 6-year-old, since they're reading while the tutor talks — so **fill in the student's date of birth** on their profile. Without it we assume age 10.
 
 ### Open Answer Evaluation
 

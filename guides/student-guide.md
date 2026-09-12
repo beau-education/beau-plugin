@@ -162,6 +162,8 @@ Some questions ask you to **say** your answer instead of typing it.
 4. **Press Record again** if you want another go — you can re-record as many times as you like
 5. **Click Submit** when you're happy with it
 
+Once you submit, **the words we heard appear on screen under "You said"**, so you can read them while the tutor talks about your answer. They stay up long enough to read, then fade. If they don't match what you meant to say, the microphone may have misheard you — just record again.
+
 Your recording is turned into text and marked on **what you said**, not how you said it — so don't worry about "ums", pauses or starting a sentence over. You can play your recording back later from your activity log, and your teacher can hear it too.
 
 If the tutor is talking, it will go quiet while you record so it doesn't interrupt you. The first time you record, your browser will ask permission to use your microphone — choose **Allow**.
