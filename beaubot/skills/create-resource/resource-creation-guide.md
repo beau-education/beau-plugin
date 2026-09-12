@@ -571,7 +571,7 @@ The student then hears the clip with a play button and types what they hear — 
    - **Question Type**: Single choice, Multiple choice, Open answer, Ordered list, Matching, or Fill in the Blank
    - **Answers** (for choice questions): The answer options
    - **Expected Answer** (for open answer): The correct answer to evaluate against
-   - **Input Restriction** (for open answer): Text, Integer, Decimal, or Fraction
+   - **Input Restriction** (for open answer): Text, Integer, Decimal, Fraction, or Voice
    - **Min/Max Value** (for numeric types): Optional range constraints
    - **Allow Negative** (for numeric types): Whether negative values are accepted
    - **Evaluation Criteria** (for open answer): Optional guidance for AI grading
@@ -591,7 +591,7 @@ The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't ed
 | **Question Type** | "Single" for one answer, "Multiple" for selecting all correct answers, "Open answer" for typed responses, "Ordered list" for drag-and-drop sequencing, "Matching" for pairing items. |
 | **Answers** | List of options with correct answers marked. (Single/Multiple choice only) |
 | **Expected Answer** | The correct answer the AI evaluates against. (Open answer only) |
-| **Input Restriction** | What type of input is allowed: "Text" (any text), "Integer" (whole numbers), "Decimal" (numbers with decimals), or "Fraction" (e.g. 1/3). (Open answer only) |
+| **Input Restriction** | What type of input is allowed: "Text" (any text), "Integer" (whole numbers), "Decimal" (numbers with decimals), "Fraction" (e.g. 1/3), or "Voice" (the student speaks their answer). (Open answer only) |
 | **Min/Max Value** | Optional range constraints for numeric input types (Integer, Decimal, Fraction). For fractions, the range applies to the evaluated decimal value. (Open answer only) |
 | **Allow Negative** | Whether negative values are accepted. Default: yes. (Open answer with numeric input types only) |
 | **Evaluation Criteria** | Optional guidance for the AI on how strictly to evaluate answers. (Open answer only) |
@@ -609,6 +609,7 @@ When creating open answer questions, choose the appropriate input restriction:
 | **Integer** | Whole number calculations, counts | "42", "100", "-5" |
 | **Decimal** | Calculations with decimals, measurements | "3.14", "98.6", "0.5" |
 | **Fraction** | Fraction answers, ratios, proportions | "1/3", "2/5", "-3/4" |
+| **Voice** | Spoken answers — reading aloud, language practice, oral recall, explaining reasoning | The student *says* "because the Earth's axis is tilted" |
 
 The input restriction affects:
 - What the student can type (numbers only for Integer/Decimal, fraction format for Fraction)
@@ -619,6 +620,28 @@ The input restriction affects:
 For numeric types (Integer, Decimal, Fraction), you can also set:
 - **Min/Max Value**: Constrain the acceptable range. For fractions, this applies to the evaluated decimal value (e.g. min=0, max=1 means 1/3 is valid but 5/3 is not)
 - **Allow Negative**: Toggle whether negative values are accepted (default: yes)
+
+#### Voice: spoken answers
+
+Choosing **Voice** turns the question into a spoken one. The student sees a **Record** button instead of a text box:
+
+1. They press record and say their answer (up to 2 minutes).
+2. They can **listen back** and **record again** as many times as they like — nothing is sent until they submit.
+3. On submit, the recording is transcribed and the transcript is graded against your Expected Answer and Evaluation Criteria, exactly like a typed open answer.
+
+It behaves differently in each delivery mode:
+
+| Mode | What the student gets |
+|------|----------------------|
+| **Presentation** | The intended home for voice questions. The tutor narrates, asks the question, then goes quiet while the student records. |
+| **Conversation** | Works too. The tutor stops talking and the microphone is muted for the conversation while the student records, so their answer isn't interrupted; once they submit, the tutor responds to what they said. |
+| **Worksheet** | No recorder — there's no tutor and worksheets are printable. The question shows and prints as "🗣️ Speak your answer aloud" with ruled lines, and isn't auto-graded; you mark it yourself. |
+
+Writing voice questions well:
+- **Write Evaluation Criteria for speech.** Spoken answers contain fillers ("um", "you know"), false starts and self-corrections. Say explicitly that these are fine and that exact wording isn't required.
+- **Ask for meaning, not spelling.** Don't use Voice for spelling — transcription can't judge it. Use a dictation quiz (listen and *type*) instead. The **Exact match (spelling)** switch is hidden for voice questions for this reason.
+- **Keep it sayable.** If the expected answer takes more than a minute or two to say, split it into two questions.
+- **Both of you can listen back.** The recording is saved with the lesson transcript, so you can hear how the student actually said it — and so can they. That makes voice questions genuinely useful for pronunciation and fluency review even though the grade is based on meaning.
 
 ### Open Answer Evaluation
 

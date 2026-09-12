@@ -152,6 +152,20 @@ Some questions ask you to arrange items in the correct order:
 3. **Click Submit** to check your order
 4. You get credit for each item in the correct position
 
+### Spoken Answer Questions
+
+Some questions ask you to **say** your answer instead of typing it.
+
+1. **Press Record** and say your answer out loud (up to 2 minutes)
+2. **Press Stop** when you're done
+3. **Press Listen** to hear your answer back
+4. **Press Record again** if you want another go — you can re-record as many times as you like
+5. **Click Submit** when you're happy with it
+
+Your recording is turned into text and marked on **what you said**, not how you said it — so don't worry about "ums", pauses or starting a sentence over. You can play your recording back later from your activity log, and your teacher can hear it too.
+
+If the tutor is talking, it will go quiet while you record so it doesn't interrupt you. The first time you record, your browser will ask permission to use your microphone — choose **Allow**.
+
 ### Retry Attempts
 
 If you answer incorrectly, the tutor may give you another chance:
@@ -165,6 +179,7 @@ If you answer incorrectly, the tutor may give you another chance:
 - **Listen to hints** - the tutor's guidance can help you find the right answer
 - **Don't worry about mistakes** - quizzes are for learning, not just testing
 - **For open answer**: The AI understands different phrasings, so focus on the concept
+- **For spoken answers**: Speak clearly and take your time — you can always listen back and record again before submitting
 
 ## Tracking Your Progress
 

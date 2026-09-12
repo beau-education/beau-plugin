@@ -526,8 +526,17 @@ The transcript viewer displays the conversation in a chat-style format:
 - **Student messages** (right side): What the student said, transcribed from their speech
 - **Bot messages** (left side): What the AI tutor said, transcribed from its speech
 - **Images shown** (center): Thumbnails of images displayed during the lesson with timestamps
+- **Quiz answers** (right side): What the student answered, whether it was correct, and the score
 
 Each message shows the timestamp so you can follow the conversation flow.
+
+**Spoken quiz answers:**
+
+When a question used the **Voice** input type, its entry is labelled "Spoken Answer" and includes a **play button** — press it to hear the student's actual recording. Underneath, you'll see the transcription that the AI graded, marked "Transcribed from the recording".
+
+This is worth listening to even when the score looks fine: the grade is based on *meaning*, so a student can score 100% while mispronouncing a key term or sounding hesitant — things only the audio will tell you. Conversely, a low score sometimes turns out to be a transcription slip rather than a wrong answer.
+
+Downloading a transcript as text keeps the transcription (marked "Spoken Answer, transcribed") but not the audio — the recordings stay in the dashboard.
 
 **Filtering the Activity Log:**
 
@@ -535,7 +544,7 @@ Each message shows the timestamp so you can follow the conversation flow.
 - Test sessions are marked with a blue "Test" badge when visible
 - Only sessions with meaningful data (score, summary, or transcript) are shown
 
-**Note:** Transcripts are only visible to teachers and administrators, not to students.
+**Who can see a transcript:** administrators can see every transcript in the organisation; teachers can see transcripts for their own enrollments; and a student can see their own — their dashboard Activity Log has the same transcript viewer, including playback of their own spoken answers. No student can see another student's transcript or recordings.
 
 ## Working with Bots
 
@@ -582,7 +591,7 @@ Reach for a visual tool whenever the content is structured data the platform can
 
 ## Working with Quizzes in Resources
 
-**Quizzes are essential for interactive, engaging lessons.** Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes keep students actively thinking and participating — without them, lessons feel passive and text-heavy. Use a variety of quiz types (single choice, multiple choice, open answer, ordered list, matching) to keep things interesting.
+**Quizzes are essential for interactive, engaging lessons.** Aim for **at least 2-3 quizzes per resource**, placed after each major concept. Quizzes keep students actively thinking and participating — without them, lessons feel passive and text-heavy. Use a variety of quiz types (single choice, multiple choice, open answer, ordered list, matching, voice) to keep things interesting.
 
 The platform supports six question types: single choice, multiple choice, open answer, ordered list, matching, and fill in the blank.
 
@@ -680,7 +689,7 @@ For comprehensive guidance on creating effective quizzes, see the **Resource Gui
 5. **Include plenty of quizzes** - aim for at least 2-3 per resource. Quizzes are the primary way students actively engage with content. Lessons without enough quizzes feel passive and text-heavy.
 6. **Include images in every resource** - aim for at least 1-2 images. Visuals break up text, illustrate concepts, and keep students interested. A text-only resource is almost always too dry.
 7. **Avoid text-heavy sections** - if any section is more than a few sentences without a quiz or image, add interactivity
-8. **Mix quiz types for variety** - use single choice for quick checks, multiple choice for "select all", open answer for calculations, ordered list for sequencing, matching for pairing concepts, and fraction for math. Variety keeps students engaged.
+8. **Mix quiz types for variety** - use single choice for quick checks, multiple choice for "select all", open answer for calculations, ordered list for sequencing, matching for pairing concepts, fraction for math, and voice when you want the student to *say* the answer (reading aloud, language practice, explaining their reasoning). Variety keeps students engaged.
 9. **Monitor the activity feed** to identify students who may need help
 10. **Test resources and courses** before assigning to students to verify the AI delivers content correctly
 11. **Review session transcripts** periodically to understand how students interact with your content

@@ -316,7 +316,7 @@ Per-`kind` `config` shapes:
 - `questionType` (required): `"single"`, `"multiple"`, `"freetext"`, `"ordered_list"`, `"matching"`, or `"fill_in_blank"`
 - `answers` (for single/multiple/ordered_list): Array of `{id, text, isCorrect}`. For matching: `{id, text, isCorrect, matchText}`
 - `expectedAnswer` (for freetext): Correct answer
-- `inputRestriction` (for freetext): `"text"`, `"integer"`, `"decimal"`, or `"fraction"`
+- `inputRestriction` (for freetext): `"text"`, `"integer"`, `"decimal"`, `"fraction"`, or `"voice"` (student speaks the answer — see the recipe below)
 - `numericMin` (optional): Minimum allowed value for numeric inputs (integer, decimal, fraction)
 - `numericMax` (optional): Maximum allowed value for numeric inputs (integer, decimal, fraction)
 - `allowNegative` (optional): Whether negative values are accepted (default: true)
@@ -326,6 +326,31 @@ Per-`kind` `config` shapes:
 - `description` (optional): When the bot should present this quiz
 - `exactMatch` (freetext only): grade the answer EXACTLY against `expectedAnswer` (case + punctuation count) with deterministic feedback, instead of lenient AI grading. **This is the flag that turns a freetext quiz into a spelling/dictation quiz** — see the recipe below.
 - `image` (optional): Illustration image ID — see **Quiz Illustrations** below. The image must already be attached to the same resource.
+
+#### Recipe: a spoken-answer (voice) quiz
+
+A voice quiz = the student **says** their answer instead of typing it. They press record, can listen back and re-record as many times as they like, then submit. The recording is transcribed server-side and graded by the same AI grader used for typed freetext.
+
+```json
+{
+  "questionType": "freetext",
+  "inputRestriction": "voice",
+  "question": "In your own words, explain why the seasons change.",
+  "expectedAnswer": "The Earth's axis is tilted, so different hemispheres get more direct sunlight at different times of year.",
+  "evaluationCriteria": "Accept natural spoken phrasing, hesitations and self-corrections. Look for the tilted axis and the amount/directness of sunlight. Do not require the word 'hemisphere'. Ignore grammar and word order."
+}
+```
+
+Rules:
+- `expectedAnswer` is **still required** — grading works exactly as it does for typed freetext.
+- Write `evaluationCriteria` **for speech**: accept fillers ("um", "like"), false starts and self-corrections, and never require exact wording. A transcript of a confident spoken answer rarely reads like written prose.
+- **Never set `exactMatch`** on a voice quiz. Transcription is not reliable enough for exact spelling comparison — for spelling, use the dictation recipe below (listen and *type*) instead.
+- Keep the expected answer to something sayable in under two minutes; recordings are capped at 120 seconds.
+- Best in **Presentation** mode (reading aloud, language practice, oral recall, explaining reasoning). Also works in **Conversation** mode — the tutor stays silent while the student records, then responds to what they said.
+- In **Worksheet** mode there is no recorder: the question renders on screen and prints as a "🗣️ Speak your answer aloud" prompt with ruled lines, and is not auto-graded.
+- Both the teacher and the student can play the recording back from the lesson transcript.
+
+**Voice vs dictation** — they are opposites, don't confuse them: a voice quiz is *student speaks, AI grades the meaning*; a dictation quiz is *student listens, types, graded exactly*.
 
 #### Recipe: a spelling or dictation quiz (end-to-end)
 
