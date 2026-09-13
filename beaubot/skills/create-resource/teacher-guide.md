@@ -620,6 +620,8 @@ The platform supports six question types: single choice, multiple choice, open a
   | **Presentation** | A **Record** button. They can listen back and re-record as often as they like before submitting. |
   | **Worksheet** | No recorder — it prints as a "🗣️ Speak your answer aloud" prompt with ruled lines for you to mark by hand, and isn't auto-graded. |
 
+  **Speak-then-type exercises:** if you pair a voice question ("say this phrase") with a typed one ("now type it"), turn **off** the "Show the student what they said" switch on the voice question. Otherwise the transcription appears on screen and hands them the spelling. With it off the tutor is also told not to repeat or spell the phrase — and you still see the transcript in the lesson record.
+
   Writing them well: say explicitly in Evaluation Criteria that fillers, false starts and self-corrections are fine and that exact wording isn't required — spoken answers don't read like written prose. Don't use Voice for spelling (transcription can't judge it; use the dictation recipe above), which is why the **Exact match** switch is hidden for voice questions. And **fill in the student's date of birth** on their profile: the transcription is held on screen for a reading time based on their age, and without a date of birth we assume 10.
 
 **Ordered List**: Student arranges items in the correct order using drag and drop

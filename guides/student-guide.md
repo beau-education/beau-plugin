@@ -175,7 +175,9 @@ If you don't choose, it sends your answer on its own after a few seconds.
 
 The first time you record, your browser will ask permission to use your microphone — choose **Allow**.
 
-**In both cases**, the words we heard stay on screen long enough to read while the tutor talks about your answer. If they don't match what you meant to say, the microphone misheard you — say it again or record again, and don't worry, that's not a wrong answer.
+**In both cases**, the words we heard usually stay on screen long enough to read while the tutor talks about your answer. If they don't match what you meant to say, the microphone misheard you — say it again or record again, and don't worry, that's not a wrong answer.
+
+Sometimes the words are **hidden on purpose** — you'll see "Answer recorded" instead. That happens when the next question asks you to *type* the same thing, so showing it would give you the answer. Your answer was still heard and marked.
 
 Your answer is marked on **what you said**, not how you said it — so don't worry about "ums", pauses, or starting a sentence over. You can play your recording back later from your activity log, and your teacher can hear it too.
 
