@@ -329,7 +329,12 @@ Per-`kind` `config` shapes:
 
 #### Recipe: a spoken-answer (voice) quiz
 
-A voice quiz = the student **says** their answer instead of typing it. They press record, can listen back and re-record as many times as they like, then submit. The recording is transcribed server-side and graded by the same AI grader used for typed freetext.
+A voice quiz = the student **says** their answer instead of typing it. The answer is transcribed and graded by the same AI grader used for typed freetext.
+
+**How they answer depends on the delivery mode**, because the microphone situation differs:
+
+- **Conversation** — the mic is already open and the student has been talking to the tutor all lesson, so there is **no button**. They just answer out loud. The words are shown back for them to confirm with **Send answer** / **Say it again**, and doing nothing sends it.
+- **Presentation** — the tutor narrates one-way and no mic is open, so the student gets a **Record** button. They can listen back and re-record as often as they like before submitting.
 
 ```json
 {
@@ -345,11 +350,12 @@ Rules:
 - `expectedAnswer` is **still required** — grading works exactly as it does for typed freetext.
 - Write `evaluationCriteria` **for speech**: accept fillers ("um", "like"), false starts and self-corrections, and never require exact wording. A transcript of a confident spoken answer rarely reads like written prose.
 - **Never set `exactMatch`** on a voice quiz. Transcription is not reliable enough for exact spelling comparison — for spelling, use the dictation recipe below (listen and *type*) instead.
-- Keep the expected answer to something sayable in under two minutes; recordings are capped at 120 seconds.
-- Best in **Presentation** mode (reading aloud, language practice, oral recall, explaining reasoning). Also works in **Conversation** mode — the tutor stays silent while the student records, then responds to what they said.
-- In **Worksheet** mode there is no recorder: the question renders on screen and prints as a "🗣️ Speak your answer aloud" prompt with ruled lines, and is not auto-graded.
-- Both the teacher and the student can play the recording back from the lesson transcript.
-- **The student sees what was transcribed.** After submitting, the words we heard appear on screen under "You said" while the tutor responds, so a misheard student can see that's what happened rather than being confused by feedback that doesn't fit their answer. It's held on a reading-speed estimate from the student's **age**, so an accurate date of birth on the student profile matters here; with none we assume 10.
+- Keep the expected answer to something sayable in under two minutes; presentation-mode recordings are capped at 120 seconds.
+- Works well in **both** Conversation and Presentation. Conversation suits answers that are part of a dialogue ("explain your reasoning"); Presentation suits ones worth rehearsing — reading aloud, language practice, a prepared definition.
+- In **Worksheet** mode there is no recorder at all: the question renders on screen and prints as a "🗣️ Speak your answer aloud" prompt with ruled lines, and is not auto-graded.
+- Both the teacher and the student can play the recording back from the lesson transcript, in either voice mode.
+- **The student always sees what was transcribed** — before sending in conversation mode, and after submitting in presentation mode. A misheard student can see that's what happened rather than being confused by feedback that doesn't fit their answer. The text is held on a reading-speed estimate from the student's **age**, so an accurate date of birth on the student profile matters here; with none we assume 10.
+- In conversation mode the tutor is told to **stay silent** while the student answers, and the model is prevented from replying until the answer is sent — so a long, hesitant answer won't get talked over.
 
 **Voice vs dictation** — they are opposites, don't confuse them: a voice quiz is *student speaks, AI grades the meaning*; a dictation quiz is *student listens, types, graded exactly*.
 

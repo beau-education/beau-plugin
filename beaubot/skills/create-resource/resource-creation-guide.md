@@ -623,26 +623,24 @@ For numeric types (Integer, Decimal, Fraction), you can also set:
 
 #### Voice: spoken answers
 
-Choosing **Voice** turns the question into a spoken one. The student sees a **Record** button instead of a text box:
+Choosing **Voice** turns the question into a spoken one. However the student answers, the result is the same: their words are transcribed and graded against your Expected Answer and Evaluation Criteria, exactly like a typed open answer.
 
-1. They press record and say their answer (up to 2 minutes).
-2. They can **listen back** and **record again** as many times as they like — nothing is sent until they submit.
-3. On submit, the recording is transcribed and the transcript is graded against your Expected Answer and Evaluation Criteria, exactly like a typed open answer.
-
-It behaves differently in each delivery mode:
+What they actually see depends on the delivery mode, because the microphone situation is different in each:
 
 | Mode | What the student gets |
 |------|----------------------|
-| **Presentation** | The intended home for voice questions. The tutor narrates, asks the question, then goes quiet while the student records. |
-| **Conversation** | Works too. The tutor stops talking and the microphone is muted for the conversation while the student records, so their answer isn't interrupted; once they submit, the tutor responds to what they said. |
-| **Worksheet** | No recorder — there's no tutor and worksheets are printable. The question shows and prints as "🗣️ Speak your answer aloud" with ruled lines, and isn't auto-graded; you mark it yourself. |
+| **Conversation** | **No button.** The microphone is already open and they've been talking to the tutor all lesson, so they simply answer out loud. The words we heard appear on screen with **Send answer** and **Say it again** — and if they do nothing, it sends itself after a few seconds. The tutor stays quiet while they answer, so a long or hesitant answer won't be talked over. |
+| **Presentation** | The tutor narrates one-way and no microphone is open, so the student gets a **Record** button. They press record, say their answer (up to 2 minutes), and can **listen back** and **record again** as often as they like. Nothing is sent until they submit. |
+| **Worksheet** | No recorder at all — there's no tutor and worksheets are printable. The question shows and prints as "🗣️ Speak your answer aloud" with ruled lines, and isn't auto-graded; you mark it yourself. |
+
+**Which mode suits a voice question?** Both of the voice modes work well, for different things. Conversation suits answers that belong in a dialogue — "explain your reasoning", "what do you think happens next" — where pressing a button would interrupt the flow. Presentation suits answers worth rehearsing: reading a passage aloud, practising pronunciation, delivering a prepared definition, where being able to listen back and try again is the point.
 
 Writing voice questions well:
 - **Write Evaluation Criteria for speech.** Spoken answers contain fillers ("um", "you know"), false starts and self-corrections. Say explicitly that these are fine and that exact wording isn't required.
 - **Ask for meaning, not spelling.** Don't use Voice for spelling — transcription can't judge it. Use a dictation quiz (listen and *type*) instead. The **Exact match (spelling)** switch is hidden for voice questions for this reason.
 - **Keep it sayable.** If the expected answer takes more than a minute or two to say, split it into two questions.
 - **Both of you can listen back.** The recording is saved with the lesson transcript, so you can hear how the student actually said it — and so can they. That makes voice questions genuinely useful for pronunciation and fluency review even though the grade is based on meaning.
-- **The student sees the transcription.** After submitting, the words we heard are shown back on screen while the tutor responds, so a student who was misheard can tell that's what happened instead of being confused by feedback that doesn't match their answer. It's held on a reading-speed estimate from the student's age — a one-sentence answer sits on screen for about 15 seconds for a 10-year-old and around 30 for a 6-year-old, since they're reading while the tutor talks — so **fill in the student's date of birth** on their profile. Without it we assume age 10.
+- **The student always sees the transcription** — before sending in conversation mode, after submitting in presentation mode. A student who was misheard can tell that's what happened instead of being confused by feedback that doesn't match their answer. It's held on a reading-speed estimate from the student's age — a one-sentence answer sits on screen for about 15 seconds for a 10-year-old and around 30 for a 6-year-old, since they're reading while the tutor talks — so **fill in the student's date of birth** on their profile. Without it we assume age 10.
 
 ### Open Answer Evaluation
 

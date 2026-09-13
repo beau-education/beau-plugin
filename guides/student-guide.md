@@ -154,19 +154,30 @@ Some questions ask you to arrange items in the correct order:
 
 ### Spoken Answer Questions
 
-Some questions ask you to **say** your answer instead of typing it.
+Some questions ask you to **say** your answer instead of typing it. There are two ways this looks, depending on the lesson.
+
+**If you're talking with the tutor** (you can hear it and it can hear you), there's nothing to press — **just say your answer out loud**, the same way you've been talking all lesson. The tutor goes quiet and waits, so take your time.
+
+The words we heard then appear on screen:
+
+- **Send answer** — if that's what you meant
+- **Say it again** — if it came out wrong, or we misheard you
+
+If you don't choose, it sends your answer on its own after a few seconds.
+
+**If the tutor is presenting to you** (it talks, you listen), you'll see a **Record** button instead:
 
 1. **Press Record** and say your answer out loud (up to 2 minutes)
 2. **Press Stop** when you're done
 3. **Press Listen** to hear your answer back
-4. **Press Record again** if you want another go — you can re-record as many times as you like
+4. **Press Record again** if you want another go — as many times as you like
 5. **Click Submit** when you're happy with it
 
-Once you submit, **the words we heard appear on screen under "You said"**, so you can read them while the tutor talks about your answer. They stay up long enough to read, then fade. If they don't match what you meant to say, the microphone may have misheard you — just record again.
+The first time you record, your browser will ask permission to use your microphone — choose **Allow**.
 
-Your recording is turned into text and marked on **what you said**, not how you said it — so don't worry about "ums", pauses or starting a sentence over. You can play your recording back later from your activity log, and your teacher can hear it too.
+**In both cases**, the words we heard stay on screen long enough to read while the tutor talks about your answer. If they don't match what you meant to say, the microphone misheard you — say it again or record again, and don't worry, that's not a wrong answer.
 
-If the tutor is talking, it will go quiet while you record so it doesn't interrupt you. The first time you record, your browser will ask permission to use your microphone — choose **Allow**.
+Your answer is marked on **what you said**, not how you said it — so don't worry about "ums", pauses, or starting a sentence over. You can play your recording back later from your activity log, and your teacher can hear it too.
 
 ### Retry Attempts
 

@@ -605,11 +605,22 @@ The platform supports six question types: single choice, multiple choice, open a
 
 **Open Answer**: Student types their answer, evaluated by AI
 - Best for numerical answers, calculations, fractions, or short written responses
-- Supports input restrictions: Text, Integer, Decimal, or Fraction
+- Supports input restrictions: Text, Integer, Decimal, Fraction, or **Voice**
 - Numeric types (Integer, Decimal, Fraction) show an on-screen keypad instead of the native keyboard
 - Fraction input shows a visual numerator/denominator entry
 - Optional min/max range and allow-negative constraints for numeric types
 - **Exact match (spelling & dictation)**: turn on the **Exact match** switch under an Open Answer question to grade the answer *exactly* — capitalisation and punctuation count — with specific feedback ("Check your capital letters", "You forgot the full stop", "You got 2 letters wrong", "2 words are wrong"). This skips AI grading. Pair it with an **audio prompt** to make a spelling or dictation test: on the question's illustration, choose the **Audio** tab, type the word or sentence, pick a voice, and preview it (regenerate if a tricky word like "read" or "lead" sounds wrong). The student hears the clip with a play button and types what they hear — the text itself is never shown.
+- **Voice (spoken answers)**: set Input Type to **Voice** and the student answers by speaking. Their words are transcribed and graded against your Expected Answer and Evaluation Criteria, exactly like a typed open answer — so meaning is marked, not pronunciation.
+
+  What the student sees depends on the resource's delivery mode:
+
+  | Mode | Student experience |
+  |------|--------------------|
+  | **Conversation** | No button — they just answer out loud, as they've been talking all lesson. The tutor stays quiet, then shows the words it heard with **Send answer** / **Say it again**. |
+  | **Presentation** | A **Record** button. They can listen back and re-record as often as they like before submitting. |
+  | **Worksheet** | No recorder — it prints as a "🗣️ Speak your answer aloud" prompt with ruled lines for you to mark by hand, and isn't auto-graded. |
+
+  Writing them well: say explicitly in Evaluation Criteria that fillers, false starts and self-corrections are fine and that exact wording isn't required — spoken answers don't read like written prose. Don't use Voice for spelling (transcription can't judge it; use the dictation recipe above), which is why the **Exact match** switch is hidden for voice questions. And **fill in the student's date of birth** on their profile: the transcription is held on screen for a reading time based on their age, and without a date of birth we assume 10.
 
 **Ordered List**: Student arranges items in the correct order using drag and drop
 - Best for sequencing steps, ordering events, ranking values, comparing numbers
