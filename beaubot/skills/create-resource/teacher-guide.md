@@ -774,58 +774,77 @@ For comprehensive guidance on creating effective quizzes, see the **Resource Gui
 
 ---
 
-## Using Claude AI to Create Resources
+## The AI Assistant
 
-You can use **Claude Code** (CLI), **Claude Cowork** (desktop app), or **Claude web** to interact with the Beau platform directly through AI. This lets you create resources, generate images, build courses, and evaluate students by having a conversation with Claude instead of using the dashboard UI.
+Beau has an AI Assistant built into the dashboard. It can create resources, build courses,
+review how a student is doing, and suggest improvements to lessons you have already published —
+by having a conversation with it, rather than filling in forms.
 
-### What You Can Do
+Find it at **AI Assistant** in the left-hand navigation.
 
-- **Create complete resources** — describe a topic and audience, and Claude will draft the content, create quizzes, generate images, and assemble everything into a ready-to-use resource
-- **Generate images** — ask Claude to create AI illustrations or formatted text images for your lessons
-- **Build courses** — organise resources into courses with the right progression type
-- **Evaluate students** — ask Claude to analyse a student's progress, scores, and transcripts to generate detailed performance reports with recommendations
+### What it can do
 
-### Getting Started
+Pick a skill when you start a conversation. Teachers have three:
 
-#### Claude Code or Cowork (Plugin)
+- **Create resource** — describe a topic and audience, and it drafts the content, writes quizzes,
+  creates images and diagrams, and assembles a ready-to-use resource. It can build a course and
+  add the resource to it as well.
+- **Evaluate student** — analyses a student's progress, quiz scores and lesson transcripts, and
+  produces a report on how they are getting on and where they may need help.
+- **Optimize resource** — looks at how students actually experienced one of your resources —
+  where they struggled, which questions they got wrong, what they said — and suggests specific
+  edits. It only suggests; nothing changes until you approve it.
 
-1. Install the Beau plugin: `/install-plugin beau-education/beau-plugin`
-2. Authenticate when prompted (uses your Beau account via Auth0)
-3. Invoke a skill:
-   - `/beaubot:create-resource` — Claude guides you through creating a resource step by step
-   - `/beaubot:evaluate-student` — Claude analyses student performance and generates reports
+Administrators also see **Usage insights** for organisation-wide reporting.
 
-#### Claude Web (MCP Connector)
+### Having a conversation
 
-1. Add the Beau MCP server as a remote Connector: `https://api.beau.bot/mcp`
-2. Authenticate via OAuth when prompted
-3. You get access to all 25 tools (but not the guided skill workflows)
+Type what you want in plain language. The Assistant works through the task in steps and shows
+you what it is doing as it goes — which resource it is reading, which quiz it is creating — so
+you can follow along rather than waiting for a result to appear.
 
-### Example Workflows
+If it heads in the wrong direction, press **Stop** and tell it what you would rather it did.
 
-**Creating a resource with Claude:**
-> "Create a Year 6 maths resource about adding fractions with different denominators. Use conversation mode, include diagrams and at least 3 quizzes."
+Conversations are saved. You can leave one and come back to it, and start a **New conversation**
+for an unrelated task. Give a conversation a name if you want to find it again easily.
 
-Claude will:
-1. Check your existing tags and reuse them
-2. Draft structured markdown content with learning objectives
-3. Generate AI images or text images for key concepts
-4. Create quizzes (mix of types) embedded at appropriate points
-5. Optionally create a course and add the resource
+### Examples
 
-**Evaluating a student:**
+**Creating a resource:**
+> "Create a Year 6 maths resource about adding fractions with different denominators. Use
+> conversation mode, include diagrams and at least 3 quizzes."
+
+It will reuse your existing tags, draft the content with learning objectives, create diagrams and
+quizzes at sensible points, and leave you a resource you can preview and edit.
+
+**Checking on a student:**
 > "How is Harry doing in the Prepositions course? Are there any areas where he's struggling?"
 
-Claude will:
-1. Look up Harry's enrollments and progress
-2. Analyse quiz scores, attempt counts, and completion rates
-3. Review lesson transcripts for engagement patterns
-4. Generate a structured report with specific recommendations
+It will look at his enrollments, scores and attempt counts, read the lesson transcripts, and give
+you a report with specific recommendations.
 
-### Tips
+**Improving a lesson that is not working:**
+> "Students keep getting question 3 wrong in my Fractions lesson. What should I change?"
 
-- Be specific about the **audience** (age, year group, ability level) — this shapes the content difficulty and language
-- Mention the **delivery mode** you want (conversation for interactive, presentation for narration, or worksheet for a no-bot self-paced/printable handout written for the student)
-- Ask Claude to **test the resource** after creation to verify it works
-- Use `/beaubot:evaluate-student` regularly to identify students who may need intervention
-- Claude can **export and import resources** as ZIP files for backup or sharing between organisations
+It will look at what students actually answered and said, and propose edits for you to approve.
+
+### Getting good results
+
+- Be specific about the **audience** — age, year group, ability. This shapes the language and
+  difficulty more than anything else you say.
+- Say which **delivery mode** you want: *conversation* for a two-way voice lesson, *presentation*
+  for narration the student listens to, or *worksheet* for a self-paced written activity with no
+  bot.
+- **Review what it produces.** It drafts quickly and confidently, and it does not know your class.
+  Read the content, check the quiz answers, and preview the lesson before assigning it.
+- **Test the resource** afterwards using Test Resource, so you hear how it is actually delivered.
+
+### Using Claude Code or Cowork instead
+
+The same capabilities are available outside the dashboard if you already use Claude. Install the
+Beau plugin with `/install-plugin beau-education/beau-plugin` and sign in with your Beau account,
+then use `/beaubot:create-resource` or `/beaubot:evaluate-student`. Claude web can connect to
+`https://api.beau.bot/mcp` as a remote connector.
+
+This is the same underlying toolset; the dashboard Assistant is simply the version that needs no
+setup.
