@@ -546,6 +546,69 @@ Downloading a transcript as text keeps the transcription (marked "Spoken Answer,
 
 **Who can see a transcript:** administrators can see every transcript in the organisation; teachers can see transcripts for their own enrollments; and a student can see their own — their dashboard Activity Log has the same transcript viewer, including playback of their own spoken answers. No student can see another student's transcript or recordings.
 
+## Safeguarding
+
+Beau watches lessons for signs that a student may need your attention, and tells you when it
+finds something. This section explains what to expect so you know how much to rely on it — and
+where your own judgement still has to do the work.
+
+### What Beau looks for
+
+Two different things, treated separately:
+
+- **Welfare** — a student disclosing self-harm, abuse, something frightening at home, or
+  distress worth a second look. This includes indirect hints, not just explicit statements.
+- **Conduct** — sustained rudeness or abuse aimed at the tutor. Not wrong answers, silliness,
+  or a student going off-topic.
+
+Neither ever affects a student's score. A child who is upset or disruptive is not marked down
+for it.
+
+### How you find out
+
+**By email.** You will get a message about the lesson, with the student's words quoted exactly
+as they said them. You get one email per lesson per severity level — so you are not emailed
+repeatedly about the same thing, but if a lesson is re-reviewed and judged **more** serious, you
+will hear about that.
+
+**In the dashboard.** Open the lesson's transcript (Activity Log → transcript icon) and the
+assessment appears at the top, above the score: how serious it is, the quotes, and why each was
+flagged. There is a **Mark as reviewed** button that records that you have seen it and dealt with
+it.
+
+### Two checks, not one
+
+Beau can raise a concern **during** a lesson — within seconds of a student saying something — and
+again **after** the lesson, when the full conversation is reviewed. The second check reads the
+saved transcript, so it still works if the first one missed something, or if the lesson ended
+unexpectedly.
+
+Occasionally a lesson is ended automatically by the underlying voice provider's own safety
+systems. If that happens the student is told the lesson has ended, that you will be able to see
+what happened, and that they have not done anything wrong. A note is saved in the transcript so
+you can see it was not a technical fault.
+
+### What this is, and what it is not
+
+Beau is a **prompt to look**, not a judgement. The flags are generated automatically from the
+transcript, so:
+
+- **It will sometimes flag things that turn out to be nothing.** A child writing a dramatic
+  sentence for a creative task can read like a disclosure. That is deliberate — it is set to err
+  towards telling you, because a wasted minute of your time costs less than a missed child. The
+  quotes are there so you can dismiss a false alarm in seconds.
+- **It will not catch everything.** Do not treat a lesson with no flag as evidence that nothing
+  happened.
+- **It is not a safeguarding procedure.** If you believe a child is at risk, follow your school
+  or organisation's safeguarding process. Do not reply to the alert email — it is not monitored.
+
+### Checking in on a lesson yourself
+
+The transcript is always available whether or not anything was flagged, and reading one is the
+most reliable way to understand how a student is doing. If a student seems withdrawn, is scoring
+unusually badly, or abandons lessons part-way, the transcript will often tell you more than the
+score does.
+
 ## Working with Bots
 
 Bots are AI tutors that guide students through interactive lessons. Only administrators can create and configure bots.
