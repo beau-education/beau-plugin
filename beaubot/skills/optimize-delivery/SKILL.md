@@ -17,6 +17,7 @@ This skill drives the **lesson-delivery optimization loop** for the Beau platfor
 - **Stamp**: each attempt records its `deliveryConfig` (resolved model/voice/turn-detection/`promptTemplateVersion`, the actual `botId`/`botVoice`, and the `gitCommit` of the prompt-assembly code) plus an `experimentArm` (today a single `none:default`; Phase 2 will vary arms).
 - **Primary metric = first-audio latency**: ms from the server VAD marking the student's turn over (`speech_stopped`) to the bot's first audio. It **excludes** the fixed VAD silence window (~1500 ms) — it measures server+model+network responsiveness, not the full human-perceived gap.
 - **Guardrails**: interruption rate, nudge count, cost, completion, quiz accuracy.
+- **Pacing** (did the lesson get taught, and did it flow): teaching beats before the first quiz, dead air, skipped quizzes. Especially for `presentation` lessons, where the bot narrates alone.
 - **Test runs count.** Teacher test runs are captured (`isTest=true`) and are valid samples for the responsiveness metric (it's a property of the system, not the learner), so you have data before real-student volume. Segment them out for learning-outcome reads.
 
 ## Instructions for Claude
@@ -27,6 +28,7 @@ Confirm a **superadmin** MCP session by calling `get_delivery_baseline`. If it r
 ### 1. Read the current baseline
 Call **`get_delivery_baseline`** (optionally `{ organization }` to scope to one org). It returns, segmented **pooled / real / test**, and **per arm** and **per org**:
 - sample count `n`, median first-audio latency (p50/p95, ms), avg interruptions, nudges, turns, cost, duration.
+- `pacing` (sessions recorded since 2026-10-15; `pacing.n` says how many): `beforeFirstQuizMedian` (bot utterances + media shown before the first quiz — around 1 means the bot skipped the teaching and went straight to questions), `avgDeadAirMs` and `avgDeadAirGapsOver3s` (silence the student did not own: no bot audio, open quiz, video or recording), and `skippedQuizRate` (quizzes replaced before the student answered).
 
 Interpret:
 - Read the **responsiveness** numbers on the **pooled** set (test runs add power).
