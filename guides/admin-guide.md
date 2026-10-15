@@ -349,20 +349,9 @@ Bots are AI tutors that provide interactive guidance during lessons. Only admins
 
 ### Bot Voice
 
-The voice setting controls how the bot sounds when speaking to students during lessons. These are OpenAI Realtime API voices, each with a distinct character:
+The voice setting controls how the bot sounds when speaking to students during lessons. Lessons run on OpenAI's GPT-Live, and the **Voice** picker lists its voices with their character, language and accent (for example "Vesper — Clear and direct (British English, male)").
 
-- **alloy** - Neutral and balanced
-- **ash** - Clear and precise
-- **ballad** - Melodic and smooth
-- **cedar** - Friendly and natural (Recommended)
-- **coral** - Warm and friendly
-- **echo** - Resonant and deep
-- **marin** - Confident and engaging (Recommended)
-- **sage** - Calm and thoughtful
-- **shimmer** - Bright and energetic
-- **verse** - Versatile and expressive
-
-OpenAI recommends **marin** or **cedar** for best quality. Choose a voice that matches the bot's personality and your target audience. For example, a bot designed for young children might work well with a warm voice like "coral", while a more formal academic bot might suit "sage".
+New bots start on **Vesper**, a British English voice, to match the default language policy of British English. Choose a voice whose accent suits your students: a voice's accent shapes how it pronounces everything in the lesson, including number names and spellings.
 
 ### 3D Avatar
 
@@ -398,7 +387,7 @@ If a bot only has a 2D image, that image will be displayed during lessons withou
 
 ### Persona — what you control vs what we control
 
-The realtime system prompt is built per lesson from two sources:
+The lesson prompt is built per lesson from two sources:
 
 - **Server-controlled**: the role ("you are a voice tutor delivering this lesson"), the available tools, turn-taking rules, unclear-audio handling, verbosity discipline, and the safety/escalation rules. You don't see these in the dashboard — they're identical across every bot on the platform and we tune them centrally as OpenAI's prompting guidance evolves.
 - **Admin-controlled (Persona card)**: how *this* tutor sounds, speaks, and pronounces specialist terms. Four free-form fields, all optional. Leave any of them blank and the server falls back to sensible defaults.

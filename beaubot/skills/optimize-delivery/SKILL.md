@@ -75,7 +75,7 @@ Once arms have runs, **`compare_experiment_arms(experimentId)`** returns per-arm
 - **Promotion is manual** — no tool changes the default; recommend promote/keep/iterate and let the user act. Stop a finished experiment with `set_experiment_status(done)`.
 
 ## Current limitations
-- **Arm dimensions that take effect today:** prompt overrides, **Realtime model** (`gpt-realtime*` — e.g. `gpt-realtime-2`/`-mini`/`-1.5`, applied at the mint), **reasoning effort** (minimal/low/medium/high), transcription model, turn detection, and temperature. (Voice is a per-bot setting, not an arm dimension.) Targeting: delivery mode, resource, org, and/or student.
+- **Arm dimensions that take effect today:** prompt overrides and **reasoning effort** (minimal/low/medium/high) for the GPT-Live delegation model. Lessons run on GPT-Live only; there is no model, temperature, transcription or turn-detection dimension. (Voice is a per-bot setting, not an arm dimension.) Targeting: delivery mode, resource, org, and/or student.
 - `compare_experiment_arms` doesn't yet aggregate **quiz eventual-correct**, and `latencyMeasuredRatio` is a proxy (sessions with p50>0) until per-sample counts are captured.
 - The judge uses the platform OpenAI key (gpt-4o); `judge_lesson` costs a few cents per lesson — judge deliberately, not in bulk.
 - Bump `JUDGE_VERSION` in the API when the rubric changes so old/new judgements stay distinct (`get_lesson_quality` returns per-version).

@@ -846,7 +846,7 @@ Call `list_bots` (or `get_bot(id)`) to read each bot's persona before authoring,
   ... }
 ```
 
-Each of `personality / languagePolicy / referencePronunciations / content` maps to a labelled section of the bot's realtime system prompt. Use them to:
+Each of `personality / languagePolicy / referencePronunciations / content` maps to a labelled section of the bot's lesson prompt. Use them to:
 
 - **Match tone**: a bot with `personality: "playful, silly, makes maths jokes"` should not get formal academic prose.
 - **Respect language/accent**: if `languagePolicy` says "British English", spell colour with a "u", say "maths" not "math".
