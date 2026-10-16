@@ -577,7 +577,7 @@ The student then hears the clip with a play button and types what they hear — 
    - **Evaluation Criteria** (for open answer): Optional guidance for AI grading
    - **Retry Limit**: Number of attempts allowed
    - **Hint**: Guidance for incorrect attempts
-   - **Illustration** (optional): An image shown to the student above the question. Use this whenever the student needs to *see a figure while answering* — a diagram to measure, a shape to label, a chart to read. The illustration and the question stay on screen together. **Prefer this over placing the figure inline in the lesson body before the quiz**: an inline image is shown earlier as the bot narrates, so by the time the student answers it may be off screen. Click **Add image** on the quiz block in the editor (or in the quiz panel) to upload one (a visual tool works too, via the Visual tab), and the **×** button on the thumbnail to remove it. Illustrations are only shown to the student — the bot does not see them.
+   - **Illustration** (optional): An image shown to the student above the question. Use this whenever the student needs to *see a figure while answering* — a diagram to measure, a shape to label, a chart to read. The illustration and the question stay on screen together. **Prefer this over placing the figure inline in the lesson body before the quiz**: an inline image is shown earlier as the bot narrates, so by the time the student answers it may be off screen. Click **Add image** on the quiz block in the editor (or in the quiz panel) to upload one (a visual tool works too, via the Visual tab), and the **×** button on the thumbnail to remove it. **What the bot knows about it:** a visual illustration is described to the bot from its settings, so the description is always exact. An image illustration is described by its **description**, and if it has **Bot can see this image** on, the picture itself is sent too. Audio illustrations, used for dictation, are never described, so the word stays secret. The bot uses all of this only to aim hints, and is told never to read out or describe what the illustration shows, because it often holds the answer. Still, don't put the answer in an image's description unless you're happy for the bot to know it.
 4. Click **Save**
 
 The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't edit this text directly.
@@ -597,7 +597,7 @@ The quiz appears as a directive in your content (e.g., `::quiz{#123}`). Don't ed
 | **Evaluation Criteria** | Optional guidance for the AI on how strictly to evaluate answers. (Open answer only) |
 | **Retry Limit** | How many attempts before moving on. Leave empty for unlimited retries. |
 | **Hint** | What the bot tells students after an incorrect answer to guide them. |
-| **Illustration** | Optional image shown above the question in the player (e.g. a diagram, chart, or photo that the student should look at while answering). Not visible to the bot. |
+| **Illustration** | Optional image shown above the question in the player (e.g. a diagram, chart, or photo that the student should look at while answering). The bot is told what it shows, from a visual's settings or an image's description, plus the picture itself for a bot-visible image. It uses this for hints only and never reads it out. |
 
 ### Open Answer Input Restrictions
 

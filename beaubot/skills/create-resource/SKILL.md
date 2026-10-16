@@ -753,6 +753,8 @@ A quiz can have an **illustration image** attached to it (separate from the reso
 
 A quiz illustration can be any image kind — an uploaded/AI image, a `create_svg` drawing, or a `create_visual` visual tool (pass the visual's `id` as the quiz `image`). For maths/science diagrams, prefer a `create_visual` (e.g. `geometry`, `coordinate_grid`, `function_graph`) or a `create_svg` so it stays crisp.
 
+**What the bot knows about it:** a visual illustration is described to the bot from its settings, so the description is always exact. An image illustration is described by its **description**, and if it has **Bot can see this image** on, the picture itself is sent too. Audio illustrations, used for dictation, are never described, so the word stays secret. The bot uses all of this only to aim hints, and is told never to read out or describe what the illustration shows, because it often holds the answer. Still, don't put the answer in an image's description unless you're happy for the bot to know it.
+
 Quiz images are **not** embedded in the resource markdown — they are linked directly to the quiz record via the `image` field. The resource content does NOT need a `![ID](/api/v1/images/ID/data)` reference for quiz illustrations.
 
 ### Attaching an illustration
