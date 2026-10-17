@@ -114,11 +114,13 @@ For organizations that require explicit consent before students access the platf
 
 1. Toggle **Require parental consent for students** to on
 2. Configure the consent form (introduction text, custom questions)
-3. When a new student logs in for the first time, they see the consent form as part of their onboarding flow
+3. Every time a student signs in, they are taken to the consent form until a parent or guardian has completed it
 4. A parent or guardian completes the form on the student's device
 5. On submission, consent is **automatically verified** and the student can proceed to complete their profile and access the dashboard
 
 The consent form is built into the platform — no external forms or manual verification needed.
+
+**No lesson can start without it.** Beau enforces consent on the server, not just in the dashboard: a student whose consent is outstanding is refused every lesson, and if they open a lesson link in the student player they see a screen asking a parent or guardian to complete the form, with a link to it. Teachers, administrators and anonymous share-link visitors are never asked. If you switch consent on when you already have students, each of them is asked on their next sign-in, whatever their status was before.
 
 ##### Configuring the Consent Form
 
@@ -636,9 +638,14 @@ As an admin, you have full access to all teacher functions:
 - Manage student enrollments
 - Monitor completion and scores
 
+### Class progress
+- **Teaching > Class progress** shows every student in every course, sorted so that students who need attention (welfare or conduct flags, gone quiet, not started) come first
+- As an admin you see every teacher's students; use the **Teacher** filter to see one teacher's class
+- Pause, resume or remove enrollments in bulk
+
 ### Students
 - Invite new students
-- View student progress and activity
+- Each student's page shows their activity, scores, course progress, what they are working on and any flags needing attention
 - Assign resources and courses
 
 See the **Teacher Guide** for detailed documentation on these features.

@@ -274,7 +274,7 @@ If you set a maximum enrollment limit:
 
 #### Managing Self-Enrolled Students
 
-Self-enrolled students appear in your normal enrollment list. You can:
+Self-enrolled students appear on **Class progress** and on the course's **Enrollments** tab, like any other student. You can:
 - View their progress in the course details
 - Contact them through the platform
 - Pause or remove their enrollment if needed
@@ -398,16 +398,22 @@ From the student list action menu (three dots), you can:
 
 - **Revoke Consent** (for Submitted or Verified students): Block the student's access by resetting consent to Pending. They must re-submit the consent form to regain access.
 
-**Note**: Students cannot access their dashboard until their consent status is Verified. Contact your administrator if you need help with consent form configuration.
+**Until consent is Verified, the student cannot start a lesson.** Every time they sign in to the dashboard they are taken to the consent form, and if they open a lesson link in the player they see a screen asking a parent or guardian to complete it, with a link to the form. Once a parent has submitted it, they are never asked again. If consent is switched on for an organization that already has students, those students are asked on their next sign-in. Contact your administrator if you need help with consent form configuration.
 
-### Student Details
+### The Student Page
 
-Click on a student to view their profile:
-- Overall progress percentage
-- Contact information and join date
-- Enrollments with individual progress
-- Progress and score charts by course
-- Complete activity log
+Click a student's name — in the student list or on **Class progress** — to open their page. It is one screen, read top to bottom:
+
+- **Header**: age, email, when they were last active, how many lessons they have done in the last 30 days, and when they joined.
+- **Needs attention** (only shown when something does): an unacknowledged welfare or conduct flag (click **Review** to open that lesson's transcript), no lessons for 14 days while lessons are still to do, or parental consent outstanding.
+- **Four numbers**: lessons completed (and how many this week), average score with its trend against the previous five lessons (shown once they have done ten), active weeks out of the last six, and unfinished attempts.
+- **Courses**: one row per course. Each lesson is a dot — filled in its score colour when completed, an amber ring when started but not finished, a grey ring when not started (hover for the lesson name and score). The row shows the next lesson, or when the course was completed, and the course's average score. The menu (three dots) has **Play** and **Copy Play URL**. Completed courses are folded away under **Completed**.
+- **From recent lessons**: **Working on** — the misconceptions the lesson grader noted in their last five lessons — and **Strengths** — the lesson objectives they met. Each item links to the lesson it came from.
+- **Recent lessons**: the last five completed lessons with score and the grader's summary. Click one to open its transcript. **All activity** opens the full activity log.
+
+Teachers see only the courses they teach a student in; administrators see all of them.
+
+**Score colours** are the same everywhere in the dashboard: green from 80%, amber from 60%, red below 60%. A lesson with no score yet is never red.
 
 ### Assigning Resources
 
@@ -419,57 +425,46 @@ You can assign resources to students in several ways:
 3. Choose the student, teacher, and bot
 4. Click **Assign**
 
-**From the Student Details:**
-1. Open the student's profile
-2. Use the enrollment options to add new courses or resources
+**From the student's page:**
+1. Open the student's page
+2. Click **Assign Resource** and choose a course or a single resource
 
-## Managing Enrollments
+A single resource goes into the student's **homework course** — one personal course per student that collects everything assigned to them individually. It appears as **Homework · Assigned lessons** on the student's page and on **Class progress**.
 
-Navigate to **Teaching > Enrollments** to view and manage all student enrollments across your courses.
+## Class Progress
 
-### Enrollment List Features
+Navigate to **Teaching > Class progress** to see, in one place, every student in every course you teach — sorted so the students who need you come first. Administrators see every teacher's students, and can narrow the view to one teacher.
 
-The enrollments page provides a comprehensive view of all enrollments with:
-- **Student Filter**: Find enrollments for a specific student
-- **Teacher Filter**: Filter by assigned teacher
-- **Status Filter**: Show only Active, Paused, or Completed enrollments
-- **Quick Search**: Search across all fields
-- **Export**: Download the list as CSV or Excel
+### What each row shows
 
-### Enrollment Information
+- **Student** (click to open their page)
+- **Course**, and the next lesson they have to do (homework courses show as **Homework · Assigned lessons**)
+- **Lessons**: the same lesson dots as the student page, with how many are done
+- **Score**: their average across completed lessons, in the score colours
+- **Last active**: how long ago they last worked on the course
+- **State**: one of the states below
 
-Each enrollment shows:
-- **Course**: The course name (click to view course details)
-- **Student**: Student name and email (click to view student profile)
-- **Teacher**: The assigned teacher
-- **Status**: Active, Paused, or Completed
-- **Started**: When the enrollment began
-- **Updated**: Last activity date
+### States
 
-### Enrollment Actions
+| State | Meaning |
+|-------|---------|
+| **Needs attention** | The lesson grader raised a welfare or conduct flag that hasn't been acknowledged. Click **Welfare** or **Conduct** to open the lesson's transcript. |
+| **Gone quiet** | The student has started, has lessons left, but hasn't done anything for 14 days |
+| **Not started** | Enrolled, but hasn't attempted a lesson yet |
+| **On track** | Working through the course |
+| **Completed** | Every lesson done, or the enrollment is marked completed |
+| **Paused** | You paused the enrollment |
 
-Use the actions menu (three dots) on each enrollment to:
-- **View Student**: Open the student's profile page
-- **View Course**: Open the course details page
-- **Pause**: Temporarily pause an active enrollment (student cannot continue until resumed)
-- **Resume**: Reactivate a paused enrollment
-- **Delete**: Permanently remove the enrollment (use with caution)
+The counts across the top are also filters — click **gone quiet** to see just those students, and click it again to go back. The page opens on everything still in play (completed and paused are hidden); **Show all** includes them. You can also filter by course.
 
-### Common Use Cases
+### Changing enrollments
 
-**Finding a student's enrollments:**
-1. Use the Student filter dropdown
-2. Select the student's name
-3. View all their enrollments across courses
+Tick one or more rows, then:
+- **Pause**: the student cannot continue the course until resumed
+- **Resume**: reactivate a paused enrollment
+- **Remove**: take the student off the course. This deletes their lesson history for that course, so it asks you to confirm.
 
-**Managing paused enrollments:**
-1. Set Status filter to "Paused"
-2. Review which students are paused
-3. Use Resume action to reactivate as needed
-
-**Checking enrollment status for a course:**
-1. Navigate to the course details page, or
-2. Use the Enrollments page and filter by searching the course name
+**Assign course** (top right) enrolls a student in a course or assigns a single resource. Test runs and the teacher-testing sandbox course never appear here.
 
 ## Monitoring Progress
 
@@ -483,19 +478,7 @@ Your dashboard shows recent student activity including:
 
 ### Student Progress
 
-In student details, you can see:
-- Per-course progress breakdown
-- Individual resource completion status
-- Attempt counts and scores
-- Completion dates
-
-### Enrollment Details
-
-Expand an enrollment row to see per-resource information:
-- Which resources are completed, in progress, or locked
-- Number of attempts on each resource
-- Latest scores
-- Completion timestamps
+For one student, use **the student's page** (above). For everyone at once, use **Class progress**.
 
 ### Session Transcripts
 
@@ -515,10 +498,9 @@ During a lesson, both the student and AI tutor communicate via voice. The platfo
 
 **Viewing Transcripts:**
 
-1. Navigate to a student's profile page
-2. Scroll to the **Activity Log** section
-3. Look for the chat icon in the **Transcript** column
-4. Click the icon to open the transcript viewer
+- On the student's page, click a lesson under **Recent lessons**, a **Working on** / **Strengths** item, or **Review** next to a flag.
+- For older lessons, click **All activity** on the student's page and use the chat icon in the **Transcript** column.
+- On **Class progress**, the **Welfare** / **Conduct** button opens the flagged lesson's transcript.
 
 **Transcript Contents:**
 
