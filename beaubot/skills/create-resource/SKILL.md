@@ -31,7 +31,7 @@ When this skill is invoked, follow these steps:
 1. **Gather Requirements**: Ask the user about:
    - Topic/subject for the resource
    - Target audience (age, skill level)
-   - Delivery mode preference: conversation (two-way voice), presentation (one-way narration), or worksheet (no bot — self-paced screens / printable, written FOR THE STUDENT). This changes who the content is written for: conversation/presentation are written for the bot; a worksheet is written directly to the student.
+   - Delivery mode preference: conversation (two-way voice), presentation (one-way narration), or worksheet (no bot — self-paced screens / printable, written FOR THE STUDENT). This changes who the content is written for: conversation/presentation are written for the bot; a worksheet is written directly to the student. For a worksheet, ask whether it should be **narrated** (read aloud, screen by screen) — suggest it for young or early readers, accessibility, and guided walkthroughs.
    - Desired length (default: 5-10 minutes)
    - Any specific learning objectives
    - Whether they want AI-generated images or have URLs to images/PDFs
@@ -215,6 +215,7 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 - `resourceId` (required): A worksheet resource with `narration.enabled`
 - Speaks every reading screen (a heading starts a screen; quizzes and picture-only screens are silent) and stores one clip per screen. Only screens whose words changed since the last run are re-spoken; a new voice or instructions redoes them all. **Call it again after every content edit** — an edited screen is silent until you do.
 - Write narrated screens **for the ear**: the screen's text *is* the script, read aloud exactly. Short sentences, one idea and one picture per screen, roughly 40–120 words. Avoid tables, symbols and abbreviations the voice would stumble on. Max 4096 characters a screen.
+- A narrated worksheet plays as a slideshow that **fits each screen to the window**: the picture shrinks to the space the words leave, so a long screen means a small picture (especially on phones). Keep screens short; split with a heading rather than letting one run long.
 
 **generate_image** (preferred for custom illustrations):
 - `resourceId` (required): Resource to attach the image to

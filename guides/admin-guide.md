@@ -199,7 +199,7 @@ Beau uses OpenAI for three separate workloads. You can use **one key for everyth
 
 | Key | What it powers | Required? |
 |-----|----------------|-----------|
-| **Primary** | Student lessons (voice), freetext grading, image generation | Yes |
+| **Primary** | Student lessons (voice), freetext grading, image and audio generation, worksheet narration | Yes |
 | **Share links** | Public / anonymous shared lessons | Optional — falls back to the primary key |
 | **AI assistant** | Teachers authoring resources with the in-dashboard AI assistant | Optional — falls back to the primary key |
 

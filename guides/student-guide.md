@@ -99,7 +99,7 @@ The course's progression type determines which resources are available and in wh
 
 ### Delivery Modes
 
-Resources can be delivered in two different modes:
+Resources can be delivered in three different modes:
 
 **Conversation Mode**:
 - You speak with the AI tutor using your microphone
@@ -112,6 +112,12 @@ Resources can be delivered in two different modes:
 - No microphone needed
 - Click "Next" to advance through sections
 - Great for listening and learning at your own pace
+
+**Worksheet Mode**:
+- No tutor: you read each screen yourself and answer the questions, then press **Next**
+- Your answers and score are saved, just like a lesson
+- Prefer paper? Press **Print** at the top to print the worksheet
+- **Narrated worksheets** are read aloud to you, one screen at a time, like a slideshow with a voice. Use the round buttons to **pause/play** or **replay** a screen, untick **Auto-play** if you'd rather press Next yourself, and use **Sound on/off** at the top to turn the voice off. **Back** returns to the previous screen.
 
 ### Resource Progress
 
