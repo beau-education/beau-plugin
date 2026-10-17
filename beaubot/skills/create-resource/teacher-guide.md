@@ -422,7 +422,7 @@ Homework is a lesson you set for **one student**, usually with a due date. Use i
 
 #### Setting homework
 
-Open the **Assign a lesson** dialog — from the student's page (**Assign lesson**, or **Assign homework** on the Homework card), or from the resource list (**Assign to Student**). Choose the student, lesson and teacher, then one of:
+Open the **Assign a lesson** dialog — from **Assign homework** on the student's Homework card, or from the resource list (**Assign to Student**). Choose the student and lesson (the teacher defaults to you, and the bot to the one their homework already uses), then one of:
 
 - **Homework for <student>** (the default): choose a **due date** (a week from today unless you change it; clear it for no due date) and the bot. The student is emailed.
 - **Enroll in class course "…"**: offered when a class course already contains that lesson and has other students in it. Best when the whole class is doing it.
@@ -450,7 +450,7 @@ Click a completed lesson to open its transcript.
 
 Behind the scenes, each student's homework lives in a personal homework course, but you never manage it as one. It doesn't appear in **Courses**, it can't be renamed, opened for enrollment or priced, and no other student can be added to it. Opening it from a link takes you to the student's page.
 
-**Two teachers, one student:** both can set homework for the same student; it all goes into that student's one homework list. For now it is recorded under the teacher who set the student's first homework, so it appears on that teacher's Class progress.
+**Several teachers, one student:** any teacher can set homework for a student; it all goes into that student's one homework list, and each lesson shows who set it ("Assigned 12 Oct by …"). Every teacher who has set a student homework sees that student's homework — on the student's page and on their own Class progress — even if they teach the student nothing else.
 
 ## Class Progress
 
