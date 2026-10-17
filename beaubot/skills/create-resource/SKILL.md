@@ -91,7 +91,7 @@ Use the `beaubot` MCP server tools:
 | `upload_image_from_url` | Upload an image or PDF from a URL to a resource |
 | `prepare_image_upload` | Mint a single-use multipart upload URL for a local file (preferred over `create_image` for files on disk) |
 | `create_image` | Upload an image or PDF (base64 data) to a resource (last resort) |
-| `generate_narration` | **Narrated worksheets:** read every worksheet screen aloud (one TTS clip per screen, made once on the org's key, free to play). Set `narration` on the resource with `update_resource` first; re-run after editing content (only changed screens are re-spoken). |
+| `generate_narration` | **Narrated worksheets:** read every worksheet screen aloud — reading screens and quiz questions (one TTS clip per screen, made once on the org's key, free to play). Set `narration` on the resource with `update_resource` first; re-run after editing content (only changed screens are re-spoken). |
 | `generate_audio` | Generate a spoken clip (text-to-speech) and attach as audio media. For listening or **spelling/dictation**: attach to a freetext quiz illustration (with `exactMatch: true`) so the student hears it and types the answer. The spoken text isn't shown — keep the answer in `expectedAnswer`. |
 | `create_quiz` | Create a quiz for a resource. For **spelling/dictation**, use `questionType: "freetext"` + `exactMatch: true` (deterministic case/punctuation grading) + attach a `generate_audio` clip as the `image`. |
 | `update_quiz` | Update an existing quiz (fix typos, attach an illustration image, set `exactMatch`, etc.) |
@@ -213,7 +213,7 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 
 **generate_narration** (narrated worksheets):
 - `resourceId` (required): A worksheet resource with `narration.enabled`
-- Speaks every reading screen (a heading starts a screen; quizzes and picture-only screens are silent) and stores one clip per screen. Only screens whose words changed since the last run are re-spoken; a new voice or instructions redoes them all. **Call it again after every content edit** — an edited screen is silent until you do.
+- Speaks every screen (a heading starts a screen; picture-only screens are silent) and stores one clip per screen. A quiz screen reads its question, plus the options for single/multiple choice; ordering, matching, fill-in-the-blank and freetext answers are never read. Only screens whose words changed since the last run are re-spoken; a new voice or instructions redoes them all. **Call it again after every content or quiz edit** — an edited screen is silent until you do.
 - Write narrated screens **for the ear**: the screen's text *is* the script, read aloud exactly. Short sentences, one idea and one picture per screen, roughly 40–120 words. Avoid tables, symbols and abbreviations the voice would stumble on. Max 4096 characters a screen.
 - A narrated worksheet plays as a slideshow that **fits each screen to the window**: the picture shrinks to the space the words leave, so a long screen means a small picture (especially on phones). Keep screens short; split with a heading rather than letting one run long.
 

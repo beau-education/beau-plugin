@@ -117,7 +117,7 @@ Resources can be delivered in three different modes:
 - No tutor: you read each screen yourself and answer the questions, then press **Next**
 - Your answers and score are saved, just like a lesson
 - Prefer paper? Press **Print** at the top to print the worksheet
-- **Narrated worksheets** are read aloud to you, one screen at a time, like a slideshow with a voice. Use the round buttons to **pause/play** or **replay** a screen, untick **Auto-play** if you'd rather press Next yourself, and use **Sound on/off** at the top to turn the voice off. **Back** returns to the previous screen.
+- **Narrated worksheets** are read aloud to you, one page at a time, like a slideshow with a voice — questions too. Use the round buttons to **pause/play** or **replay** a page, untick **Auto-play** if you'd rather press Next yourself, and use **Sound on/off** at the top to turn the voice off. **Back** returns to the previous page.
 
 ### Resource Progress
 
