@@ -63,7 +63,7 @@ Use the `beaubot` MCP server tools for data collection:
 | `get_user` | Get full student profile (learning goals, challenges) | Individual student deep dive |
 | `list_courses` | List available courses | Course selection |
 | `list_enrollments` | List enrollments with filtering by course/student/teacher/status | Finding enrollments to analyze |
-| `get_enrollment_progress` | Per-resource scores, completion, attempts for an enrollment | Core performance data |
+| `get_enrollment_progress` | Per-resource scores, completion, attempts, and homework `dueAt` / `overdue` for an enrollment | Core performance data; overdue homework is an engagement warning sign |
 | `get_student_stats` | 30-day averages, streak, all-time totals | Quick performance overview |
 | `get_student_activity` | Paginated activity log with scores and summaries | Recent session history |
 | `get_transcript` | Full conversation transcript with quiz responses | Deep engagement analysis |

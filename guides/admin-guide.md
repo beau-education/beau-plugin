@@ -630,7 +630,7 @@ As an admin, you have full access to all teacher functions:
 ### Resources
 - Create and edit learning resources
 - Apply tags for organization
-- Assign resources directly to students
+- Set a resource as one student's homework, with a due date (see **Homework** in the Teacher Guide)
 
 ### Courses
 - Create courses with resources

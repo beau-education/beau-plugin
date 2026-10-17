@@ -14,6 +14,15 @@ Welcome to the learning platform. This guide explains how to navigate your dashb
 
 When you log in, you'll see your personalized learning dashboard with several sections:
 
+### Your Homework
+
+If your teacher has set you homework, it's at the top of your dashboard under **Your homework**. Each lesson shows:
+- **Overdue by N days** (red) — the due date has passed, so do these first
+- **Due today**, **Due tomorrow** or **Due** with the date — amber when it's within two days
+- **Done** with your score, once you've finished it
+
+Press **Start** to open your homework in the lesson player. The lesson list there shows the same **Due** and **Overdue** labels. When everything is done, the card says so — great work!
+
 ### Overall Progress
 
 At the top, you'll see a summary card showing:

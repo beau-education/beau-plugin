@@ -102,7 +102,8 @@ Use the `beaubot` MCP server tools:
 | `import_resource` | Import a resource from a base64-encoded ZIP (creates a new resource) |
 | `create_course` | Create a new course (collection of resources) |
 | `list_courses` | List existing courses |
-| `add_resource_to_course` | Add a resource to a course |
+| `add_resource_to_course` | Add a resource to a class course (optional `dueAt`) |
+| `assign_homework` | Set a resource as ONE student's homework, with an optional due date |
 | `list_course_resources` | List resources already in a course (with details) |
 
 ### Choosing how to show something visual
@@ -506,6 +507,12 @@ Each quiz file (e.g. `quizzes/quiz-001.json`) contains:
 - `order` (optional): Position in the course (important for sequential courses)
 - `bot` (optional): Override the course's default bot for this specific resource
 - `deliveryMode` (optional): Override the resource's default delivery mode within this course
+- `dueAt` (optional): When the lesson is due (ISO 8601). Already in the course: only the due date changes
+
+**assign_homework** — individual work for one student (never add a student to someone else's homework, and never use a class course for one student's practice):
+- `studentId`, `resourceId`, `teacherId`, `botId` (required)
+- `dueAt` (optional): ISO 8601, end of the day the teacher names (e.g. `2026-10-24T23:59:59Z`). Omit to leave an existing due date unchanged
+- Homework courses are hidden from `list_courses`; the student sees the lesson under "Your homework" and teachers see it flagged once overdue
 
 ## Organizing Resources into Courses
 

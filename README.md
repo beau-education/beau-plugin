@@ -101,7 +101,8 @@ Teacher-authored diagrams rendered as crisp SVG/HTML (stored as a media type, sh
 |------|-------------|
 | `create_course` | Create a course |
 | `list_courses` | List courses |
-| `add_resource_to_course` | Add a resource to a course |
+| `add_resource_to_course` | Add a resource to a class course (optional due date) |
+| `assign_homework` | Set a resource as one student's homework, with an optional due date |
 | `list_course_resources` | List resources in a course with order and bot details |
 
 ### Bots

@@ -79,7 +79,7 @@ For each resource, you can:
 - **Edit**: Click the resource name to modify it
 - **Download ZIP**: Export the resource as a self-contained ZIP file (includes all media and quizzes)
 - **Test Resource**: Preview the resource with an AI tutor before assigning
-- **Assign to Student**: Quickly assign this resource to a specific student
+- **Assign to Student**: Set this resource as one student's homework (with a due date), or enroll them in a class course that has it
 - **Delete**: Remove the resource (use with caution)
 
 ### Exporting and Importing Resources
@@ -407,7 +407,8 @@ Click a student's name — in the student list or on **Class progress** — to o
 - **Header**: age, email, when they were last active, how many lessons they have done in the last 30 days, and when they joined.
 - **Needs attention** (only shown when something does): an unacknowledged welfare or conduct flag (click **Review** to open that lesson's transcript), no lessons for 14 days while lessons are still to do, or parental consent outstanding.
 - **Four numbers**: lessons completed (and how many this week), average score with its trend against the previous five lessons (shown once they have done ten), active weeks out of the last six, and unfinished attempts.
-- **Courses**: one row per course. Each lesson is a dot — filled in its score colour when completed, an amber ring when started but not finished, a grey ring when not started (hover for the lesson name and score). The row shows the next lesson, or when the course was completed, and the course's average score. The menu (three dots) has **Play** and **Copy Play URL**. Completed courses are folded away under **Completed**.
+- **Homework**: the lessons you've set this student individually, with due dates — see **Homework** below.
+- **Courses**: one row per class course. Each lesson is a dot — filled in its score colour when completed, an amber ring when started but not finished, a grey ring when not started (hover for the lesson name and score). The row shows the next lesson, or when the course was completed, and the course's average score. The menu (three dots) has **Play** and **Copy Play URL**. Completed courses are folded away under **Completed**.
 - **From recent lessons**: **Working on** — the misconceptions the lesson grader noted in their last five lessons — and **Strengths** — the lesson objectives they met. Each item links to the lesson it came from.
 - **Recent lessons**: the last five completed lessons with score and the grader's summary. Click one to open its transcript. **All activity** opens the full activity log.
 
@@ -415,21 +416,41 @@ Teachers see only the courses they teach a student in; administrators see all of
 
 **Score colours** are the same everywhere in the dashboard: green from 80%, amber from 60%, red below 60%. A lesson with no score yet is never red.
 
-### Assigning Resources
+### Homework
 
-You can assign resources to students in several ways:
+Homework is a lesson you set for **one student**, usually with a due date. Use it for individual practice, catch-up or extension work. For something the whole class is doing, put it in a class course instead.
 
-**From the Resource List:**
-1. Click the actions menu on a resource
-2. Select **Assign to Student**
-3. Choose the student, teacher, and bot
-4. Click **Assign**
+#### Setting homework
 
-**From the student's page:**
-1. Open the student's page
-2. Click **Assign Resource** and choose a course or a single resource
+Open the **Assign a lesson** dialog — from the student's page (**Assign lesson**, or **Assign homework** on the Homework card), or from the resource list (**Assign to Student**). Choose the student, lesson and teacher, then one of:
 
-A single resource goes into the student's **homework course** — one personal course per student that collects everything assigned to them individually. It appears as **Homework · Assigned lessons** on the student's page and on **Class progress**.
+- **Homework for <student>** (the default): choose a **due date** (a week from today unless you change it; clear it for no due date) and the bot. The student is emailed.
+- **Enroll in class course "…"**: offered when a class course already contains that lesson and has other students in it. Best when the whole class is doing it.
+
+If the student already has the lesson, the dialog says so. Assigning a lesson that is already their homework only changes its due date.
+
+#### Due dates and overdue homework
+
+A due date means "by the end of that day". Once it passes and the lesson isn't done, the homework is **overdue**:
+- the student's page shows it in **Needs attention**, and the Homework card marks it **Overdue by N days**;
+- on **Class progress** the row shows the **Overdue** state, near the top;
+- the student sees it in red under **Your homework** on their dashboard, and as **Overdue** in the lesson list when they start.
+
+Homework due within two days is shown in amber.
+
+#### Managing homework
+
+The **Homework** card on the student's page lists everything you've set them: overdue first, then by due date, then lessons with no due date, then completed ones with their score. For each:
+- **Change due date** (calendar icon) — or clear it;
+- **Remove** (bin icon) — only for homework the student hasn't started. Once they have attempted it, removing it would delete their attempts and transcripts, so it can't be removed; clear its due date instead.
+
+Click a completed lesson to open its transcript.
+
+#### Homework is not a course
+
+Behind the scenes, each student's homework lives in a personal homework course, but you never manage it as one. It doesn't appear in **Courses**, it can't be renamed, opened for enrollment or priced, and no other student can be added to it. Opening it from a link takes you to the student's page.
+
+**Two teachers, one student:** both can set homework for the same student; it all goes into that student's one homework list. For now it is recorded under the teacher who set the student's first homework, so it appears on that teacher's Class progress.
 
 ## Class Progress
 
@@ -438,7 +459,7 @@ Navigate to **Teaching > Class progress** to see, in one place, every student in
 ### What each row shows
 
 - **Student** (click to open their page)
-- **Course**, and the next lesson they have to do (homework courses show as **Homework · Assigned lessons**)
+- **Course**, and what's next: the next lesson, or for homework when it's due (or how many are overdue). Homework shows as **Homework · Assigned lessons**
 - **Lessons**: the same lesson dots as the student page, with how many are done
 - **Score**: their average across completed lessons, in the score colours
 - **Last active**: how long ago they last worked on the course
@@ -449,6 +470,7 @@ Navigate to **Teaching > Class progress** to see, in one place, every student in
 | State | Meaning |
 |-------|---------|
 | **Needs attention** | The lesson grader raised a welfare or conduct flag that hasn't been acknowledged. Click **Welfare** or **Conduct** to open the lesson's transcript. |
+| **Overdue** | Homework past its due date and not done (the row shows how many) |
 | **Gone quiet** | The student has started, has lessons left, but hasn't done anything for 14 days |
 | **Not started** | Enrolled, but hasn't attempted a lesson yet |
 | **On track** | Working through the course |
