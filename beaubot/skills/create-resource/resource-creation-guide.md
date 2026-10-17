@@ -65,6 +65,7 @@ Resources can be delivered in three modes, which you select when creating the re
 - Write the content **directly to the student** (e.g. "Read the passage below, then answer the questions") — not as instructions to a bot. Make instructions and questions self-explanatory, since no tutor is there to clarify.
 - The same resource can be **printed** as a take-home worksheet — by you from the editor toolbar (**Print**), or by the **student from the worksheet screen** (a **Print** button in the header) if they'd rather work on paper. (Email-as-PDF is planned.)
 - Ideal for: independent practice, homework, printable handouts, assessments, and any time you want a written record without a voice session.
+- **Narrated worksheets:** turn on **Narration** (the button beside the delivery mode) and each screen is read aloud while the student sees it — a slideshow with a voice. Choose the voice and how it should speak, then **Generate narration**. The audio is made once, on your organisation's OpenAI key, so playing it costs nothing; after you edit, only the screens you changed are re-recorded (an edited screen stays silent until you update). Students get play/pause, replay, **Auto-play** (turns the page when a screen finishes) and **Sound off**. Write narrated screens for the ear: the screen's words are read exactly, so keep to short sentences, one idea and one picture per screen. Great for young or early readers, accessibility, and product-style walkthroughs.
 
 ### How the Bot Works
 
