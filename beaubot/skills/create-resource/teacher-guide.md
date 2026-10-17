@@ -128,7 +128,7 @@ Before assigning a resource to students, you can test it to verify the AI tutor 
 4. Optionally select a **Student** profile to simulate (defaults to yourself)
 5. Click **Start Test** to open the player
 
-During testing, you'll experience the lesson exactly as a student would - including voice interaction with the AI tutor. Test sessions are automatically marked as "tests" and won't appear in the student's activity log by default.
+During testing, you'll experience the lesson exactly as a student would - including voice interaction with the AI tutor. Test sessions are automatically marked as "tests" and won't appear in the student's activity log by default. They run in your own **Test Sandbox** course, which Beau manages for you and which is not shown on the Courses page.
 
 **What to check when testing:**
 - Does the bot introduce the topic clearly?
@@ -218,6 +218,15 @@ Courses are collections of resources organized for students to complete. Navigat
 2. Click **Add Resource**
 3. Select resources from your library
 4. **Drag and drop** resources to set the order (important for sequential courses)
+
+### Removing a Resource from a Course
+
+Click the bin icon on the resource's row.
+
+- If **no student has started it**, it is simply removed.
+- If **students have started it**, it is **archived** instead: it leaves the course, so it no longer counts towards anyone's progress or completion, but every attempt, score and transcript is kept. Archived resources are listed under **Archived** at the bottom of the course's resources, with **Restore** to put one back at the end of the course. Adding the same resource again also restores it.
+
+Removing or restoring a resource re-checks who has completed the course: removing the last unfinished resource can complete it for a student, and restoring one can reopen it.
 
 ### Overriding the Bot for Specific Resources
 
@@ -334,7 +343,7 @@ For each enrollment, you can:
 - **Play**: Open the enrollment in player mode (student view)
 - **Test Course**: Open in test mode for verification
 - **Copy URL**: Get the player URL for external sharing
-- **Delete**: Remove the enrollment
+- **Delete**: Remove the student from the course. If they had started it, their lesson history is kept and enrolling them again brings it back.
 
 ### Testing a Course
 
@@ -442,7 +451,7 @@ Homework due within two days is shown in amber.
 
 The **Homework** card on the student's page lists everything you've set them: overdue first, then by due date, then lessons with no due date, then completed ones with their score. For each:
 - **Change due date** (calendar icon) — or clear it;
-- **Remove** (bin icon) — only for homework the student hasn't started. Once they have attempted it, removing it would delete their attempts and transcripts, so it can't be removed; clear its due date instead.
+- **Remove** (bin icon) — takes the lesson out of their homework. If they have already attempted it, their attempts and transcripts are kept (and still show in their Activity Log); assigning the same lesson again brings it back.
 
 Click a completed lesson to open its transcript.
 
@@ -484,7 +493,7 @@ The counts across the top are also filters — click **gone quiet** to see just 
 Tick one or more rows, then:
 - **Pause**: the student cannot continue the course until resumed
 - **Resume**: reactivate a paused enrollment
-- **Remove**: take the student off the course. This deletes their lesson history for that course, so it asks you to confirm.
+- **Remove**: take the student off the course. It asks you to confirm. Their lesson history and transcripts are kept, and enrolling them in the course again brings it back.
 
 **Assign course** (top right) enrolls a student in a course or assigns a single resource. Test runs and the teacher-testing sandbox course never appear here.
 
@@ -579,6 +588,11 @@ will hear about that.
 assessment appears at the top, above the score: how serious it is, the quotes, and why each was
 flagged. There is a **Mark as reviewed** button that records that you have seen it and dealt with
 it.
+
+**Your organisation's admins see every concern.** **Admin ▸ Safeguarding** lists every welfare
+and conduct concern for every student, whoever teaches them, with what is still waiting for
+review — so a concern is never left unseen just because a teacher missed an email. When you mark
+a concern as reviewed, it shows as reviewed there too, with your name.
 
 ### Two checks, not one
 

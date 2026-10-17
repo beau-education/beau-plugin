@@ -641,7 +641,7 @@ As an admin, you have full access to all teacher functions:
 ### Class progress
 - **Teaching > Class progress** shows every student in every course, sorted so that students who need attention (welfare or conduct flags, gone quiet, not started) come first
 - As an admin you see every teacher's students; use the **Teacher** filter to see one teacher's class
-- Pause, resume or remove enrollments in bulk
+- Pause, resume or remove enrollments in bulk (removing keeps the student's lesson history; enrolling them again brings it back)
 
 ### Students
 - Invite new students
@@ -649,6 +649,35 @@ As an admin, you have full access to all teacher functions:
 - Assign resources and courses
 
 See the **Teacher Guide** for detailed documentation on these features.
+
+## Safeguarding
+
+**Admin ▸ Safeguarding** is the one place to review every welfare and conduct concern raised in
+lessons across your organisation — every student, every teacher. Only admins can see it.
+
+The lesson grader reads each finished lesson and flags:
+- **Welfare** — *Concern* or *Urgent*: a student disclosing self-harm, abuse, something
+  frightening at home, or distress worth a second look;
+- **Conduct** — *Minor* or *Persistent*: sustained rudeness or abuse aimed at the tutor.
+
+Each concern shows the student (click to open their page), the lesson, course and teacher, when
+it happened, and the student's own words with why each was flagged.
+
+- **To review** lists concerns no one has marked as reviewed yet, most serious first (urgent
+  welfare at the top, with a banner when any are waiting). **Reviewed** shows who reviewed each
+  and when; **All** shows both. Filter by **Welfare** or **Conduct** with the **Type** menu.
+- **Read transcript** opens the whole lesson.
+- **Mark reviewed** records that you have seen the concern and dealt with it. A teacher marking
+  it reviewed from the transcript counts too, and shows their name.
+
+Concerns stay listed even after the lesson is removed from its course or the student is removed
+from it: a concern about a child does not stop mattering when a course is tidied up. Teacher test
+runs are never included.
+
+The student's teacher is also emailed about each new welfare concern. Beau's flags are a prompt
+to look, not a judgement, and are not a safeguarding procedure — if you believe a child is at
+risk, follow your organisation's safeguarding policy. See **Safeguarding** in the Teacher Guide
+for what the grader looks for and its limits.
 
 ## Common Administrative Tasks
 
