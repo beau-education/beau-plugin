@@ -209,7 +209,7 @@ All of these embed the same way in the content — `![ID](/api/v1/images/ID/data
 - `tags` (optional): New tags (replaces existing — must come from the catalog)
 - `deliveryMode` (optional): `"conversation"`, `"presentation"`, or `"worksheet"`
 - `coverImage` (optional): Image ID to use as the resource cover (shown to students when the lesson starts). The image must already be attached to the resource (use `create_visual`, `generate_image`, `upload_image_from_url`, `prepare_image_upload` + curl, or `create_image` first, then pass the returned ID here). Pass `null` to remove the cover.
-- `narration` (optional, worksheet mode): `{ enabled, voice, instructions? }` — read each screen aloud. `voice` is a TTS voice (`alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `nova`, `onyx`, `sage`, `shimmer`); `instructions` steers delivery ("Warm British English accent, calm pace"). Then call `generate_narration`.
+- `narration` (optional, worksheet mode): `{ enabled, voice, instructions? }` — read each screen aloud. `voice` is a TTS voice: `marin` or `cedar` (OpenAI's best quality — use these unless asked otherwise), or `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `nova`, `onyx`, `sage`, `shimmer`, `verse`; `instructions` steers delivery ("Warm British English accent, calm pace"). Then call `generate_narration`.
 
 **generate_narration** (narrated worksheets):
 - `resourceId` (required): A worksheet resource with `narration.enabled`
