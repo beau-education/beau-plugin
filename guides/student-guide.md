@@ -119,6 +119,8 @@ Resources can be delivered in three different modes:
 - Prefer paper? Press **Print** at the top to print the worksheet
 - **Narrated worksheets** are read aloud to you, one page at a time, like a slideshow with a voice — questions too. Use the round buttons to **pause/play** or **replay** a page, untick **Auto-play** if you'd rather press Next yourself, and use **Sound on/off** at the top to turn the voice off. **Back** returns to the previous page.
 
+Beau's tutors, and the voice that reads narrated worksheets, are AI voices: made by a computer, not a real person. They can sometimes get things wrong, so if something doesn't sound right, ask your teacher.
+
 ### Resource Progress
 
 As you work through a course, each resource tracks your progress:
