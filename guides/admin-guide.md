@@ -312,11 +312,14 @@ You can resend invitations to users with Legacy status.
 
 ### Editing Users
 
-Click on any user to:
-- Update their name or email
-- Modify their teacher profile description
-- Modify assigned tags
-- Upload a profile photo
+Click on any user to change what only an admin can:
+- Their **roles** (admin, teacher, student)
+- Their **tags**
+- **Delete user** (after a confirmation): their sign-in is deleted, so they lose access straight away; their lessons, transcripts and other records are kept
+
+Everything else about a person is theirs to edit, on their own **Account** pages: their name, photo and, for teachers, the **Teacher** tab with two separate texts:
+- **Your bio, for parents**: shown to parents choosing a teacher and on your public homepage
+- **How you teach**: read by the AI tutor in lessons, never shown to parents or students
 
 ### Managing User Roles
 
@@ -348,13 +351,13 @@ When editing an existing user, admins can manage their roles using the **Roles**
 
 When the AI bot delivers a lesson, it receives context that includes:
 - The bot's system prompt
-- The teacher's profile description
+- The teacher's "How you teach" text
 - The student's profile description
 - The resource content
 
 This allows the bot to personalize delivery based on teaching style and student background. As an admin:
-- Ensure teacher profiles include relevant expertise and teaching approach
-- Add relevant details to student profiles (students cannot edit their own profiles)
+- Encourage teachers to fill in **How you teach** (Account › Teacher) with their expertise and approach
+- Encourage parents to fill in **About the student** (Account › Student)
 - Create bot descriptions that complement your teachers' styles
 
 **Example student profile:**
