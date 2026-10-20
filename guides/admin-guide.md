@@ -22,6 +22,7 @@ Navigate to **Admin > Settings** to configure your organization. Settings are or
 | **Stripe** | Stripe connection status and platform fee (read-only) |
 | **Sharing** | Share-link kill switch and revoke-all panic button |
 | **Homepage** | Your public homepage: words, colour, banner, featured worksheets and videos, teachers |
+| **Policies** | Your terms, privacy, refund and AI privacy policies, each on its own public page |
 | **Tutoring** | Time zone and half terms for in-person lessons |
 
 If the primary OpenAI API key is not configured, a warning banner appears across all tabs linking to the OpenAI tab.
@@ -231,12 +232,23 @@ The homepage needs **open sign-up** (Students tab), since every course on it lea
 - **Publish the homepage**: the on/off switch. **View page** opens it once it's on.
 - **Headline** and **Introduction**: the words across the top of the page. With no headline, it reads "Learn with" and your organization's name.
 - **Brand colour**: the buttons and, with no banner photo, the background behind the headline.
-- **Contact email** (optional): shown at the bottom of the page for questions.
 - **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
 - **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Sharing tab). Videos are the ones uploaded to your media library.
 - **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out.
+  Each teacher has a **Contact** button. It opens a short form (name, email, optional phone, message), and the message is emailed to the teacher with reply-to the parent, so the teacher's own email address stays private until they reply.
+- **What parents say** (optional):
+  - **Google reviews**: paste two links from your free Google Business Profile (business.google.com): the "Ask for reviews" link (the **Leave a review** button opens Google's star-rating box) and your Google Maps link (**Read our reviews on Google**).
+  - **Testimonials**: up to 6, shown as a carousel that moves on by itself, each with the parent's words, a name and an optional description ("Mum to a little girl, age 7"). Use parents' real words, unedited, and only with their permission: UK law treats fake or edited reviews as misleading.
+- **Questions parents ask** (optional): up to 12 questions and answers, shown as a list parents open one at a time.
+- **Find us**: your address (with an **Open in Google Maps** button), phone and email, taken from the General tab, so there's nothing to type twice. Switch it off if you'd rather not show your address, for example if you teach from home.
 
 Your logo, website and privacy policy (General tab) appear on the page too.
+
+### Policies Tab
+
+Write your **Terms of Service**, **Privacy Policy**, **Refund Policy** and **AI Privacy Policy** here, in Markdown (`# Heading`, `**bold**`, `- list item`). Use **Preview** to check how one looks. Each one you write gets its own public page (beau.bot/your-slug/policies/…), linked from the bottom of your homepage; leave one empty to leave it out. **View page** opens a saved policy.
+
+If you write a Privacy Policy here, the homepage links to it instead of the privacy policy link on the General tab.
 
 ### Stripe Tab
 
