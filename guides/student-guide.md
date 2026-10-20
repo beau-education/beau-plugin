@@ -87,8 +87,9 @@ Your dashboard includes visual charts showing:
 
 ### Booking In-Person Lessons
 
-Some courses in the **Course Catalog** are in-person 1:1 lessons with a teacher, bought a half term at a time. Click **Book lessons**:
+Some courses in the **Course Catalog** (and on your organisation's homepage) are in-person 1:1 lessons with a teacher, bought a half term at a time. Click **Book lessons**. You can book straight after creating your account: verifying your email, the parental consent form and the rest of your child's profile can wait until before their first AI lesson.
 
+1. If we don't know yet, tell us who the lessons are for: your child's name and date of birth (we show the school year it means).
 1. Choose the half term.
 2. Choose a teacher (if there's more than one): you'll see their photo, subjects and prices.
 3. Choose the lesson length and how many lessons a week, and tell the teacher when suits you (for example "weekday afternoons after 4pm, not Wednesdays").
