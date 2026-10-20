@@ -369,6 +369,31 @@ This opens the player in test mode where you can:
 
 **Tip:** Always test a course before sharing the enrollment URL with students to ensure the content flows correctly and the AI tutor behaves as expected.
 
+## In-Person Tutoring
+
+If your organization sells in-person 1:1 lessons, you teach them through Beau too, and set Beau homework between them.
+
+### Your teaching profile
+In **Account › Teaching**, write a short bio, add your subjects, and set your **hourly rate** and the **notice** you need to change a lesson (24 hours by default). Parents see these, with your profile photo, when they choose a teacher. A new rate only applies to new bookings.
+
+Below them, draw your **weekly hours** on a repeating week: drag to add the times you can teach (e.g. Tuesdays 15:00–18:00, or Saturday mornings) and click one to set where it is. Parents can only book lessons inside these hours. Here you can also make a private **calendar link** to subscribe to in Apple Calendar, Google Calendar or Outlook.
+
+### Your lesson calendar
+Open **Calendar**. Your weekly hours show in green.
+- **Click a lesson** to mark it attended, a no-show or cancelled, and to keep private notes on what you covered.
+- **Move lesson** moves it to any date and time you choose, weekends included, as long as it doesn't clash with your other lessons or blocked-out time. For a cancelled or missed lesson the button is **Book a catch-up**: the lesson is scheduled again at no extra charge. The family is emailed the new time.
+- **Block out time** for days or hours you can't teach: press the button, then drag across the hours (or select days in the month view). If lessons are already booked then, you'll see them and can cancel them; the family's refund is made from Payments by your admin. Click a grey block to add or change its note (only you and admins see it), or to unblock it.
+
+### Creating a tutoring course
+Create a course and choose **Course type: In-person lessons**. Set the lesson lengths parents can choose (30 and/or 60 minutes), how many lessons a week a booking may have, the location, subject, age range and what's included, then the **teachers** and **terms** it's offered in. Turn on **Open Enrollment** to let parents book it. If only one teacher is listed, parents skip choosing.
+
+To offer an existing in-person course yourself, edit it and add yourself under **Teachers parents can choose**; parents only see you once you've set an hourly rate and weekly hours in Account › Teaching.
+
+An in-person course can also have **AI lessons**: choose a bot and add resources on its **Resources** tab, as for any course. Every student who books it gets them, to do between sessions. (For one student only, set homework instead.)
+
+### Homework between lessons
+Assign homework as usual from the student's page. For a student with in-person lessons, the due date defaults to the day before their next lesson.
+
 ## Managing Students
 
 Navigate to **Teaching > Students** to view and manage your students.

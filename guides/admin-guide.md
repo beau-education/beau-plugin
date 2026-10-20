@@ -226,6 +226,29 @@ Displays your Stripe Connect account status and platform fee percentage (read-on
 
 For detailed Stripe setup instructions, see the **Payments and Stripe Integration** section below.
 
+### Tutoring Tab
+
+Set up in-person 1:1 tutoring (see **In-Person Tutoring** below):
+
+- **Time zone**: every lesson time, teacher's availability and booking email uses it. Defaults to Europe/London; summer time is handled for you.
+- **Terms**: add each term with its first and last day and its breaks (half term, bank holidays). Parents book a term at a time, and lessons fall on the chosen weekdays between the term's dates, skipping the breaks. Once a term has bookings only its name can change, and it can't be deleted.
+
+## In-Person Tutoring
+
+Your organization can sell terms of in-person 1:1 lessons alongside AI lessons. A parent signs in as their child (the child's account uses the parent's email), chooses a teacher and weekly times, and pays at checkout.
+
+**Setting it up**
+1. Add your terms (Settings › Tutoring).
+2. Each teacher fills in **Account › Teaching**: bio, subjects, hourly rate and how many hours' notice they need to change a lesson. Only the teacher can set their rate; you can see it. A teacher with no rate isn't offered to parents.
+3. Each teacher draws their **weekly hours** in Account › Teaching (weekends included).
+4. A teacher creates a course with **Course type: In-person lessons** (it can also have AI lessons on its Resources tab, for students to do between sessions), chooses the lesson lengths (30 and/or 60 minutes), the teachers, the terms, and turns on **Open Enrollment** so parents can book it.
+
+**Prices and fees**: a lesson costs the teacher's hourly rate × its length. A parent pays for the lessons left in the term at the times they chose, so someone joining in week 3 pays less. In-person bookings carry their own platform fee (shown on the Stripe tab), separate from the fee on AI courses. Payments go to your organization's Stripe account; **Payments** shows in-person income per teacher so you can pay your teachers.
+
+**Calendar**: shows every teacher's lessons and blocked-out time. Choose a teacher to edit their weekly hours, block out time for them (e.g. sick leave), or move one of their lessons. Blocking out time with booked lessons in it cancels those lessons after you confirm; refund the family from **Payments**, or book a catch-up from the lesson.
+
+**Not yet available**: parents moving or cancelling a lesson themselves, paid extra lessons, automatic refunds for cancelled lessons, and reminders before each lesson.
+
 ## User Management
 
 Navigate to **Admin > Users** to manage all users in your organization.
