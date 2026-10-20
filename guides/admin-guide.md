@@ -21,6 +21,8 @@ Navigate to **Admin > Settings** to configure your organization. Settings are or
 | **OpenAI** | The three OpenAI API keys (primary, share links, AI assistant) |
 | **Stripe** | Stripe connection status and platform fee (read-only) |
 | **Sharing** | Share-link kill switch and revoke-all panic button |
+| **Homepage** | Your public homepage: words, colour, banner, featured worksheets and videos, teachers |
+| **Tutoring** | Time zone and half terms for in-person lessons |
 
 If the primary OpenAI API key is not configured, a warning banner appears across all tabs linking to the OpenAI tab.
 
@@ -220,6 +222,22 @@ Public lesson URLs let anyone — including people without an account on your pl
 - No student profile, no user row
 - The visitor's interaction is in-memory only and disappears when they close the tab
 
+### Homepage Tab
+
+Your organization can have a public homepage at **beau.bot/your-slug** that anyone can visit. It shows who you are and lists every course with open enrollment (teacher previews are left out). A visitor picks a course, signs up (or signs in) and goes straight on: to the booking page for in-person lessons, or to the course catalog on their home page for AI lessons, where they enrol or pay.
+
+The homepage needs **open sign-up** (Students tab), since every course on it leads to sign-up. Turning open sign-up off takes the page down too.
+
+- **Publish the homepage**: the on/off switch. **View page** opens it once it's on.
+- **Headline** and **Introduction**: the words across the top of the page. With no headline, it reads "Learn with" and your organization's name.
+- **Brand colour**: the buttons and, with no banner photo, the background behind the headline.
+- **Contact email** (optional): shown at the bottom of the page for questions.
+- **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
+- **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Sharing tab). Videos are the ones uploaded to your media library.
+- **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out.
+
+Your logo, website and privacy policy (General tab) appear on the page too.
+
 ### Stripe Tab
 
 Displays your Stripe Connect account status and platform fee percentage (read-only). Manage your Stripe connection from the **Admin > Payments** page.
@@ -230,22 +248,23 @@ For detailed Stripe setup instructions, see the **Payments and Stripe Integratio
 
 Set up in-person 1:1 tutoring (see **In-Person Tutoring** below):
 
-- **Time zone**: every lesson time, teacher's availability and booking email uses it. Defaults to Europe/London; summer time is handled for you.
-- **Terms**: add each term with its first and last day and its breaks (half term, bank holidays). Parents book a term at a time, and lessons fall on the chosen weekdays between the term's dates, skipping the breaks. Once a term has bookings only its name can change, and it can't be deleted.
+- **Time zone**: every lesson time and booking email uses it. Defaults to Europe/London; summer time is handled for you.
+- **Half terms**: add each half term parents can buy, with its first and last day and any days off in it (bank holidays, INSET days). A half term with bookings keeps its dates (only its name can change) and can't be deleted.
 
 ## In-Person Tutoring
 
-Your organization can sell terms of in-person 1:1 lessons alongside AI lessons. A parent signs in as their child (the child's account uses the parent's email), chooses a teacher and weekly times, and pays at checkout.
+Your organization can sell in-person 1:1 lessons a half term at a time, alongside AI lessons. A parent signs in as their child (the child's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
 
 **Setting it up**
-1. Add your terms (Settings › Tutoring).
-2. Each teacher fills in **Account › Teaching**: bio, subjects, hourly rate and how many hours' notice they need to change a lesson. Only the teacher can set their rate; you can see it. A teacher with no rate isn't offered to parents.
-3. Each teacher draws their **weekly hours** in Account › Teaching (weekends included).
-4. A teacher creates a course with **Course type: In-person lessons** (it can also have AI lessons on its Resources tab, for students to do between sessions), chooses the lesson lengths (30 and/or 60 minutes), the teachers, the terms, and turns on **Open Enrollment** so parents can book it.
+1. Add your half terms (Settings › Tutoring).
+2. Each teacher fills in **Account › Teacher**: bio, subjects, a **price for each lesson length** they offer (30, 45 or 60 minutes) and how many days' notice they need to reschedule a lesson (14 by default). Only the teacher can set their prices; you can see them. A teacher without a price for one of the course's lengths isn't offered to parents.
+3. A teacher creates a course with **Course type: In-person lessons** (it can also have AI lessons on its Resources tab, for students to do between sessions), chooses the lesson lengths, the most lessons a week, the teachers and the half terms, and turns on **Open Enrollment** so parents can book it.
 
-**Prices and fees**: a lesson costs the teacher's hourly rate × its length. A parent pays for the lessons left in the term at the times they chose, so someone joining in week 3 pays less. In-person bookings carry their own platform fee (shown on the Stripe tab), separate from the fee on AI courses. Payments go to your organization's Stripe account; **Payments** shows in-person income per teacher so you can pay your teachers.
+**Prices and fees**: a booking is the whole half term: every teaching week × lessons a week, at the teacher's price for that length. It's the full price whenever it's bought (it can be bought until the start of the half term's last week). A week with a bank holiday still counts; the teacher schedules around it. In-person bookings carry their own platform fee (shown on the Stripe tab), separate from the fee on AI courses. Payments go to your organization's Stripe account; **Payments** shows in-person income per teacher so you can pay your teachers.
 
-**Calendar**: shows every teacher's lessons and blocked-out time. Choose a teacher to edit their weekly hours, block out time for them (e.g. sick leave), or move one of their lessons. Blocking out time with booked lessons in it cancels those lessons after you confirm; refund the family from **Payments**, or book a catch-up from the lesson.
+**Scheduling**: a paid booking appears under **Calendar › To schedule** with the family's note and contact details. The teacher agrees times with the family, then clicks **Schedule**: they see their week, click the agreed times, and Beau creates every lesson of the half term, leaving out any week that clashes (for a single lesson instead). The family is emailed every date. A lesson cancelled later puts the booking back under To schedule, to rearrange.
+
+**Calendar**: shows every teacher's lessons, bookings to schedule and blocked-out time. Choose a teacher to schedule for them, block out time for them (e.g. sick leave), or move one of their lessons. Blocking out time with booked lessons in it cancels those lessons after you confirm; they then wait to be rearranged, or refund the family from **Payments**.
 
 **Not yet available**: parents moving or cancelling a lesson themselves, paid extra lessons, automatic refunds for cancelled lessons, and reminders before each lesson.
 

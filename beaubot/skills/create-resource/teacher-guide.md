@@ -206,6 +206,7 @@ Courses are collections of resources organized for students to complete. Navigat
 
 1. Click **New Course**
 2. Enter a **Name** and **Description**
+   - Optionally upload a **Course picture**. It's shown on the course's cards for students and parents, and on your organization's public homepage. Use a landscape JPG, PNG or WebP picture, 1200×600px (2:1) or larger and up to 2 MB. Cards crop it to fill, so keep the subject in the middle. Without one, the card shows a colour.
 3. Select a default **Bot** for interactive lessons
 4. Choose a **Progression Type**:
    - **Flexible**: Students complete resources in any order
@@ -374,20 +375,26 @@ This opens the player in test mode where you can:
 If your organization sells in-person 1:1 lessons, you teach them through Beau too, and set Beau homework between them.
 
 ### Your teaching profile
-In **Account › Teaching**, write a short bio, add your subjects, and set your **hourly rate** and the **notice** you need to change a lesson (24 hours by default). Parents see these, with your profile photo, when they choose a teacher. A new rate only applies to new bookings.
+In **Account › Teacher**, write a short bio, add your subjects, set a **price for each lesson length** you offer (30, 45 or 60 minutes; leave a length empty if you don't offer it) and the **notice** you need to reschedule a lesson (14 days by default). Parents see these, with your photo, when they choose a teacher; if your organization has a public homepage that shows its teachers, your photo, subjects and bio appear there too. New prices only apply to new bookings. To see your lessons in Apple Calendar, Google Calendar or Outlook, use **Add to my calendar app** on the **Calendar** page.
 
-Below them, draw your **weekly hours** on a repeating week: drag to add the times you can teach (e.g. Tuesdays 15:00–18:00, or Saturday mornings) and click one to set where it is. Parents can only book lessons inside these hours. Here you can also make a private **calendar link** to subscribe to in Apple Calendar, Google Calendar or Outlook.
+### Scheduling a new booking
+Parents buy a whole half term (a length and lessons a week) and leave a note on the times that suit them. Their booking appears at the top of your **Calendar** under **To schedule**, with the note and their contact details.
+1. Agree times with the family (by phone, email or in person).
+2. Click **Schedule**. You see your week with your other lessons and time off; click the agreed time to add it as a weekly lesson (once per lesson a week).
+3. Check the preview: every lesson it makes for the half term, and any week that clashes. Click **Schedule lessons**. Cover a clashing week with **Or add a single lesson**.
+
+The family is emailed every date. If a lesson is cancelled later, the booking comes back under To schedule so you can rearrange it.
 
 ### Your lesson calendar
-Open **Calendar**. Your weekly hours show in green.
+Open **Calendar**.
 - **Click a lesson** to mark it attended, a no-show or cancelled, and to keep private notes on what you covered.
 - **Move lesson** moves it to any date and time you choose, weekends included, as long as it doesn't clash with your other lessons or blocked-out time. For a cancelled or missed lesson the button is **Book a catch-up**: the lesson is scheduled again at no extra charge. The family is emailed the new time.
-- **Block out time** for days or hours you can't teach: press the button, then drag across the hours (or select days in the month view). If lessons are already booked then, you'll see them and can cancel them; the family's refund is made from Payments by your admin. Click a grey block to add or change its note (only you and admins see it), or to unblock it.
+- **Block out time** for days or hours you can't teach: press the button, then drag across the hours (or select days in the month view). If lessons are already booked then, you'll see them and can cancel them; they come back under To schedule to rearrange. Click a grey block to add or change its note (only you and admins see it), or to unblock it.
 
 ### Creating a tutoring course
-Create a course and choose **Course type: In-person lessons**. Set the lesson lengths parents can choose (30 and/or 60 minutes), how many lessons a week a booking may have, the location, subject, age range and what's included, then the **teachers** and **terms** it's offered in. Turn on **Open Enrollment** to let parents book it. If only one teacher is listed, parents skip choosing.
+Create a course and choose **Course type: In-person lessons**. Set the lesson lengths parents can choose (30, 45 and/or 60 minutes), the most lessons a week, the location, subject, age range and what's included, then the **teachers** and **half terms** it's offered in. Turn on **Open Enrollment** to let parents book it. If only one teacher is listed, parents skip choosing.
 
-To offer an existing in-person course yourself, edit it and add yourself under **Teachers parents can choose**; parents only see you once you've set an hourly rate and weekly hours in Account › Teaching.
+To offer an existing in-person course yourself, edit it and add yourself under **Teachers parents can choose**; parents only see you once you've set a price for one of its lesson lengths in Account › Teacher.
 
 An in-person course can also have **AI lessons**: choose a bot and add resources on its **Resources** tab, as for any course. Every student who books it gets them, to do between sessions. (For one student only, set homework instead.)
 

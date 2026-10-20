@@ -87,13 +87,14 @@ Your dashboard includes visual charts showing:
 
 ### Booking In-Person Lessons
 
-Some courses in the **Course Catalog** are in-person 1:1 lessons with a teacher. Click **Book lessons**:
+Some courses in the **Course Catalog** are in-person 1:1 lessons with a teacher, bought a half term at a time. Click **Book lessons**:
 
-1. Choose a teacher (if there's more than one): you'll see their photo, subjects and price.
-2. Choose how many lessons a week, and for each one its length and a free weekly time. The page lists the dates and the price for the rest of the term.
-3. Pay at checkout. Your times are held for 30 minutes while you pay.
+1. Choose the half term.
+2. Choose a teacher (if there's more than one): you'll see their photo, subjects and prices.
+3. Choose the lesson length and how many lessons a week, and tell the teacher when suits you (for example "weekday afternoons after 4pm, not Wednesdays").
+4. Pay for the half term at checkout. The price covers every teaching week of it, whenever you book.
 
-Your lessons then appear under **My lessons**, and a confirmation email with every date (and a calendar file) is sent to the account's email. On **My lessons** you can also make a calendar link so the lessons show in your own calendar app. If you can't make a lesson, message the teacher before their notice period (shown on each lesson).
+The teacher then gets in touch to agree lesson times with you. Once they've scheduled them, you'll get an email with every date (and a calendar file), and the lessons appear on your home page and under **My lessons**, where you can also make a calendar link for your own calendar app. If you can't make a lesson, message the teacher before their notice period (shown on each lesson).
 
 ## Accessing Courses
 
