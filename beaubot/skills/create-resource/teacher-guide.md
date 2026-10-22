@@ -389,6 +389,7 @@ If your organization sells in-person lessons, you teach them through Beau too, a
 - **Note for the parent**: saved as you type, but only sent when you click **Send to parent**. The parent gets it by email and sees it on the lesson in **My lessons**. You can edit it and send it again.
 - **Attendance**: Scheduled, Attended, No-show or Cancelled.
 - **Set homework**: opens the student's page to assign AI lessons before the next visit.
+- **Recording** (if your organisation records lessons, and the student's parent has agreed): tick that everyone present knows, then **Record the lesson**. It's transcribed as you go; the recording itself is never kept. Afterwards, **Summarise with AI** drafts your notes and a note for the parent: choose **Use this** for each, then edit as you like. Nothing is sent until you send it. If the AI notices a possible welfare concern, it asks you to review it; it never goes in the parent's note.
 - **Raise a welfare concern**: what you saw or heard, as a concern or urgent. It goes to your organisation's Safeguarding register for an admin to review (an urgent one emails the admin straight away). It is never shared with the parent or the student.
 
 ### Your teaching profile

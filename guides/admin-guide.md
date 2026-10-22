@@ -272,6 +272,12 @@ Set up in-person tutoring (see **In-Person Tutoring** below):
 
 ## In-Person Tutoring
 
+**Recording in-person lessons.** Turn on **Allow recording in-person lessons** (Settings › Students) to
+let teachers record a lesson on its page, to have AI transcribe it and draft notes for the teacher and
+the parent. A lesson can only be recorded if the student's parent has said yes under **Account ›
+Parent or guardian › Lesson recordings**. The recording is never kept, only the transcript, which only
+teachers and admins see. It uses your organisation's OpenAI key.
+
 **Moving lessons you already run into Beau?** On the calendar, **Add an existing booking** enters one
 by hand: the student, course, teacher, half term, lesson length and lessons a week (and, if the half
 term has already started, how many lessons are left). It's for lessons paid for outside Beau, so the

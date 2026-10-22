@@ -142,6 +142,10 @@ On **My lessons**, under **Add lessons to your calendar**, tap **Make my calenda
 
 Keep the link private: anyone with it can see your lesson times. If you share it by mistake, **Make a new link** (the old one stops working), or **Turn off** the link altogether.
 
+### Lesson recordings
+
+If your organisation records in-person lessons, **Account › Parent or guardian** asks whether the student's lessons may be recorded. With your yes, the teacher can record a lesson so that AI writes up notes on it for the teacher and for you. The recording itself is not kept, only a written transcript that only the teachers and the organisation's admins see. Saying no changes nothing else, and you can change your mind at any time.
+
 ### If you can't make a lesson
 
 Message your teacher before their notice period ends (each lesson shows the date). If they cancel a lesson, it's owed to you and they'll arrange a new time.
