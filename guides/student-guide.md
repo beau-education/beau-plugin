@@ -12,6 +12,18 @@ Welcome to the learning platform. This guide explains how to navigate your dashb
 
 ## Your Dashboard
 
+### Setup
+
+Until your account is set up, a **Setup** tile sits at the top of your home page. Each step has a **Go** button, and the tile tells you why the next one matters:
+
+1. **Verify your email**: needed before the first AI lesson. **Send the email again** is on that page if it hasn't arrived.
+2. **Give consent for AI lessons** (if your organisation asks for it): needed before the first AI lesson. You can see what you agreed to, or withdraw it, under **Account › Parent or guardian**.
+3. **Complete student profile**: the student's hobbies and interests and learning goals help Beau pitch each lesson.
+4. **Complete parent profile**: your name and postal address, for bookings and receipts.
+5. **Add lessons to calendar** (with in-person lessons only).
+
+Once every step is done, the tile makes way for **My Progress**.
+
 When you log in, you'll see your personalized learning dashboard with several sections:
 
 ### Your Homework
@@ -85,17 +97,57 @@ Your dashboard includes visual charts showing:
 - Progress comparison across your enrolled courses
 - A log of your recent activity
 
-### Booking In-Person Lessons
+## In-Person Lessons
 
-Some courses in the **Course Catalog** (and on your organisation's homepage) are in-person 1:1 lessons with a teacher, bought a half term at a time. Click **Book lessons**. You can book straight after creating your account: verifying your email, the parental consent form and the rest of your child's profile can wait until before their first AI lesson.
+Some organisations also offer **in-person 1:1 lessons** with a teacher, bought a half term at a time. You'll find them in the **Course Catalog** on your home page (and on your organisation's homepage), marked **In person 1:1**.
 
-1. If we don't know yet, tell us who the lessons are for: your child's name and date of birth (we show the school year it means).
-1. Choose the half term.
-2. Choose a teacher (if there's more than one): you'll see their photo, subjects and prices.
-3. Choose the lesson length and how many lessons a week, and tell the teacher when suits you (for example "weekday afternoons after 4pm, not Wednesdays").
-4. Pay for the half term at checkout. The price covers every teaching week of it, whenever you book.
+### Booking
 
-The teacher then gets in touch to agree lesson times with you. Once they've scheduled them, you'll get an email with every date (and a calendar file), and the lessons appear on your home page and under **My lessons**, where you can also make a calendar link for your own calendar app. If you can't make a lesson, message the teacher before their notice period (shown on each lesson).
+Click **Book lessons** on the course. You can book straight after creating your account: verifying your email and the consent form can wait until before the student's first AI lesson.
+
+1. If we don't know yet, tell us who the lessons are for: the student's name and date of birth. We show the school year it means.
+2. Choose the half term.
+3. Choose a teacher, if there's more than one. You'll see their photo, subjects and prices.
+4. Choose the lesson length and how many lessons a week.
+5. Tell the teacher when suits you, for example "weekday afternoons after 4pm, not Wednesdays".
+6. Pay for the half term at checkout.
+
+The price covers every teaching week of the half term, whenever you book. A half term is on sale until its last week starts.
+
+### After you book
+
+Your teacher gets in touch to agree lesson times with you. Until they're set, **My lessons** says "Booked: your teacher will be in touch to arrange lesson times".
+
+Once the teacher has scheduled your lessons:
+
+- You get an **email with every date**, and a calendar file to add them all at once.
+- The next fortnight's lessons appear in **Your lessons** on your home page.
+- Every lesson is on the calendar in **My lessons** (tap **All lessons** on your home page).
+
+### My lessons
+
+**My lessons** shows the half term's lessons on a calendar. Times are in your organisation's time zone.
+
+Tap a lesson to see:
+
+- the date, time and teacher, and where it is;
+- its status: **Scheduled**, **Attended**, **Cancelled**, **Late cancellation** or **No-show**;
+- how much notice the teacher needs to change it, and the date to tell them by;
+- **Download .ics**, to add that one lesson to your calendar.
+
+### Lessons in your own calendar
+
+On **My lessons**, under **Add lessons to your calendar**, tap **Make my calendar link**. Then **Open in my calendar app** (on an iPhone, this adds it to Calendar) or **Add to Google Calendar**. Your lessons appear there and stay up to date when a teacher moves one.
+
+Keep the link private: anyone with it can see your lesson times. If you share it by mistake, **Make a new link** (the old one stops working), or **Turn off** the link altogether.
+
+### If you can't make a lesson
+
+Message your teacher before their notice period ends (each lesson shows the date). If they cancel a lesson, it's owed to you and they'll arrange a new time.
+
+### AI lessons with an in-person course
+
+Some in-person courses come with **AI lessons** too, for practice between visits. They appear under your courses on your home page like any other course: press **Play**. AI lessons need the **Setup** steps done first: a verified email, and consent if your organisation asks for it.
 
 ## Accessing Courses
 

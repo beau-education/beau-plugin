@@ -111,19 +111,23 @@ Toggle **Allow student self-registration** to let students create their own acco
 
 #### Parental Consent
 
-For organizations that require explicit consent before students access the platform (e.g., parental consent for minors), enable the built-in consent form.
+For organizations that require explicit consent before students have AI lessons (e.g., parental consent for minors), enable the built-in consent form.
 
 ##### How Consent Works
 
 1. Toggle **Require parental consent for students** to on
 2. Configure the consent form (introduction text, custom questions)
-3. Every time a student signs in, they are taken to the consent form until a parent or guardian has completed it
+3. Students can use the dashboard straight away. Until consent is given, **Give consent for AI lessons** is a step in the **Setup** tile on their home page, and every Start lesson button takes them to the form first
 4. A parent or guardian completes the form on the student's device
-5. On submission, consent is **automatically verified** and the student can proceed to complete their profile and access the dashboard
+5. On submission, consent is **automatically verified** and AI lessons can start
 
 The consent form is built into the platform — no external forms or manual verification needed.
 
-**No lesson can start without it.** Beau enforces consent on the server, not just in the dashboard: a student whose consent is outstanding is refused every lesson, and if they open a lesson link in the student player they see a screen asking a parent or guardian to complete the form, with a link to it. Teachers, administrators and anonymous share-link visitors are never asked. If you switch consent on when you already have students, each of them is asked on their next sign-in, whatever their status was before.
+**No lesson can start without it.** Beau enforces consent on the server, not just in the dashboard: a student whose consent is outstanding is refused every lesson, and if they open a lesson link in the student player they see a screen asking a parent or guardian to complete the form, with a link to it. Teachers, administrators and anonymous share-link visitors are never asked. If you switch consent on when you already have students, each of them is asked before their next AI lesson, whatever their status was before.
+
+A **verified email** is required before a student's first AI lesson too, in the same way: a Setup step until it's done, and lessons refuse to start without it. Teachers and administrators must verify their email before using the dashboard at all.
+
+**Withdrawing consent.** A parent can see what they agreed to, and withdraw it, under **Account › Parent or guardian**. You are emailed when they do. AI lessons stop until consent is given again; in-person lessons are not affected. Revoking consent from the student list does the same. Either way the record of what was agreed, and when it was withdrawn, is kept (**View Withdrawn Consent**).
 
 ##### Configuring the Consent Form
 
@@ -133,8 +137,8 @@ When consent is enabled, a two-column layout appears with configuration on the l
 
 **Built-in fields** (always shown when consent is enabled):
 - Parent/Guardian Full Name (required)
-- "I consent to my child using voice tutoring with Beau" checkbox (required)
-- "I have read and agree to the privacy policy" checkbox (shown only when a Privacy Policy URL is set on the General tab — required when shown)
+- "I consent to the student having AI tutoring lessons: spoken lessons with Beau, an AI tutor (not a person)" checkbox (required)
+- "I have read and agree to the Privacy Policy and the AI Privacy Policy" checkbox, linking each policy you have written under **Settings › Policies** (or the Privacy Policy URL on the General tab). Shown, and required, when you have either policy
 
 **Custom Questions**: Add up to 10 custom questions to gather additional information from parents. Each question has:
 
@@ -156,10 +160,13 @@ The right side of the Students tab shows a live preview that updates as you conf
 
 ##### What Parents See
 
-When a student first logs in and consent is required, they are guided through an onboarding flow:
+When a student first signs in, they are asked only the student's name and date of birth. Everything else is in the **Setup** tile on their home page, each step saying why it matters:
 
-1. **Consent step**: The parent/guardian fills in their name, checks the required consent boxes, answers any custom questions, and submits
-2. **Profile step**: Basic information about the child (name, date of birth, optional details like school, hobbies, learning goals)
+1. **Verify your email** (required before AI lessons)
+2. **Give consent for AI lessons** (when consent is on; required before AI lessons): the parent/guardian fills in their name, checks the required boxes, answers any custom questions, and submits
+3. **Complete student profile**: hobbies and interests, and learning goals
+4. **Complete parent profile**: the parent's name and postal address
+5. **Add lessons to calendar** (only with in-person lessons)
 
 The consent form displays your organization's logo and name, and includes a "Contact Us" section at the bottom showing your website, email, and phone number (if configured on the General tab).
 
@@ -265,7 +272,7 @@ Set up in-person 1:1 tutoring (see **In-Person Tutoring** below):
 
 ## In-Person Tutoring
 
-Your organization can sell in-person 1:1 lessons a half term at a time, alongside AI lessons. A parent signs in as their child (the child's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
+Your organization can sell in-person 1:1 lessons a half term at a time, alongside AI lessons. A parent signs in as the student (the student's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
 
 **Setting it up**
 1. Add your half terms (Settings › Tutoring).
@@ -728,11 +735,11 @@ it happened, and the student's own words with why each was flagged.
   it reviewed from the transcript counts too, and shows their name.
 
 Concerns stay listed even after the lesson is removed from its course or the student is removed
-from it: a concern about a child does not stop mattering when a course is tidied up. Teacher test
+from it: a concern about a student does not stop mattering when a course is tidied up. Teacher test
 runs are never included.
 
 The student's teacher is also emailed about each new welfare concern. Beau's flags are a prompt
-to look, not a judgement, and are not a safeguarding procedure — if you believe a child is at
+to look, not a judgement, and are not a safeguarding procedure — if you believe a student is at
 risk, follow your organisation's safeguarding policy. See **Safeguarding** in the Teacher Guide
 for what the grader looks for and its limits.
 

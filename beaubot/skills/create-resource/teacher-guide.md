@@ -206,7 +206,7 @@ Courses are collections of resources organized for students to complete. Navigat
 
 1. Click **New Course**
 2. Enter a **Name** and **Description**
-   - Optionally upload a **Course picture**. It's shown on the course's cards for students and parents, and on your organization's public homepage. Use a landscape JPG, PNG or WebP picture, 1200×600px (2:1) or larger and up to 2 MB. Cards crop it to fill, so keep the subject in the middle. Without one, the card shows a colour.
+   - Optionally upload a **Course picture**. It's shown on the course's cards for students and parents, and on your organization's public homepage. Use a landscape JPG, PNG or WebP picture, 1200×600px (2:1) or larger and up to 2 MB. Cards crop it to fill, so keep the subject in the middle. Without one, the card shows a colour. Or click **Generate with AI** to have one drawn from the course's name, description and lessons. It takes about a minute, and adding the lessons first gives a better picture.
 3. Select a default **Bot** for interactive lessons
 4. Choose a **Progression Type**:
    - **Flexible**: Students complete resources in any order
@@ -256,7 +256,8 @@ Open enrollment allows students to self-enroll in courses without teacher interv
 3. Toggle on **Enable Open Enrollment**
 4. Select a **Default Teacher** (required) - this teacher will be assigned to all self-enrolled students
 5. Optionally set **Maximum Enrollments** to limit capacity (leave empty for unlimited)
-6. Save the course
+6. Optionally set **Enrollment opens** and **Enrollment closes** (see below)
+7. Save the course
 
 #### How Open Enrollment Works
 
@@ -266,6 +267,14 @@ When open enrollment is enabled:
 - The selected default teacher is automatically assigned to manage these enrollments
 - You receive an email notification each time a student self-enrolls
 - If a maximum enrollment limit is set, the course shows as "Full" when capacity is reached
+
+#### Enrollment Dates
+
+**Enrollment opens** and **Enrollment closes** limit when students can join, for every kind of course. Both are optional: leave either empty (or clear it with ✕) for no limit.
+
+- The course can be joined from the start of the opening day through the end of the closing day, in your organisation's time zone.
+- Outside those dates the course is hidden from the **Course Catalog** and your public homepage, and enrolling, paying or booking is refused.
+- Students already enrolled are not affected: they keep the course and can take all its lessons after enrollment closes.
 
 #### Default Teacher Requirements
 
@@ -608,7 +617,7 @@ Two different things, treated separately:
 - **Conduct** — sustained rudeness or abuse aimed at the tutor. Not wrong answers, silliness,
   or a student going off-topic.
 
-Neither ever affects a student's score. A child who is upset or disruptive is not marked down
+Neither ever affects a student's score. A student who is upset or disruptive is not marked down
 for it.
 
 ### How you find out
@@ -645,13 +654,13 @@ you can see it was not a technical fault.
 Beau is a **prompt to look**, not a judgement. The flags are generated automatically from the
 transcript, so:
 
-- **It will sometimes flag things that turn out to be nothing.** A child writing a dramatic
+- **It will sometimes flag things that turn out to be nothing.** A student writing a dramatic
   sentence for a creative task can read like a disclosure. That is deliberate — it is set to err
-  towards telling you, because a wasted minute of your time costs less than a missed child. The
+  towards telling you, because a wasted minute of your time costs less than a missed student. The
   quotes are there so you can dismiss a false alarm in seconds.
 - **It will not catch everything.** Do not treat a lesson with no flag as evidence that nothing
   happened.
-- **It is not a safeguarding procedure.** If you believe a child is at risk, follow your school
+- **It is not a safeguarding procedure.** If you believe a student is at risk, follow your school
   or organisation's safeguarding process. Do not reply to the alert email — it is not monitored.
 
 ### Checking in on a lesson yourself
