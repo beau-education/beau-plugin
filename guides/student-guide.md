@@ -19,7 +19,7 @@ A **Setup** tile sits at the top of your home page. Each step has a **Go** butto
 1. **Complete student profile**: needed before the first lesson. The student's age, interests and goals help each lesson start at the right level. It also asks about **allergies and medical needs**: choose **None**, or give the details. Only the student's teachers and your organisation's admins see the answer; it is never shared with the AI tutor.
 2. **Verify your email**: needed before the first AI lesson. **Send the email again** is on that page if it hasn't arrived.
 3. **Give consent for AI lessons** (if your organisation asks for it): needed before the first AI lesson. You can see what you agreed to, or withdraw it, under **Account › Parent or guardian**.
-4. **Complete parent profile**: your name and postal address, for bookings and receipts.
+4. **Complete parent profile**: your name and postal address, for bookings and receipts (and, if your organisation records lessons, your answer on recording: Yes or No).
 5. **Add lessons to calendar** (with in-person lessons only).
 
 Once every step is done, the tile says **All set!**. Its guides and help stay underneath.
@@ -141,6 +141,10 @@ Tap a lesson to see:
 On **My lessons**, under **Add lessons to your calendar**, tap **Make my calendar link**. Then **Open in my calendar app** (on an iPhone, this adds it to Calendar) or **Add to Google Calendar**. Your lessons appear there and stay up to date when a teacher moves one.
 
 Keep the link private: anyone with it can see your lesson times. If you share it by mistake, **Make a new link** (the old one stops working), or **Turn off** the link altogether.
+
+### Notes from your teacher
+
+After a lesson, the teacher may send you a note: what you covered, what went well and something to practise at home. You get it by email, and the latest notes are on your home page under **Notes from your teacher**. **All notes** (on **My lessons**, below the calendar) lists every one.
 
 ### Lesson recordings
 
