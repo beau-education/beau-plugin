@@ -381,7 +381,7 @@ This opens the player in test mode where you can:
 
 ## In-Person Tutoring
 
-If your organization sells in-person 1:1 lessons, you teach them through Beau too, and set Beau homework between them.
+If your organization sells in-person lessons, you teach them through Beau too, and set Beau homework between them.
 
 ### Your teaching profile
 In **Account › Teacher**, write a short bio, add your subjects, set a **price for each lesson length** you offer (30, 45 or 60 minutes; leave a length empty if you don't offer it) and the **notice** you need to reschedule a lesson (14 days by default). Parents see these, with your photo, when they choose a teacher; if your organization has a public homepage that shows its teachers, your photo, subjects and bio appear there too. New prices only apply to new bookings. To see your lessons in Apple Calendar, Google Calendar or Outlook, use **Add to my calendar app** on the **Calendar** page.

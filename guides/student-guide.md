@@ -14,15 +14,15 @@ Welcome to the learning platform. This guide explains how to navigate your dashb
 
 ### Setup
 
-Until your account is set up, a **Setup** tile sits at the top of your home page. Each step has a **Go** button, and the tile tells you why the next one matters:
+A **Setup** tile sits at the top of your home page. Each step has a **Go** button, and the tile tells you why the next one matters:
 
-1. **Verify your email**: needed before the first AI lesson. **Send the email again** is on that page if it hasn't arrived.
-2. **Give consent for AI lessons** (if your organisation asks for it): needed before the first AI lesson. You can see what you agreed to, or withdraw it, under **Account › Parent or guardian**.
-3. **Complete student profile**: the student's hobbies and interests and learning goals help Beau pitch each lesson.
+1. **Complete student profile**: needed before the first lesson. The student's age, interests and goals help each lesson start at the right level. It also asks about **allergies and medical needs**: choose **None**, or give the details. Only the student's teachers and your organisation's admins see the answer; it is never shared with the AI tutor.
+2. **Verify your email**: needed before the first AI lesson. **Send the email again** is on that page if it hasn't arrived.
+3. **Give consent for AI lessons** (if your organisation asks for it): needed before the first AI lesson. You can see what you agreed to, or withdraw it, under **Account › Parent or guardian**.
 4. **Complete parent profile**: your name and postal address, for bookings and receipts.
 5. **Add lessons to calendar** (with in-person lessons only).
 
-Once every step is done, the tile makes way for **My Progress**.
+Once every step is done, the tile says **All set!**. Its guides and help stay underneath.
 
 When you log in, you'll see your personalized learning dashboard with several sections:
 
@@ -99,7 +99,7 @@ Your dashboard includes visual charts showing:
 
 ## In-Person Lessons
 
-Some organisations also offer **in-person 1:1 lessons** with a teacher, bought a half term at a time. You'll find them in the **Course Catalog** on your home page (and on your organisation's homepage), marked **In person 1:1**.
+Some organisations also offer **in-person lessons** with a teacher, bought a half term at a time. You'll find them in the **Course Catalog** on your home page (and on your organisation's homepage), marked **In person**.
 
 ### Booking
 

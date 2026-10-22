@@ -160,11 +160,11 @@ The right side of the Students tab shows a live preview that updates as you conf
 
 ##### What Parents See
 
-When a student first signs in, they are asked only the student's name and date of birth. Everything else is in the **Setup** tile on their home page, each step saying why it matters:
+Signing up asks nothing more: a new student goes straight to their home page. What's needed is in the **Setup** tile there, each step saying why it matters:
 
-1. **Verify your email** (required before AI lessons)
-2. **Give consent for AI lessons** (when consent is on; required before AI lessons): the parent/guardian fills in their name, checks the required boxes, answers any custom questions, and submits
-3. **Complete student profile**: hobbies and interests, and learning goals
+1. **Complete student profile**: the student's name, date of birth, hobbies and interests, learning goals, and allergies and medical needs (needed before the first lesson). Teachers and admins see the medical answer at the top of the student's page; it is never shared with the AI tutor
+2. **Verify your email** (required before AI lessons)
+3. **Give consent for AI lessons** (when consent is on; required before AI lessons): the parent/guardian fills in their name, checks the required boxes, answers any custom questions, and submits
 4. **Complete parent profile**: the parent's name and postal address
 5. **Add lessons to calendar** (only with in-person lessons)
 
@@ -265,14 +265,14 @@ For detailed Stripe setup instructions, see the **Payments and Stripe Integratio
 
 ### Tutoring Tab
 
-Set up in-person 1:1 tutoring (see **In-Person Tutoring** below):
+Set up in-person tutoring (see **In-Person Tutoring** below):
 
 - **Time zone**: every lesson time and booking email uses it. Defaults to Europe/London; summer time is handled for you.
 - **Half terms**: add each half term parents can buy, with its first and last day and any days off in it (bank holidays, INSET days). A half term with bookings keeps its dates (only its name can change) and can't be deleted.
 
 ## In-Person Tutoring
 
-Your organization can sell in-person 1:1 lessons a half term at a time, alongside AI lessons. A parent signs in as the student (the student's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
+Your organization can sell in-person lessons a half term at a time, alongside AI lessons. A parent signs in as the student (the student's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
 
 **Setting it up**
 1. Add your half terms (Settings › Tutoring).
