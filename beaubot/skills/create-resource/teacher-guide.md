@@ -383,6 +383,14 @@ This opens the player in test mode where you can:
 
 If your organization sells in-person lessons, you teach them through Beau too, and set Beau homework between them.
 
+**During and after a lesson.** Click the lesson on **My calendar** and choose **Open lesson**. The lesson's page shows the student's **allergies and medical needs** at the top, then:
+
+- **Notes for you**: what you covered, where they struggled, what to practise. Private to teachers and admins, and saved as you type. They also appear on the student's page under **In-person lessons**, so last week's notes are there when you need them.
+- **Note for the parent**: saved as you type, but only sent when you click **Send to parent**. The parent gets it by email and sees it on the lesson in **My lessons**. You can edit it and send it again.
+- **Attendance**: Scheduled, Attended, No-show or Cancelled.
+- **Set homework**: opens the student's page to assign AI lessons before the next visit.
+- **Raise a welfare concern**: what you saw or heard, as a concern or urgent. It goes to your organisation's Safeguarding register for an admin to review (an urgent one emails the admin straight away). It is never shared with the parent or the student.
+
 ### Your teaching profile
 In **Account › Teacher**, write a short bio, add your subjects, set a **price for each lesson length** you offer (30, 45 or 60 minutes; leave a length empty if you don't offer it) and the **notice** you need to reschedule a lesson (14 days by default). Parents see these, with your photo, when they choose a teacher; if your organization has a public homepage that shows its teachers, your photo, subjects and bio appear there too. New prices only apply to new bookings. To see your lessons in Apple Calendar, Google Calendar or Outlook, use **Add to my calendar app** on the **Calendar** page.
 

@@ -724,6 +724,11 @@ The lesson grader reads each finished lesson and flags:
   frightening at home, or distress worth a second look;
 - **Conduct** — *Minor* or *Persistent*: sustained rudeness or abuse aimed at the tutor.
 
+Teachers can also **raise a concern themselves**, from an in-person lesson's page (**Raise a welfare
+concern**). These appear in the same list, marked as raised by the teacher, with what they wrote. An
+**urgent** one also emails your organisation's admin straight away. Concerns are never shared with the
+parent or the student.
+
 Each concern shows the student (click to open their page), the lesson, course and teacher, when
 it happened, and the student's own words with why each was flagged.
 

@@ -133,6 +133,7 @@ Tap a lesson to see:
 - the date, time and teacher, and where it is;
 - its status: **Scheduled**, **Attended**, **Cancelled**, **Late cancellation** or **No-show**;
 - how much notice the teacher needs to change it, and the date to tell them by;
+- a **note from the teacher**, when they've sent one after the lesson (you also get it by email);
 - **Download .ics**, to add that one lesson to your calendar.
 
 ### Lessons in your own calendar
