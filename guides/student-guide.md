@@ -24,6 +24,8 @@ A **Setup** tile sits at the top of your home page. Each step has a **Go** butto
 
 Once every step is done, the tile says **All set!**. Its guides and help stay underneath.
 
+If the student or parent profile isn't finished when you press **Play** on a lesson, a short **Before the lesson** note says what's missing. Choose **Complete now**, or **Later, start the lesson** to carry on: it never stops a lesson, and asks only once per visit.
+
 When you log in, you'll see your personalized learning dashboard with several sections:
 
 ### Your Homework
@@ -77,7 +79,7 @@ Some courses require payment:
 
 1. Browse courses - paid courses display their price (e.g., £29.99, $19.99)
 2. Click **Purchase Course** to proceed
-3. Complete payment on the secure Stripe checkout page
+3. Complete payment on the secure Stripe checkout page, by card, Apple Pay, Google Pay or Pay by Bank (straight from your bank app)
 4. After payment, you're automatically enrolled
 5. The course appears in your **Your courses** section
 
@@ -99,7 +101,7 @@ Your dashboard includes visual charts showing:
 
 ## In-Person Lessons
 
-Some organisations also offer **in-person lessons** with a teacher, bought a half term at a time. You'll find them in the **Join a course** on your home page (and on your organisation's homepage), marked **In person**.
+Some organisations also offer **in-person lessons** with a teacher, bought a half term at a time. You'll find them under **Join a course** on your home page (and on your organisation's homepage), marked **In person**.
 
 ### Booking
 
@@ -110,9 +112,11 @@ Click **Book lessons** on the course. You can book straight after creating your 
 3. Choose a teacher, if there's more than one. You'll see their photo, subjects and prices.
 4. Choose the lesson length and how many lessons a week.
 5. Tell the teacher when suits you, for example "weekday afternoons after 4pm, not Wednesdays".
-6. Pay for the half term at checkout.
+6. Pay for the half term at checkout, by card, Apple Pay, Google Pay or Pay by Bank. Apple Pay shows in Safari or on an iPhone or iPad; Google Pay in Chrome or on Android with a card saved to Google.
 
 The price covers every teaching week of the half term, whenever you book. A half term is on sale until its last week starts.
+
+If you leave the checkout page without paying, just book again: your earlier checkout is cancelled, so you can't pay twice. With Pay by Bank, the booking is confirmed as soon as your bank sends the money.
 
 ### After you book
 
@@ -319,4 +323,6 @@ Your message will be sent directly to your assigned teacher for that course. The
 
 ### Other Support
 
-If you're experiencing technical issues with the platform (login problems, pages not loading, etc.), contact your administrator for assistance.
+If signing in to a lesson doesn't work, you'll see **We couldn't sign you in**, with the reason when there is one. Check your email address and password, then press **Sign in again**.
+
+If you're experiencing other technical issues with the platform (pages not loading, etc.), contact your administrator for assistance.

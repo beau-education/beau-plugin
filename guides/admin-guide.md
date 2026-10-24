@@ -238,10 +238,10 @@ The homepage needs **open sign-up** (Students tab), since every course on it lea
 
 - **Publish the homepage**: the on/off switch. **View page** opens it once it's on.
 - **Headline** and **Introduction**: the words across the top of the page. With no headline, it reads "Learn with" and your organization's name.
-- **Brand colour**: the buttons and, with no banner photo, the background behind the headline.
+- **Brand colour**: the buttons and, with no banner photo, the background behind the headline. It also colours the **Pay** button at checkout.
 - **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
 - **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Sharing tab). Videos are the ones uploaded to your media library.
-- **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out.
+- **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out. The section is headed **Our teachers**, or **Taught by** when only one teacher is shown.
   Each teacher has a **Contact** button. It opens a short form (name, email, optional phone, message), and the message is emailed to the teacher with reply-to the parent, so the teacher's own email address stays private until they reply.
 - **What parents say** (optional):
   - **Google reviews**: paste two links from your free Google Business Profile (business.google.com): the "Ask for reviews" link (the **Leave a review** button opens Google's star-rating box) and your Google Maps link (**Read our reviews on Google**).
@@ -293,7 +293,7 @@ Your organization can sell in-person lessons a half term at a time, alongside AI
 
 **Prices and fees**: a booking is the whole half term: every teaching week × lessons a week, at the teacher's price for that length. It's the full price whenever it's bought (it can be bought until the start of the half term's last week). A week with a bank holiday still counts; the teacher schedules around it. In-person bookings carry their own platform fee (shown on the Stripe tab), separate from the fee on AI courses. Payments go to your organization's Stripe account; **Payments** shows in-person income per teacher so you can pay your teachers.
 
-**Scheduling**: a paid booking appears under **Calendar › To schedule** with the family's note and contact details. The teacher agrees times with the family, then clicks **Schedule**: they see their week, click the agreed times, and Beau creates every lesson of the half term, leaving out any week that clashes (for a single lesson instead). The family is emailed every date. A lesson cancelled later puts the booking back under To schedule, to rearrange.
+**Scheduling**: a paid booking appears under **Calendar › To schedule** with the family's note and contact details. The teacher agrees times with the family, then clicks **Schedule**: they see their week, click the agreed times, and Beau creates every lesson of the half term, leaving out any week that clashes (for a single lesson instead). If the half term can't hold every lesson owed (for example, a booking made or entered in its last week), the rest carry on into your next half terms, skipping their days off and the holidays between them (or into the following weeks, if no later half term is set up); the preview says which lessons fall after the half term. The family is emailed every date. A lesson cancelled later puts the booking back under To schedule, to rearrange.
 
 **Calendar**: shows every teacher's lessons, bookings to schedule and blocked-out time. Choose a teacher to schedule for them, block out time for them (e.g. sick leave), or move one of their lessons. Blocking out time with booked lessons in it cancels those lessons after you confirm; they then wait to be rearranged, or refund the family from **Payments**.
 
@@ -605,9 +605,16 @@ When a student browses **Join a course**:
 2. Paid courses display the price and a **Purchase Course** button
 3. Clicking **Purchase Course** redirects to a secure Stripe Checkout page
 4. After successful payment, the student is automatically enrolled
-5. The course appears in their **My Courses** list
+5. The course appears under **Your courses** on their home page
 
-Students can pay using credit/debit cards. Stripe handles all payment processing securely.
+Families can pay by card, **Apple Pay**, **Google Pay** or **Pay by Bank** (paying straight from their UK bank app). Each option only appears where it works: Apple Pay in Safari or on an iPhone or iPad, Google Pay in Chrome or on Android with a card saved to Google. Stripe handles all payment processing securely.
+
+The checkout page carries your organization's name and logo, your homepage **Brand colour** on the Pay button, and the course's picture, so families can see who they're paying. A square logo is shown as a small icon beside your name; a wide logo is shown on its own.
+
+A few things to know:
+- **Pay by Bank** can take a moment to confirm. The student is enrolled (or the booking confirmed) once the money has arrived, not before; if the bank payment fails, the booking is released.
+- **A checkout a family leaves without paying** is marked **Failed** in Payments when it expires (after at most a day), so it doesn't sit as pending.
+- **Starting again**: if a parent leaves the checkout page and books the same half term again, their earlier checkout is cancelled and the new one replaces it, so they can never pay twice.
 
 ### Revenue Split
 
@@ -688,7 +695,7 @@ You can offer free and paid courses side by side.
 
 #### Payment Completed but No Enrollment
 
-- Payments are processed via webhooks which may have a short delay
+- Payments can take a moment to confirm, especially **Pay by Bank**
 - Ask the student to refresh their dashboard
 - Check the Payments list for the transaction status
 - Contact support if the issue persists

@@ -401,6 +401,8 @@ Parents buy a whole half term (a length and lessons a week) and leave a note on 
 2. Click **Schedule**. You see your week with your other lessons and time off; click the agreed time to add it as a weekly lesson (once per lesson a week).
 3. Check the preview: every lesson it makes for the half term, and any week that clashes. Click **Schedule lessons**. Cover a clashing week with **Or add a single lesson**.
 
+If the half term can't hold every lesson the family has paid for (for example, it was booked in its last week), the rest carry on into your organisation's next half terms, skipping their days off and the holidays in between. The preview says which lessons fall after the half term.
+
 The family is emailed every date. If a lesson is cancelled later, the booking comes back under To schedule so you can rearrange it.
 
 ### Your lesson calendar
