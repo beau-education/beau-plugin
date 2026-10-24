@@ -52,7 +52,7 @@ The system validates slug availability in real-time as you type. If you change t
 
 Upload your organization's logo to brand the platform. The logo appears:
 - At the top of student and teacher dashboards
-- In the course catalog alongside your courses
+- Under **Join a course** on the student home page
 - On the Auth0 login and signup pages for your organization
 
 When you upload or change the logo, it is automatically synced to Auth0 so your login page displays your organization's branding. This sync requires the API to be served over HTTPS (production environments).
@@ -73,7 +73,7 @@ To upload a logo:
 
 | Field | Description |
 |-------|-------------|
-| **Website URL** | Your organization's public website. Appears in course catalog listings and on the consent form. |
+| **Website URL** | Your organization's public website. Appears in course listings and on the consent form. |
 | **Admin Email** | Primary administrative contact. Shown on the consent form so parents can reach you. |
 | **Phone Number** | Select a country code from the dropdown and enter the number in national format. Shown on the consent form. |
 
@@ -232,7 +232,7 @@ Public lesson URLs let anyone — including people without an account on your pl
 
 ### Homepage Tab
 
-Your organization can have a public homepage at **beau.bot/your-slug** that anyone can visit. It shows who you are and lists every course with open enrollment (teacher previews are left out). A visitor picks a course, signs up (or signs in) and goes straight on: to the booking page for in-person lessons, or to the course catalog on their home page for AI lessons, where they enrol or pay.
+Your organization can have a public homepage at **beau.bot/your-slug** that anyone can visit. It shows who you are and lists every course with open enrollment (teacher previews are left out). A visitor picks a course, signs up (or signs in) and goes straight on: to the booking page for in-person lessons, or to **Join a course** on their home page for AI lessons, where they enrol or pay.
 
 The homepage needs **open sign-up** (Students tab), since every course on it leads to sign-up. Turning open sign-up off takes the page down too.
 
@@ -595,11 +595,11 @@ Once Stripe is connected, you can create paid courses:
 
 The system supports 10 currencies: GBP (default), USD, EUR, CAD, AUD, JPY, CHF, INR, MXN, and BRL. Prices are displayed with the appropriate currency symbol (£, $, €, ¥, etc.).
 
-**Important**: Paid courses require open enrollment to be enabled. Students purchase access through the Course Catalog.
+**Important**: Paid courses require open enrollment to be enabled. Students purchase access under **Join a course** on their home page.
 
 ### How Students Purchase Courses
 
-When a student browses the Course Catalog:
+When a student browses **Join a course**:
 
 1. Free courses show an **Enroll Now** button
 2. Paid courses display the price and a **Purchase Course** button
@@ -666,11 +666,11 @@ When you process a refund:
 ### Free Courses
 
 Courses without a price remain free and work as before:
-- Students click **Enroll Now** in the Course Catalog
+- Students click **Enroll Now** under **Join a course**
 - No payment is required
 - Enrollment is immediate
 
-You can mix free and paid courses in your catalog.
+You can offer free and paid courses side by side.
 
 ### Troubleshooting Payments
 
@@ -797,7 +797,7 @@ for what the grader looks for and its limits.
 1. Go to **Admin > Payments** and complete Stripe Connect setup
 2. Create a course with **Open Enrollment** enabled
 3. Toggle **Paid Course**, select a currency, and enter the price
-4. Students can purchase from the Course Catalog
+4. Students buy it under **Join a course** on their home page
 
 ### Viewing Earnings
 

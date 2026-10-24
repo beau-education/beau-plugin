@@ -42,9 +42,9 @@ At the top, you'll see a summary card showing:
 - The number of resources you've completed out of the total
 - How many courses you're enrolled in
 
-### Course Enrollments
+### Your courses
 
-This section shows all the courses you're enrolled in. For each course, you can see:
+**Your courses** shows the courses you're enrolled in. For each course, you can see:
 - Course name
 - Your progress bar
 - Enrollment status (Active, Paused, or Completed)
@@ -52,9 +52,9 @@ This section shows all the courses you're enrolled in. For each course, you can 
 
 Click on a course row to expand it and see details about each resource in that course.
 
-### Course Catalog
+### Join a course
 
-Below your enrolled courses, you'll find the **Course Catalog** showing courses available for self-enrollment. These are open enrollment courses that you can join without needing to wait for a teacher invitation.
+**Join a course**, near the top of your home page, lists the courses you can join or book yourself, without waiting for a teacher to invite you. Once you've joined one, it moves to **Your courses**.
 
 For each available course, you can see:
 - Course name and description (click "Read more" for long descriptions)
@@ -66,9 +66,9 @@ For each available course, you can see:
 
 #### Enrolling in Free Courses
 
-1. Browse the available courses in the catalog
+1. Browse the courses under **Join a course**
 2. Click **Enroll Now** on a course you're interested in
-3. The course immediately appears in your **Course Enrollments** section
+3. The course immediately appears in your **Your courses** section
 4. Click **Play** to start learning
 
 #### Purchasing Paid Courses
@@ -79,7 +79,7 @@ Some courses require payment:
 2. Click **Purchase Course** to proceed
 3. Complete payment on the secure Stripe checkout page
 4. After payment, you're automatically enrolled
-5. The course appears in your **Course Enrollments** section
+5. The course appears in your **Your courses** section
 
 **Note:** Some courses have enrollment limits. If a course shows "Course Full," you'll need to wait for a spot to open or contact your administrator.
 
@@ -99,7 +99,7 @@ Your dashboard includes visual charts showing:
 
 ## In-Person Lessons
 
-Some organisations also offer **in-person lessons** with a teacher, bought a half term at a time. You'll find them in the **Course Catalog** on your home page (and on your organisation's homepage), marked **In person**.
+Some organisations also offer **in-person lessons** with a teacher, bought a half term at a time. You'll find them in the **Join a course** on your home page (and on your organisation's homepage), marked **In person**.
 
 ### Booking
 
@@ -309,7 +309,7 @@ Your dashboard shows a chronological record of your completed resources, includi
 
 If you have questions about course content or need assistance, you can contact your teacher directly from the dashboard:
 
-1. Find the course you have a question about in your **Course Enrollments** section
+1. Find the course you have a question about in your **Your courses** section
 2. Click the **three-dot menu** (⋮) on the right side of that course row
 3. Select **Contact Teacher**
 4. Fill in the subject and your message

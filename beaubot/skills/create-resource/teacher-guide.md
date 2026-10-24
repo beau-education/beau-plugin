@@ -262,7 +262,7 @@ Open enrollment allows students to self-enroll in courses without teacher interv
 #### How Open Enrollment Works
 
 When open enrollment is enabled:
-- The course appears in the **Course Catalog** on the student dashboard
+- The course appears under **Join a course** on the student home page
 - Students can click "Enroll Now" to join the course immediately
 - The selected default teacher is automatically assigned to manage these enrollments
 - You receive an email notification each time a student self-enrolls
@@ -273,7 +273,7 @@ When open enrollment is enabled:
 **Enrollment opens** and **Enrollment closes** limit when students can join, for every kind of course. Both are optional: leave either empty (or clear it with ✕) for no limit.
 
 - The course can be joined from the start of the opening day through the end of the closing day, in your organisation's time zone.
-- Outside those dates the course is hidden from the **Course Catalog** and your public homepage, and enrolling, paying or booking is refused.
+- Outside those dates the course is hidden from **Join a course** and your public homepage, and enrolling, paying or booking is refused.
 - Students already enrolled are not affected: they keep the course and can take all its lessons after enrollment closes.
 
 #### Default Teacher Requirements
@@ -289,7 +289,7 @@ You can select yourself or another teacher in your organization as the default t
 
 If you set a maximum enrollment limit:
 - Students can only enroll if spaces are available
-- The Course Catalog shows remaining capacity (e.g., "8/10 enrolled")
+- **Join a course** shows remaining capacity (e.g., "8/10 enrolled")
 - Once full, the "Enroll Now" button is disabled and shows "Course Full"
 - You can increase the limit later to allow more enrollments
 
@@ -311,13 +311,13 @@ If your organization has Stripe Connect set up (see Admin Guide), you can create
 4. Enter the **Price** as a decimal amount (e.g., 29.99)
 5. Save the course
 
-Students will see the price with the appropriate currency symbol (£, $, €, etc.) in the Course Catalog. Clicking "Purchase Course" takes them through secure Stripe checkout, and they're automatically enrolled after payment.
+Students will see the price with the appropriate currency symbol (£, $, €, etc.) under **Join a course**. Clicking "Purchase Course" takes them through secure Stripe checkout, and they're automatically enrolled after payment.
 
 **Note**: Paid course setup requires your organization to have completed Stripe Connect onboarding. Contact your administrator if the Paid Course option is disabled.
 
 #### Teacher Preview Mode
 
-Before releasing a course to students, you can enable **Teacher Preview Only** mode to test everything—including the purchase flow for paid courses—without students seeing the course in their catalog.
+Before releasing a course to students, you can enable **Teacher Preview Only** mode to test everything—including the purchase flow for paid courses—without students seeing the course under Join a course.
 
 **Enabling Teacher Preview:**
 
@@ -327,7 +327,7 @@ Before releasing a course to students, you can enable **Teacher Preview Only** m
 
 **How Teacher Preview Works:**
 
-- The course only appears in the Course Catalog for users with the **teacher role**
+- The course only appears under **Join a course** for users with the **teacher role**
 - Students cannot see or enroll in the course
 - A yellow "Teacher Preview" badge appears on the course card and in course lists
 - Teachers can test the full enrollment process, including payment for paid courses
@@ -340,7 +340,7 @@ Before releasing a course to students, you can enable **Teacher Preview Only** m
 - Reviewing content organization and progression
 - Training other teachers on course content before student rollout
 
-**Tip:** Combine Teacher Preview with the Test Course feature to experience the course exactly as students will, while keeping it hidden from the student catalog.
+**Tip:** Combine Teacher Preview with the Test Course feature to experience the course exactly as students will, while keeping it hidden from students.
 
 ### Managing Course Enrollments
 
