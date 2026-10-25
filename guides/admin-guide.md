@@ -257,6 +257,10 @@ Write your **Terms of Service**, **Privacy Policy**, **Refund Policy** and **AI 
 
 The homepage, the consent form and the students' Help links all link to the policies you write here: the AI Privacy Policy first, otherwise the Privacy Policy.
 
+### Help Tab
+
+Every home page has a **Getting started** tile with the user guides and a **tour** (the ▶ button). By default it plays Beau's own tour for that audience: the parents and students tour, the teachers tour, and for admins the tutoring company tour. To play your own instead, choose one of your narrated worksheets for students and parents, teachers or admins (share the worksheet first, from its **Share** button).
+
 ### Stripe Tab
 
 Displays your Stripe Connect account status and platform fee percentage (read-only). Manage your Stripe connection from the **Admin > Payments** page.
