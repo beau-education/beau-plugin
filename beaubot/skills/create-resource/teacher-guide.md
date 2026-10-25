@@ -81,7 +81,7 @@ For each resource, you can:
 - **Edit**: Click the resource name to modify it
 - **Download ZIP**: Export the resource as a self-contained ZIP file (includes all media and quizzes)
 - **Test Resource**: Preview the resource with an AI tutor before assigning
-- **Assign to Student**: Set this resource as one student's homework (with a due date), or enroll them in a class course that has it
+- **Assign as homework**: Set this resource as one student's homework (with a due date), or enroll them in a class course that has it
 - **Delete**: Remove the resource (use with caution)
 
 ### Exporting and Importing Resources
@@ -388,7 +388,7 @@ If your organization sells in-person lessons, you teach them through Beau too, a
 - **Notes for you**: what you covered, where they struggled, what to practise. Private to teachers and admins, and saved as you type. They also appear on the student's page under **In-person lessons**, so last week's notes are there when you need them.
 - **Note for the parent**: saved as you type, but only sent when you click **Send to parent**. The parent gets it by email and sees it on the lesson in **My lessons**. You can edit it and send it again.
 - **Attendance**: Scheduled, Attended, No-show or Cancelled.
-- **Set homework**: opens the student's page to assign AI lessons before the next visit.
+- **Assign homework**: opens the student's page to assign AI lessons before the next visit.
 - **Recording** (if your organisation records lessons, and the student's parent has agreed): tick that everyone present knows, then **Record the lesson**. It's transcribed as you go; the recording itself is never kept. Afterwards, **Summarise with AI** drafts your notes and a note for the parent: choose **Use this** for each, then edit as you like. Nothing is sent until you send it. If the AI notices a possible welfare concern, it asks you to review it; it never goes in the parent's note.
 - **Raise a welfare concern**: what you saw or heard, as a concern or urgent. It goes to your organisation's Safeguarding register for an admin to review (an urgent one emails the admin straight away). It is never shared with the parent or the student.
 
@@ -485,7 +485,7 @@ Homework is a lesson you set for **one student**, usually with a due date. Use i
 
 #### Setting homework
 
-Open the **Assign a lesson** dialog — from **Assign homework** on the student's Homework card, or from the resource list (**Assign to Student**). Choose the student and lesson (the teacher defaults to you, and the bot to the one their homework already uses), then one of:
+Open the **Assign homework** dialog: from **Assign homework** on the student's Homework card or in the Students list's ⋮ menu, or from the resource list (**Assign as homework**). Choose the student and lesson (the teacher defaults to you, and the bot to the one their homework already uses), then one of:
 
 - **Homework for <student>** (the default): choose a **due date** (a week from today unless you change it; clear it for no due date) and the bot. The student is emailed.
 - **Enroll in class course "…"**: offered when a class course already contains that lesson and has other students in it. Best when the whole class is doing it.
