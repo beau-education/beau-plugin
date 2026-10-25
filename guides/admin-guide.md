@@ -12,20 +12,21 @@ This guide covers administrative functions including organization settings, user
 
 ## Organization Settings
 
-Navigate to **Admin > Settings** to configure your organization. Settings are organized into these tabs:
+Navigate to **Admin > Settings** to configure your organization. The tabs follow the order you set things up in:
 
 | Tab | Contents |
 |-----|----------|
-| **General** | Organization details, logo, contact info, business address, privacy policy |
-| **Students** | Student self-registration, parental consent form configuration |
-| **OpenAI** | The three OpenAI API keys (primary, share links, AI assistant) |
-| **Stripe** | Stripe connection status and platform fee (read-only) |
-| **Sharing** | Share-link kill switch and revoke-all panic button |
+| **General** | Organization details, logo, contact info, business address, time zone |
 | **Homepage** | Your public homepage: words, colour, banner, featured worksheets and videos, teachers |
 | **Policies** | Your terms, privacy, refund and AI privacy policies, each on its own public page |
-| **Tutoring** | Time zone and half terms for in-person lessons |
+| **Families** | Letting families sign up themselves (with your sign-up link), and parental consent |
+| **In-person lessons** | Half terms, and recording in-person lessons |
+| **Payments** | Stripe connection status and platform fee (read-only) |
+| **AI** | The three OpenAI API keys (primary, share links, AI assistant) |
+| **Share links** | Share-link kill switch and revoke-all panic button |
+| **Help** | The tour on each home page's Getting started tile |
 
-If the primary OpenAI API key is not configured, a warning banner appears across all tabs linking to the OpenAI tab.
+If the primary OpenAI API key is not configured, a warning banner appears across all tabs linking to the AI tab.
 
 ### General Tab
 
@@ -94,20 +95,42 @@ Enter your organization's physical address. All fields are optional but help est
 | **Postal Code** | ZIP or postal code |
 | **Country** | Select from the dropdown (ISO country codes) |
 
-#### Privacy Policy
+#### Time Zone
 
-If your organization has a privacy policy for AI-assisted learning, enter the full URL. When configured:
-- A "Privacy Policy" link appears in the student Help panel
-- A shield icon appears on course cards linking to the policy
-- A required "I have read and agree to the privacy policy" checkbox is automatically added to the consent form (if consent is enabled)
+Calendars, lesson times, enrolment dates and booking emails all use your organization's time zone. It defaults to Europe/London; summer time is handled for you. It's saved as soon as you choose it.
 
-This is optional but recommended for transparency about how AI and student data are used.
+### Homepage Tab
 
-### Students Tab
+Your organization can have a public homepage at **beau.bot/your-slug** that anyone can visit. It shows who you are and lists every course with open enrollment (teacher previews are left out). A visitor picks a course, signs up (or signs in) and goes straight on: to the booking page for in-person lessons, or to **Join a course** on their home page for AI lessons, where they enrol or pay.
 
-#### Student Registration
+The homepage needs **Let families sign up themselves** on (Families tab), since every course on it leads to sign-up. Turning it off takes the page down too.
 
-Toggle **Allow student self-registration** to let students create their own accounts using your organization's sign-up link. The sign-up link is displayed on this page and can be shared with students.
+- **Publish the homepage**: the on/off switch. **View page** opens it once it's on.
+- **Headline** and **Introduction**: the words across the top of the page. With no headline, it reads "Learn with" and your organization's name.
+- **Brand colour**: the buttons and, with no banner photo, the background behind the headline. It also colours the **Pay** button at checkout.
+- **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
+- **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Share links tab). Videos are the ones uploaded to your media library.
+- **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out. The section is headed **Our teachers**, or **Taught by** when only one teacher is shown.
+  Each teacher has a **Contact** button. It opens a short form (name, email, optional phone, message), and the message is emailed to the teacher with reply-to the parent, so the teacher's own email address stays private until they reply.
+- **What parents say** (optional):
+  - **Google reviews**: paste two links from your free Google Business Profile (business.google.com): the "Ask for reviews" link (the **Leave a review** button opens Google's star-rating box) and your Google Maps link (**Read our reviews on Google**).
+  - **Testimonials**: up to 6, shown as a carousel that moves on by itself, each with the parent's words, a name and an optional description ("Mum to a little girl, age 7"). Use parents' real words, unedited, and only with their permission: UK law treats fake or edited reviews as misleading.
+- **Questions parents ask** (optional): up to 12 questions and answers, shown as a list parents open one at a time.
+- **Find us**: your address (with an **Open in Google Maps** button), phone and email, taken from the General tab, so there's nothing to type twice. Switch it off if you'd rather not show your address, for example if you teach from home.
+
+Your logo, website and privacy policy (General tab) appear on the page too.
+
+### Policies Tab
+
+Write your **Terms of Service**, **Privacy Policy**, **Refund Policy** and **AI Privacy Policy** here, in Markdown (`# Heading`, `**bold**`, `- list item`). Use **Preview** to check how one looks. Each one you write gets its own public page (beau.bot/your-slug/policies/…), linked from the bottom of your homepage; leave one empty to leave it out. **View page** opens a saved policy.
+
+The homepage, the consent form and the students' Help links all link to the policies you write here: the AI Privacy Policy first, otherwise the Privacy Policy.
+
+### Families Tab
+
+#### Sign-up
+
+Turn on **Let families sign up themselves** so parents and students can create an account with your organization's sign-up link, without an invitation. The link is shown on this tab: click it (or its copy button) to copy it, and share it with parents and students.
 
 #### Parental Consent
 
@@ -150,7 +173,7 @@ When consent is enabled, a two-column layout appears with configuration on the l
 
 ##### Consent Form Preview
 
-The right side of the Students tab shows a live preview that updates as you configure the form. This shows exactly what parents will see, including:
+The right side of the Families tab shows a live preview that updates as you configure the form. This shows exactly what parents will see, including:
 - Introduction text
 - Parent name field
 - Consent checkboxes
@@ -203,7 +226,20 @@ From the student list action menu:
 - **Resend Welcome Email**: Re-send the welcome email to a verified student
 - **Revoke Consent**: Block a student's access by resetting their consent to Pending. The student will need to re-submit the consent form to regain access.
 
-### OpenAI Tab
+### In-person lessons Tab
+
+Set up in-person tutoring (see **In-Person Tutoring** below):
+
+- **Half terms**: add each half term parents can buy, with its first and last day and any days off in it (bank holidays, INSET days). A half term with bookings keeps its dates (only its name can change) and can't be deleted.
+- **Recording in-person lessons**: let teachers record lessons for AI notes (see **Recording in-person lessons** below).
+
+### Payments Tab
+
+Displays your Stripe Connect account status and platform fee percentage (read-only). Manage your Stripe connection from the **Admin > Payments** page.
+
+For detailed Stripe setup instructions, see the **Payments and Stripe Integration** section below.
+
+### AI Tab
 
 Beau uses OpenAI for three separate workloads. You can use **one key for everything**, or set a **dedicated key per workload** so you can monitor usage and apply separate spend limits in the OpenAI dashboard. The tab shows a status table — what each key powers and whether it's configured — with a pencil **edit** action per row that opens a dialog to set, replace, or clear the key. Keys are masked after saving and never shown again.
 
@@ -217,7 +253,7 @@ Setting the optional keys lets you meter and cap share-link and content-authorin
 
 **Important**: Without a primary OpenAI API key, resource testing and student lessons will not work.
 
-### Sharing Tab
+### Share links Tab
 
 Public lesson URLs let anyone — including people without an account on your platform — take a specific lesson by clicking a link. Teachers create the links from the resource editor; this tab is where you manage them at the organization level. (The dedicated share-link OpenAI key lives on the **OpenAI** tab.)
 
@@ -230,53 +266,13 @@ Public lesson URLs let anyone — including people without an account on your pl
 - No student profile, no user row
 - The visitor's interaction is in-memory only and disappears when they close the tab
 
-### Homepage Tab
-
-Your organization can have a public homepage at **beau.bot/your-slug** that anyone can visit. It shows who you are and lists every course with open enrollment (teacher previews are left out). A visitor picks a course, signs up (or signs in) and goes straight on: to the booking page for in-person lessons, or to **Join a course** on their home page for AI lessons, where they enrol or pay.
-
-The homepage needs **open sign-up** (Students tab), since every course on it leads to sign-up. Turning open sign-up off takes the page down too.
-
-- **Publish the homepage**: the on/off switch. **View page** opens it once it's on.
-- **Headline** and **Introduction**: the words across the top of the page. With no headline, it reads "Learn with" and your organization's name.
-- **Brand colour**: the buttons and, with no banner photo, the background behind the headline. It also colours the **Pay** button at checkout.
-- **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
-- **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Sharing tab). Videos are the ones uploaded to your media library.
-- **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out. The section is headed **Our teachers**, or **Taught by** when only one teacher is shown.
-  Each teacher has a **Contact** button. It opens a short form (name, email, optional phone, message), and the message is emailed to the teacher with reply-to the parent, so the teacher's own email address stays private until they reply.
-- **What parents say** (optional):
-  - **Google reviews**: paste two links from your free Google Business Profile (business.google.com): the "Ask for reviews" link (the **Leave a review** button opens Google's star-rating box) and your Google Maps link (**Read our reviews on Google**).
-  - **Testimonials**: up to 6, shown as a carousel that moves on by itself, each with the parent's words, a name and an optional description ("Mum to a little girl, age 7"). Use parents' real words, unedited, and only with their permission: UK law treats fake or edited reviews as misleading.
-- **Questions parents ask** (optional): up to 12 questions and answers, shown as a list parents open one at a time.
-- **Find us**: your address (with an **Open in Google Maps** button), phone and email, taken from the General tab, so there's nothing to type twice. Switch it off if you'd rather not show your address, for example if you teach from home.
-
-Your logo, website and privacy policy (General tab) appear on the page too.
-
-### Policies Tab
-
-Write your **Terms of Service**, **Privacy Policy**, **Refund Policy** and **AI Privacy Policy** here, in Markdown (`# Heading`, `**bold**`, `- list item`). Use **Preview** to check how one looks. Each one you write gets its own public page (beau.bot/your-slug/policies/…), linked from the bottom of your homepage; leave one empty to leave it out. **View page** opens a saved policy.
-
-The homepage, the consent form and the students' Help links all link to the policies you write here: the AI Privacy Policy first, otherwise the Privacy Policy.
-
 ### Help Tab
 
 Every home page has a **Getting started** tile with the user guides and a **tour** (the ▶ button). By default it plays Beau's own tour for that audience: the parents and students tour, the teachers tour, and for admins the tutoring company tour. To play your own instead, choose one of your narrated worksheets for students and parents, teachers or admins (share the worksheet first, from its **Share** button).
 
-### Stripe Tab
-
-Displays your Stripe Connect account status and platform fee percentage (read-only). Manage your Stripe connection from the **Admin > Payments** page.
-
-For detailed Stripe setup instructions, see the **Payments and Stripe Integration** section below.
-
-### Tutoring Tab
-
-Set up in-person tutoring (see **In-Person Tutoring** below):
-
-- **Time zone**: every lesson time and booking email uses it. Defaults to Europe/London; summer time is handled for you.
-- **Half terms**: add each half term parents can buy, with its first and last day and any days off in it (bank holidays, INSET days). A half term with bookings keeps its dates (only its name can change) and can't be deleted.
-
 ## In-Person Tutoring
 
-**Recording in-person lessons.** Turn on **Allow recording in-person lessons** (Settings › Students) to
+**Recording in-person lessons.** Turn on **Allow recording in-person lessons** (Settings › In-person lessons) to
 let teachers record a lesson on its page, to have AI transcribe it and draft notes for the teacher and
 the parent. A lesson can only be recorded if the student's parent has said yes under **Account ›
 Parent or guardian › Lesson recordings**. The recording is never kept, only the transcript, which only
@@ -291,11 +287,11 @@ schedule** as usual. Invite the students first if they aren't on Beau yet.
 Your organization can sell in-person lessons a half term at a time, alongside AI lessons. A parent signs in as the student (the student's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
 
 **Setting it up**
-1. Add your half terms (Settings › Tutoring).
+1. Add your half terms (Settings › In-person lessons).
 2. Each teacher fills in **Account › Teacher**: bio, subjects, a **price for each lesson length** they offer (30, 45 or 60 minutes) and how many days' notice they need to reschedule a lesson (14 by default). Only the teacher can set their prices; you can see them. A teacher without a price for one of the course's lengths isn't offered to parents.
 3. A teacher creates a course with **Course type: In-person lessons** (it can also have AI lessons on its Resources tab, for students to do between sessions), chooses the lesson lengths, the most lessons a week, the teachers and the half terms, and turns on **Open Enrollment** so parents can book it.
 
-**Prices and fees**: a booking is the whole half term: every teaching week × lessons a week, at the teacher's price for that length. It's the full price whenever it's bought (it can be bought until the start of the half term's last week). A week with a bank holiday still counts; the teacher schedules around it. In-person bookings carry their own platform fee (shown on the Stripe tab), separate from the fee on AI courses. Payments go to your organization's Stripe account; **Payments** shows in-person income per teacher so you can pay your teachers.
+**Prices and fees**: a booking is the whole half term: every teaching week × lessons a week, at the teacher's price for that length. It's the full price whenever it's bought (it can be bought until the start of the half term's last week). A week with a bank holiday still counts; the teacher schedules around it. In-person bookings carry their own platform fee (shown on the Payments tab), separate from the fee on AI courses. Payments go to your organization's Stripe account; **Payments** shows in-person income per teacher so you can pay your teachers.
 
 **Scheduling**: a paid booking appears under **Calendar › To schedule** with the family's note and contact details. The teacher agrees times with the family, then clicks **Schedule**: they see their week, click the agreed times, and Beau creates every lesson of the half term, leaving out any week that clashes (for a single lesson instead). If the half term can't hold every lesson owed (for example, a booking made or entered in its last week), the rest carry on into your next half terms, skipping their days off and the holidays between them (or into the following weeks, if no later half term is set up); the preview says which lessons fall after the half term. The family is emailed every date. A lesson cancelled later puts the booking back under To schedule, to rearrange.
 
