@@ -138,7 +138,7 @@ When consent is enabled, a two-column layout appears with configuration on the l
 **Built-in fields** (always shown when consent is enabled):
 - Parent/Guardian Full Name (required)
 - "I consent to the student having AI tutoring lessons: spoken lessons with Beau, an AI tutor (not a person)" checkbox (required)
-- "I have read and agree to the Privacy Policy and the AI Privacy Policy" checkbox, linking each policy you have written under **Settings › Policies** (or the Privacy Policy URL on the General tab). Shown, and required, when you have either policy
+- "I have read and agree to the Privacy Policy and the AI Privacy Policy" checkbox, linking each policy you have written under **Settings › Policies**. Shown, and required, when you have either policy
 
 **Custom Questions**: Add up to 10 custom questions to gather additional information from parents. Each question has:
 
@@ -255,7 +255,7 @@ Your logo, website and privacy policy (General tab) appear on the page too.
 
 Write your **Terms of Service**, **Privacy Policy**, **Refund Policy** and **AI Privacy Policy** here, in Markdown (`# Heading`, `**bold**`, `- list item`). Use **Preview** to check how one looks. Each one you write gets its own public page (beau.bot/your-slug/policies/…), linked from the bottom of your homepage; leave one empty to leave it out. **View page** opens a saved policy.
 
-If you write a Privacy Policy here, the homepage links to it instead of the privacy policy link on the General tab.
+The homepage, the consent form and the students' Help links all link to the policies you write here: the AI Privacy Policy first, otherwise the Privacy Policy.
 
 ### Stripe Tab
 
@@ -776,8 +776,8 @@ for what the grader looks for and its limits.
 3. Enter your website URL, admin email, and phone number
 4. Add your business address
 5. Configure your URL slug if desired
-6. Optionally add a Privacy Policy URL
-7. Click **Save Changes**
+6. Click **Save Changes**
+7. Write your policies under **Settings › Policies** (Privacy, AI Privacy, Terms, Refunds)
 
 ### Onboarding a New Teacher
 
@@ -822,7 +822,7 @@ for what the grader looks for and its limits.
 5. Check the live preview on the right to see what parents will see
 6. Click **Save Changes**
 7. Ensure your contact info is filled in on the **General** tab (shown on the consent form)
-8. If you have a privacy policy URL set on the **General** tab, a privacy policy checkbox is automatically added
+8. If you have written a Privacy or AI Privacy Policy under **Settings › Policies**, a checkbox agreeing to it is added automatically
 
 ### Configuring the OpenAI API Key
 
