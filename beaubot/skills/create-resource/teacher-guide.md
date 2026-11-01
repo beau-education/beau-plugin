@@ -393,7 +393,7 @@ If your organization sells in-person lessons, you teach them through Beau too, a
 - **Raise a welfare concern**: what you saw or heard, as a concern or urgent. It goes to your organisation's Safeguarding register for an admin to review (an urgent one emails the admin straight away). It is never shared with the parent or the student.
 
 ### Your teaching profile
-In **Account › Teacher**, write a short bio, add your subjects, set a **price for each lesson length** you offer (30, 45 or 60 minutes; leave a length empty if you don't offer it) and the **notice** you need to reschedule a lesson (14 days by default). Parents see these, with your photo, when they choose a teacher; if your organization has a public homepage that shows its teachers, your photo, subjects and bio appear there too. New prices only apply to new bookings. To see your lessons in Apple Calendar, Google Calendar or Outlook, use **Add to my calendar app** on the **Calendar** page.
+In **Account › Teacher**, write a short bio, add your subjects, set a **price for each lesson length** you offer (30, 45 or 60 minutes; leave a length empty if you don't offer it) and the **notice** you need to reschedule a lesson (14 days by default). Parents see these, with your photo, when they choose a teacher; if your organization has a public homepage that shows its teachers, your photo, subjects and bio appear there too. New prices only apply to new bookings. A course can have its own prices instead (for example a small group, cheaper than one-to-one): then everyone teaching it charges the course's prices, set in the course's in-person section. To see your lessons in Apple Calendar, Google Calendar or Outlook, use **Add to my calendar app** on the **Calendar** page.
 
 ### Scheduling a new booking
 Parents buy a whole half term (a length and lessons a week) and leave a note on the times that suit them. Their booking appears at the top of your **Calendar** under **To schedule**, with the note and their contact details.
@@ -418,7 +418,7 @@ Open **Calendar**.
 ### Creating a tutoring course
 Create a course and choose **Course type: In-person lessons**. Set the lesson lengths parents can choose (30, 45 and/or 60 minutes), the most lessons a week, the location, subject, age range and what's included, then the **teachers** and **half terms** it's offered in. Turn on **Open Enrollment** to let parents book it. If only one teacher is listed, parents skip choosing.
 
-To offer an existing in-person course yourself, edit it and add yourself under **Teachers parents can choose**; parents only see you once you've set a price for one of its lesson lengths in Account › Teacher.
+To offer an existing in-person course yourself, edit it and add yourself under **Teachers parents can choose**; parents only see you once you've set a price for one of its lesson lengths in Account › Teacher (unless the course has its own prices).
 
 An in-person course can also have **AI lessons**: choose a bot and add resources on its **Resources** tab, as for any course. Every student who books it gets them, to do between sessions. (For one student only, set homework instead.)
 
