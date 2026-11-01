@@ -670,6 +670,8 @@ When you process a refund:
 - The platform's share is also reversed
 - The student's enrollment remains active (but can be manually deactivated)
 
+**In-person lessons**: refunding a booking offers **Also cancel the booking and its lessons still to come**, ticked by default. The booking leaves To schedule, its future lessons are cancelled (lessons already given stay), and the family is emailed (the teacher too, if it's not you). Refunding lessons a family added to a booking instead takes those lessons off it, cancelling any of them already scheduled. Untick it to refund without changing the lessons.
+
 **Note**: Stripe's original processing fees are not refunded. The platform absorbs this cost.
 
 ### Free Courses
