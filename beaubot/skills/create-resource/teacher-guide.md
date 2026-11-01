@@ -405,6 +405,8 @@ If the half term can't hold every lesson the family has paid for (for example, i
 
 The family is emailed every date. If a lesson is cancelled later, the booking comes back under To schedule so you can rearrange it.
 
+If a booking won't go ahead, **Cancel booking** beside it cancels its lessons still to come (you choose whether the family is emailed); it doesn't refund them, which an admin does from Payments. A booking marked **Half term over** still has lessons never scheduled: schedule them later, or cancel it.
+
 If a family adds lessons a week to their booking (they pay for the extra lessons themselves), you get an email and the booking comes back under To schedule with the new lessons to arrange.
 
 ### Your lesson calendar
