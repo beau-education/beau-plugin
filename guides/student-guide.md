@@ -128,6 +128,10 @@ Once the teacher has scheduled your lessons:
 - The next fortnight's lessons appear in **Your lessons** on your home page.
 - Every lesson is on the calendar in **My lessons** (tap **All lessons** on your home page).
 
+### Adding lessons
+
+Booked fewer lessons a week than you need? Add more to your booking: you can't book the same half term twice. Go to **My lessons** and press **Add lessons** under **Need more lessons?**, or open the course's booking page and choose the half term you've booked. Choose how many more lessons a week (up to what the course allows), add a note on the times that suit, and pay for the extra lessons at checkout. They're priced at the same rate as your booking, for the weeks left in the half term. Your teacher then gets in touch to arrange the new times.
+
 ### My lessons
 
 **My lessons** shows the half term's lessons on a calendar. Times are in your organisation's time zone.
