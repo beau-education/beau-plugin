@@ -617,7 +617,7 @@ The checkout page carries your organization's name and logo, your homepage **Bra
 
 A few things to know:
 - **Pay by Bank** can take a moment to confirm. The student is enrolled (or the booking confirmed) once the money has arrived, not before; if the bank payment fails, the booking is released.
-- **A checkout a family leaves without paying** is marked **Failed** in Payments when it expires (after at most a day), so it doesn't sit as pending.
+- **A checkout a family leaves without paying** is marked **not completed** in Payments when it expires (after at most a day), so it doesn't sit as pending. It isn't a declined card: the family never paid.
 - **Starting again**: if a parent leaves the checkout page and books the same half term again, their earlier checkout is cancelled and the new one replaces it, so they can never pay twice.
 
 ### Revenue Split
