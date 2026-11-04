@@ -317,7 +317,7 @@ Your dashboard shows a chronological record of your completed resources, includi
 
 You can ask for help from your home page, from **Support** in the menu, or from the course or lesson your question is about:
 
-- **Need help?** on your home page: choose who to ask, the teacher of one of your courses or your tutoring organisation, then **Ask**.
+- **Need help?** on the **My Progress** card on your home page: choose who to ask, the teacher of one of your courses or your tutoring organisation.
 - **Contact Teacher** on a course (open it from **Your courses**): goes to that course's teacher.
 - **Report a problem** on an in-person lesson (**My lessons**, then the lesson): goes to its teacher, about that lesson.
 - **Ask for help** on the **Support** page: goes to your tutoring organisation.
