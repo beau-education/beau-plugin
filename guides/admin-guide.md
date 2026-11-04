@@ -799,7 +799,7 @@ Support follows a chain: **teachers support families, admins support teachers, a
 
 **Support** in the menu (with a count of new cases):
 - **To answer**: cases waiting on any admin. These are your teachers' questions, cases a teacher passed to you, a family's question that isn't about a particular course, and **Can't sign in or sign up?** messages.
-- **All cases**: every case in your organisation, including those a teacher is handling (read only).
+- **All cases**: every case in your organisation. You can read the ones a teacher is handling, and **Take over** one if they can't answer: it moves to your admins, and the family is told.
 - **Asked by me**: your own questions to the Beau team, with **Ask for help**.
 
 In a case:
@@ -810,7 +810,7 @@ In a case:
 
 Each case shows what the app saw when it was opened: the page, browser and recent errors.
 
-**Can't sign in or sign up?** sits on your sign-in pages, for people who can't get in. They give a name, an email and what happened. The case comes to you, with the sign-in error if there was one, and your replies go to them by email. If they reply, it goes to your organisation's email address (General tab).
+**Can't sign in or sign up?** sits on your sign-in pages, for people who can't get in. They give a name, an email and what happened. The case comes to you, with the sign-in error if there was one, and your replies go to them by email. **Who they are isn't verified:** check before you change anyone's account. A second message from the same email joins their open case. If they reply, it goes to your organisation's email address (General tab).
 
 A worry about a child is never a support case. The forms send people to your **safeguarding lead**.
 
