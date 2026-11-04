@@ -120,7 +120,7 @@ The homepage needs **Let families sign up themselves** on (Families tab), since 
 - **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
 - **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Share links tab). Videos are the ones uploaded to your media library.
 - **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out. The section is headed **Our teachers**, or **Taught by** when only one teacher is shown.
-  Under each teacher's name are the background check and memberships you've recorded on their user page (see **Editing Users**), e.g. "Enhanced DBS checked · Mar 2026". When every teacher has the same check, it's also shown as a badge under your headline ("Enhanced DBS checked").
+  Under each teacher's name are the background check and memberships you've recorded on their user page (see **Editing Users**), e.g. "Enhanced DBS checked · Mar 2026 · on the DBS Update Service". When every teacher has a check recorded, a badge under your headline says so: "Enhanced DBS checked" when they all have the same check, "Background checked" when their checks differ. It links to **Keeping your child safe**.
   Each teacher has a **Contact** button. It opens a short form (name, email, optional phone, message), and the message is emailed to the teacher with reply-to the parent, so the teacher's own email address stays private until they reply.
 - **What parents say** (optional):
   - **Google reviews**: paste two links from your free Google Business Profile (business.google.com): the "Ask for reviews" link (the **Leave a review** button opens Google's star-rating box) and your Google Maps link (**Read our reviews on Google**).
@@ -364,7 +364,8 @@ Click on any user to change what only an admin can:
 - Their **tags**
 - **Delete user** (after a confirmation): their sign-in is deleted, so they lose access straight away; their lessons, transcripts and other records are kept
 - For a teacher, **Background check and memberships**, shown to parents on your homepage and booking page:
-  - Tick that you've seen their criminal record or background check certificate, then say **which check** it is, as your country names it (in England, **Enhanced DBS**; in Scotland, **PVG**), and the date it was **issued**. Tick **Kept up to date by a monitoring service** if it's on one (in England, the DBS Update Service).
+  - Tick that you've seen their criminal record or background check certificate, then say **which check** it is, as your country names it (in England, **Enhanced DBS**; in Scotland, **PVG**), and the date it was **issued**. The suggestions follow your organization's country (General tab), and you can type any check. Tick **Kept up to date by a monitoring service** if it's on one (in England and Wales, the DBS Update Service: parents then see "on the DBS Update Service").
+  - It's saved with **Save Changes**, along with their roles and tags.
   - **Professional memberships**, e.g. The Tutors' Association.
   - Record only what you've seen on the certificate. Don't store the certificate or its number in Beau. Beau doesn't carry out checks itself.
 
