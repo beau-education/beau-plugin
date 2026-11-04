@@ -95,6 +95,15 @@ Enter your organization's physical address. All fields are optional but help est
 | **Postal Code** | ZIP or postal code |
 | **Country** | Select from the dropdown (ISO country codes) |
 
+#### Safeguarding Lead
+
+Choose the person responsible for keeping children safe in your organisation, from your admins (they need to be an admin to open **Admin ▸ Safeguarding**). It's saved as soon as you choose. Your safeguarding lead:
+- is emailed straight away about anything **urgent**: a worrying comment in an AI lesson (the student's teacher is told too), or an urgent concern a teacher raises;
+- is emailed about any concern in an AI lesson that has no teacher;
+- is named to parents in **Keeping your child safe** on your homepage and booking pages.
+
+Until you choose one, urgent concerns teachers raise go to your organisation's email, and AI lesson alerts go only to the student's teacher. **Name your safeguarding lead** stays on your Quick Start list until it's set. A sole tutor chooses themselves.
+
 #### Time Zone
 
 Calendars, lesson times, enrolment dates and booking emails all use your organization's time zone. It defaults to Europe/London; summer time is handled for you. It's saved as soon as you choose it.
@@ -111,11 +120,13 @@ The homepage needs **Let families sign up themselves** on (Families tab), since 
 - **Banner photo** (optional): a wide photo behind the headline, at least 1200×400px.
 - **Get to know us**: up to 6 narrated worksheets or videos that introduce your organization. Visitors play them without an account. A worksheet is featured through its share link, so create one first (the worksheet's **Share** button) and keep **Allow share links** on (Share links tab). Videos are the ones uploaded to your media library.
 - **Show our teachers**: lists the teachers of your in-person courses with their photo, subjects and bio from their teaching profile (Account › Teacher). Teachers with no bio or subjects are left out. The section is headed **Our teachers**, or **Taught by** when only one teacher is shown.
+  Under each teacher's name are the background check and memberships you've recorded on their user page (see **Editing Users**), e.g. "Enhanced DBS checked · Mar 2026". When every teacher has the same check, it's also shown as a badge under your headline ("Enhanced DBS checked").
   Each teacher has a **Contact** button. It opens a short form (name, email, optional phone, message), and the message is emailed to the teacher with reply-to the parent, so the teacher's own email address stays private until they reply.
 - **What parents say** (optional):
   - **Google reviews**: paste two links from your free Google Business Profile (business.google.com): the "Ask for reviews" link (the **Leave a review** button opens Google's star-rating box) and your Google Maps link (**Read our reviews on Google**).
   - **Testimonials**: up to 6, shown as a carousel that moves on by itself, each with the parent's words, a name and an optional description ("Mum to a little girl, age 7"). Use parents' real words, unedited, and only with their permission: UK law treats fake or edited reviews as misleading.
 - **Questions parents ask** (optional): up to 12 questions and answers, shown as a list parents open one at a time.
+- **Keeping your child safe** (shown automatically when there's something to say): your safeguarding lead's name, that every teacher has a background check (when you've recorded one for each), and, if you have AI lessons, how they're kept safe. It links to Beau's **Safety** page (beau.bot/safety). The same panel appears on your booking pages.
 - **Find us**: your address (with an **Open in Google Maps** button), phone and email, taken from the General tab, so there's nothing to type twice. Switch it off if you'd rather not show your address, for example if you teach from home.
 
 Your logo, website and privacy policy (General tab) appear on the page too.
@@ -352,6 +363,10 @@ Click on any user to change what only an admin can:
 - Their **roles** (admin, teacher, student)
 - Their **tags**
 - **Delete user** (after a confirmation): their sign-in is deleted, so they lose access straight away; their lessons, transcripts and other records are kept
+- For a teacher, **Background check and memberships**, shown to parents on your homepage and booking page:
+  - Tick that you've seen their criminal record or background check certificate, then say **which check** it is, as your country names it (in England, **Enhanced DBS**; in Scotland, **PVG**), and the date it was **issued**. Tick **Kept up to date by a monitoring service** if it's on one (in England, the DBS Update Service).
+  - **Professional memberships**, e.g. The Tutors' Association.
+  - Record only what you've seen on the certificate. Don't store the certificate or its number in Beau. Beau doesn't carry out checks itself.
 
 Everything else about a person is theirs to edit, on their own **Account** pages: their name, photo and, for teachers, the **Teacher** tab with two separate texts:
 - **Your bio, for parents**: shown to parents choosing a teacher and on your public homepage
@@ -752,7 +767,8 @@ The lesson grader reads each finished lesson and flags:
 
 Teachers can also **raise a concern themselves**, from an in-person lesson's page (**Raise a welfare
 concern**). These appear in the same list, marked as raised by the teacher, with what they wrote. An
-**urgent** one also emails your organisation's admin straight away. Concerns are never shared with the
+**urgent** one also emails your **safeguarding lead** straight away (General tab), or your
+organisation's email when you haven't named one. Concerns are never shared with the
 parent or the student.
 
 Each concern shows the student (click to open their page), the lesson, course and teacher, when
@@ -769,7 +785,9 @@ Concerns stay listed even after the lesson is removed from its course or the stu
 from it: a concern about a student does not stop mattering when a course is tidied up. Teacher test
 runs are never included.
 
-The student's teacher is also emailed about each new welfare concern. Beau's flags are a prompt
+The student's teacher is also emailed about each new welfare concern from an AI lesson, and your
+**safeguarding lead** about each urgent one (and about any concern in a lesson with no teacher).
+Beau's flags are a prompt
 to look, not a judgement, and are not a safeguarding procedure — if you believe a student is at
 risk, follow your organisation's safeguarding policy. See **Safeguarding** in the Teacher Guide
 for what the grader looks for and its limits.

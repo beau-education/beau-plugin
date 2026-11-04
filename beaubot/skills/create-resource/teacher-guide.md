@@ -390,7 +390,7 @@ If your organization sells in-person lessons, you teach them through Beau too, a
 - **Attendance**: Scheduled, Attended, No-show or Cancelled.
 - **Assign homework**: opens the student's page to assign AI lessons before the next visit.
 - **Recording** (if your organisation records lessons, and the student's parent has agreed): tick that everyone present knows, then **Record the lesson**. It's transcribed as you go; the recording itself is never kept. Afterwards, **Summarise with AI** drafts your notes and a note for the parent: choose **Use this** for each, then edit as you like. Nothing is sent until you send it. If the AI notices a possible welfare concern, it asks you to review it; it never goes in the parent's note.
-- **Raise a welfare concern**: what you saw or heard, as a concern or urgent. It goes to your organisation's Safeguarding register for an admin to review (an urgent one emails the admin straight away). It is never shared with the parent or the student.
+- **Raise a welfare concern**: what you saw or heard, as a concern or urgent. It goes to your organisation's Safeguarding register for an admin to review (an urgent one emails your organisation's safeguarding lead straight away). It is never shared with the parent or the student.
 
 ### Your teaching profile
 In **Account › Teacher**, write a short bio, add your subjects, set a **price for each lesson length** you offer (30, 45 or 60 minutes; leave a length empty if you don't offer it) and the **notice** you need to reschedule a lesson (14 days by default). Parents see these, with your photo, when they choose a teacher; if your organization has a public homepage that shows its teachers, your photo, subjects and bio appear there too. New prices only apply to new bookings. A course can have its own prices instead (for example a small group, cheaper than one-to-one): then everyone teaching it charges the course's prices, set in the course's in-person section. To see your lessons in Apple Calendar, Google Calendar or Outlook, use **Add to my calendar app** on the **Calendar** page.
@@ -646,6 +646,10 @@ will hear about that.
 assessment appears at the top, above the score: how serious it is, the quotes, and why each was
 flagged. There is a **Mark as reviewed** button that records that you have seen it and dealt with
 it.
+
+**Urgent concerns also go to your safeguarding lead.** If your organisation has named one
+(Settings › General), they're emailed about every urgent flag as well as you, so a child at risk
+never depends on one person reading one email.
 
 **Your organisation's admins see every concern.** **Admin ▸ Safeguarding** lists every welfare
 and conduct concern for every student, whoever teaches them, with what is still waiting for
