@@ -689,6 +689,17 @@ most reliable way to understand how a student is doing. If a student seems withd
 unusually badly, or abandons lessons part-way, the transcript will often tell you more than the
 score does.
 
+## Support
+
+Families ask you for help about your courses and lessons. **Support** in the menu (with a count of new cases) lists them under **To answer**.
+
+- Open a case to read it. **Reply** emails the family your answer. Turn on **Note only** to add a note that only the people handling the case see, never the family.
+- **Pass to** (your organisation's team) when you can't help: add a note on what you've tried. The family is told who has it now. If you're also your organisation's admin, it goes straight to the Beau team.
+- **Mark solved** when it's done. If the family replies, it opens again.
+- **Asked by me** lists what you've asked your organisation's admins, with **Ask for help**.
+
+A worry about a child is never a support case: **raise a welfare concern** (see **Safeguarding**).
+
 ## Working with Bots
 
 Bots are AI tutors that guide students through interactive lessons. Only administrators can create and configure bots.

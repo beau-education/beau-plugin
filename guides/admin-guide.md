@@ -793,6 +793,27 @@ to look, not a judgement, and are not a safeguarding procedure — if you believ
 risk, follow your organisation's safeguarding policy. See **Safeguarding** in the Teacher Guide
 for what the grader looks for and its limits.
 
+## Support
+
+Support follows a chain: **teachers support families, admins support teachers, and the Beau team supports admins.** Each level answers what it can and passes the rest up, with the whole case, so nobody repeats themselves.
+
+**Support** in the menu (with a count of new cases):
+- **To answer**: cases waiting on any admin. These are your teachers' questions, cases a teacher passed to you, a family's question that isn't about a particular course, and **Can't sign in or sign up?** messages.
+- **All cases**: every case in your organisation, including those a teacher is handling (read only).
+- **Asked by me**: your own questions to the Beau team, with **Ask for help**.
+
+In a case:
+- **Reply** emails the person who asked.
+- **Note only** adds a note for the people handling it.
+- **Pass to the Beau team** sends it on when you can't solve it.
+- **Mark solved** closes it.
+
+Each case shows what the app saw when it was opened: the page, browser and recent errors.
+
+**Can't sign in or sign up?** sits on your sign-in pages, for people who can't get in. They give a name, an email and what happened. The case comes to you, with the sign-in error if there was one, and your replies go to them by email. If they reply, it goes to your organisation's email address (General tab).
+
+A worry about a child is never a support case. The forms send people to your **safeguarding lead**.
+
 ## Common Administrative Tasks
 
 ### Setting Up Your Organization

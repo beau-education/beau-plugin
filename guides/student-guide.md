@@ -313,20 +313,23 @@ Your dashboard shows a chronological record of your completed resources, includi
 
 ## Getting Help
 
-### Contacting Your Teacher
+### Asking for help
 
-If you have questions about course content or need assistance, you can contact your teacher directly from the dashboard:
+You can ask for help from your home page, from **Support** in the menu, or from the course or lesson your question is about:
 
-1. Find the course you have a question about in your **Your courses** section
-2. Click the **three-dot menu** (⋮) on the right side of that course row
-3. Select **Contact Teacher**
-4. Fill in the subject and your message
-5. Click **Send Message**
+- **Need help?** on your home page: choose who to ask, the teacher of one of your courses or your tutoring organisation, then **Ask**.
+- **Contact Teacher** on a course (open it from **Your courses**): goes to that course's teacher.
+- **Report a problem** on an in-person lesson (**My lessons**, then the lesson): goes to its teacher, about that lesson.
+- **Ask for help** on the **Support** page: goes to your tutoring organisation.
 
-Your message will be sent directly to your assigned teacher for that course. They can see your progress and will respond to help you.
+Say what it's about and what happened, then **Send**. Before you send, the form tells you who it goes to. You get their reply by email, and you can follow the conversation under **Support**: reply there, or mark it **solved** when it is. If your teacher can't help, they may pass your question to their organisation, or to the Beau team. You're told each time who has it.
+
+**Worried about a child's safety?** Don't use these forms. Contact your tutoring organisation's safeguarding lead, named in the form and on their homepage, or the emergency services if a child is in danger.
 
 ### Other Support
 
 If signing in to a lesson doesn't work, you'll see **We couldn't sign you in**, with the reason when there is one. Check your email address and password, then press **Sign in again**.
 
-If you're experiencing other technical issues with the platform (pages not loading, etc.), contact your administrator for assistance.
+**Can't sign in or sign up at all?** Use **Can't sign in or sign up?** under the buttons on your organisation's sign-in page. Give your name, the email you tried, and what happened, and your organisation will reply by email. If sign-in failed with an error, it's included for them.
+
+For anything else that isn't working, use **Ask for help** on the **Support** page.
