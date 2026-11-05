@@ -107,12 +107,13 @@ Some organisations also offer **in-person lessons** with a teacher, bought a hal
 
 Click **Book lessons** on the course. You can book straight after creating your account: verifying your email and the consent form can wait until before the student's first AI lesson.
 
-1. If we don't know yet, tell us who the lessons are for: the student's name and date of birth. We show the school year it means.
+1. If we don't know yet, tell us who's who: **your name** (the parent or guardian), and the **student's name** and date of birth. We show the school year it means. If the lessons are for you, put your own name in both.
 2. Choose the half term.
 3. Choose a teacher, if there's more than one. You'll see their photo, subjects and prices.
-4. Choose the lesson length and how many lessons a week.
-5. Tell the teacher when suits you, for example "weekday afternoons after 4pm, not Wednesdays".
-6. Pay for the half term at checkout, by card, Apple Pay, Google Pay or Pay by Bank. Apple Pay shows in Safari or on an iPhone or iPad; Google Pay in Chrome or on Android with a card saved to Google.
+4. Choose the lesson length.
+5. Choose **how many lessons each week**. Nothing is chosen until you pick one, and each choice shows how many lessons and the price for the half term, so pick 2 if you want two lessons a week.
+6. Tell the teacher when suits you, one line for each lesson a week, for example "Mondays after 4pm". If you mention more days than the lessons you've chosen, we ask whether you meant more.
+7. Check **Your booking** (it says how many lessons a week), then pay for the half term at checkout, by card, Apple Pay, Google Pay or Pay by Bank. Apple Pay shows in Safari or on an iPhone or iPad; Google Pay in Chrome or on Android with a card saved to Google.
 
 The price covers every teaching week of the half term, whenever you book. A half term is on sale until its last week starts.
 
