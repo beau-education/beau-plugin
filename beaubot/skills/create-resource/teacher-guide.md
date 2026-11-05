@@ -398,8 +398,8 @@ In **Account › Teacher**, write a short bio, add your subjects, set a **price 
 ### Scheduling a new booking
 Parents buy a whole half term (a length and lessons a week) and leave a note on the times that suit them. Their booking appears at the top of your **Calendar** under **To schedule**, with the note and their contact details.
 1. Agree times with the family (by phone, email or in person).
-2. Click **Schedule**. You see your week with your other lessons and time off; click the agreed time to add it as a weekly lesson (once per lesson a week).
-3. Check the preview: every lesson it makes for the half term, and any week that clashes. Click **Schedule lessons**. Cover a clashing week with **Or add a single lesson**.
+2. Click **Schedule**. You see your week with your other lessons and time off; click the agreed time to add it as a weekly lesson (once per lesson a week), or use **Add a weekly time**. Then set its exact **Day**, **Start** and **End** to the minute (e.g. 7:45 to 8:30). The end starts at the booked length after the start; change it if the lesson runs differently.
+3. Check the preview: every lesson it makes for the half term, and any week that clashes. Click **Schedule lessons**. Cover a clashing week with **Or add a single lesson**, which also takes any start and end time.
 
 If the half term can't hold every lesson the family has paid for (for example, it was booked in its last week), the rest carry on into your organisation's next half terms, skipping their days off and the holidays in between. The preview says which lessons fall after the half term.
 
@@ -412,7 +412,7 @@ If a family adds lessons a week to their booking (they pay for the extra lessons
 ### Your lesson calendar
 Open **Calendar**.
 - **Click a lesson** to mark it attended, a no-show or cancelled, and to keep private notes on what you covered.
-- **Move lesson** moves it to any date and time you choose, weekends included, as long as it doesn't clash with your other lessons or blocked-out time. For a cancelled or missed lesson the button is **Book a catch-up**: the lesson is scheduled again at no extra charge. The family is emailed the new time.
+- **Move lesson** moves it to any date, start and end time you choose (it keeps its length unless you change the end), weekends included, as long as it doesn't clash with your other lessons or blocked-out time. For a cancelled or missed lesson the button is **Book a catch-up**: the lesson is scheduled again at no extra charge. The family is emailed the new time.
 - **Block out time** for days or hours you can't teach: press the button, then drag across the hours (or select days in the month view). If lessons are already booked then, you'll see them and can cancel them; they come back under To schedule to rearrange. Click a grey block to add or change its note (only you and admins see it), or to unblock it.
 
 ### Creating a tutoring course
