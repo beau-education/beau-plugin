@@ -24,6 +24,8 @@ A **Setup** tile sits at the top of your home page. Each step has a **Go** butto
 
 Once every step is done, the tile says **All set!**. Its guides and help stay underneath.
 
+If some steps are still to do a couple of days after you sign up, we email you what's missing and why it helps your lessons, with a link to each. There are at most three of these emails, and they stop as soon as Setup is done.
+
 If the student or parent profile isn't finished when you press **Play** on a lesson, a short **Before the lesson** note says what's missing. Choose **Complete now**, or **Later, start the lesson** to carry on: it never stops a lesson, and asks only once per visit.
 
 When you log in, you'll see your personalized learning dashboard with several sections:
