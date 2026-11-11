@@ -16,7 +16,7 @@ Navigate to **Admin > Settings** to configure your organization. The tabs follow
 
 | Tab | Contents |
 |-----|----------|
-| **General** | Organization details, logo, contact info, business address, time zone |
+| **General** | Organization details, logo, contact info, business address, who you teach, safeguarding lead, time zone |
 | **Homepage** | Your public homepage: words, colour, banner, featured worksheets and videos, teachers |
 | **Policies** | Your terms, privacy, refund and AI privacy policies, each on its own public page |
 | **Families** | Letting families sign up themselves (with your sign-up link), and parental consent |
@@ -94,6 +94,16 @@ Enter your organization's physical address. All fields are optional but help est
 | **State/Province/Region** | State, province, county, or region |
 | **Postal Code** | ZIP or postal code |
 | **Country** | Select from the dropdown (ISO country codes) |
+
+#### Who Do You Teach?
+
+Choose **Children**, **Adults** or **Both**. It decides whether accounts have a parent or guardian, and the words your students and families see. It's saved as soon as you choose it, and it's **Children** unless you change it.
+
+- **Children**: a parent or guardian holds each account. They book and pay, give consent, and get your lesson notes. Booking asks for their name and the student's.
+- **Adults**: students hold their own accounts, and nothing mentions parents. Booking asks for the student's own name and date of birth; consent (if you ask for it) and lesson notes are theirs.
+- **Both**: booking asks "Me" or "Someone I look after", and a parent or guardian's name is optional on the account.
+
+Safeguarding is the same for every choice: your safeguarding lead, welfare alerts and the Safeguarding register cover adult students too.
 
 #### Safeguarding Lead
 
