@@ -12,6 +12,16 @@ Welcome to the learning platform. This guide explains how to navigate your dashb
 
 ## Your Dashboard
 
+### More than one child on your account
+
+You can book lessons for more than one child on the same account: on the booking page, choose **Someone new** under "Who are the lessons for?". Each child has their own lessons, progress, details and consent, but there's only one sign-in, and every email comes to you.
+
+- **Switching child**: once there's more than one, their name is at the top of the page (for example **Lily ▾**). Choose a child to see their courses, homework and progress, and to edit their details under **Account › Student**. **My lessons** and your calendar feed show everyone's lessons together, each with the child's name.
+- **Consent, once**: the consent form asks "These answers are for:" with every child still needing it ticked. Untick anyone you'd like to answer for separately. You can withdraw consent for one child at a time under **Account › Your details**.
+- **Recording answer, once**: the same for recording in-person lessons: one answer for the children you tick.
+- **Setup** lists your own details once, and an **About …** step for each child still missing theirs.
+- **AI lessons** for a second child are coming soon; their in-person lessons work now.
+
 ### Setup
 
 A **Setup** tile sits at the top of your home page. Each step has a **Go** button, and the tile tells you why the next one matters:
