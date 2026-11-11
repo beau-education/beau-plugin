@@ -20,7 +20,7 @@ You can book lessons for more than one child on the same account: on the booking
 - **Consent, once**: the consent form asks "These answers are for:" with every child still needing it ticked. Untick anyone you'd like to answer for separately. You can withdraw consent for one child at a time under **Account › Your details**.
 - **Recording answer, once**: the same for recording in-person lessons: one answer for the children you tick.
 - **Setup** lists your own details once, and an **About …** step for each child still missing theirs.
-- **AI lessons** for a second child are coming soon; their in-person lessons work now.
+- **AI lessons**: with a child chosen at the top, **Play** starts their lesson: the AI tutor uses their name and age, and their progress is their own. Joining or buying a course on the home page is for the child chosen.
 
 ### Setup
 
