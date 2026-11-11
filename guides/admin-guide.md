@@ -305,6 +305,8 @@ term has already started, how many lessons are left). It's for lessons paid for 
 family isn't charged or emailed, and it doesn't count in Earnings. Then set its times under **To
 schedule** as usual. Invite the students first if they aren't on Beau yet.
 
+When you add an existing booking, choose the family's account, then **Who are the lessons for?**: the account itself, a child already on it, or **A child** (type their name). A new child is added to the family's account, with no sign-in of their own, and their name is what appears on the calendar.
+
 Your organization can sell in-person lessons a half term at a time, alongside AI lessons. A parent signs in as the student (the student's account uses the parent's email), chooses a half term, a teacher, a lesson length and lessons a week, adds a note on the times that suit them, and pays at checkout. The teacher then arranges times with the family and schedules the lessons.
 
 **Setting it up**
