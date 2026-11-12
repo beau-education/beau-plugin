@@ -20,7 +20,7 @@ Your teacher dashboard provides quick access to common tasks and recent activity
 The dashboard includes shortcuts to:
 - **Create Resource**: Start building new learning content
 - **Create Course**: Set up a new course structure
-- **Invite Student**: Add a new student to the platform
+- **Invite a family** (or **Invite a student**, in an organization that teaches adults): Add a new student to the platform
 
 ### Recent Activity
 
@@ -431,12 +431,14 @@ Assign homework as usual from the student's page. For a student with in-person l
 
 ## Managing Students
 
-Navigate to **Teaching > Students** to view and manage your students.
+Navigate to **Teaching > Families** to view and manage your students (it's called **Students** in an organization that teaches adults, and **Students and families** in one that teaches both). Each row is a student; in an organization that teaches children, the parent's name is shown under the student's, and the email is the parent's.
+
+A family can have more than one child on one account (they add another when booking, with **Someone new**). Each child has their own row, lessons and progress, with the parent's name and email; they have no sign-in of their own.
 
 ### Inviting Students
 
-1. Click **Invite Student**
-2. Enter the student's email address
+1. Click **Invite a family**
+2. Enter the student's name and the parent's email address (the student's own email, in an organization that teaches adults)
 3. The system sends an invitation
 
 Students appear with invitation status:
@@ -446,7 +448,7 @@ Students appear with invitation status:
 
 ### Student Consent
 
-If your organization has enabled parental consent (configured by your admin in **Settings > Students**), students must complete an on-platform consent form before accessing the dashboard. Consent is **automatically verified** when the parent submits the form — no manual approval is needed.
+If your organization has enabled parental consent (configured by your admin in **Settings › Families**), students must complete an on-platform consent form before accessing the dashboard. Consent is **automatically verified** when the parent submits the form — no manual approval is needed.
 
 You'll see a **Consent** column in the student list with these statuses:
 

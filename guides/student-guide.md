@@ -16,7 +16,8 @@ Welcome to the learning platform. This guide explains how to navigate your dashb
 
 You can book lessons for more than one child on the same account: on the booking page, choose **Someone new** under "Who are the lessons for?". Each child has their own lessons, progress, details and consent, but there's only one sign-in, and every email comes to you.
 
-- **Switching child**: once there's more than one, their name is at the top of the page (for example **Lily ▾**). Choose a child to see their courses, homework and progress, and to edit their details under **Account › Student**. **My lessons** and your calendar feed show everyone's lessons together, each with the child's name.
+- **Switching child**: once there's more than one, their name is at the top of the page (for example **Lily ▾**). Choose a child to see their courses, homework and progress. **My lessons** and your calendar feed show everyone's lessons together, each with the child's name.
+- **Each child's details**: **Account** has a tab for each child, by name, next to your own details: their date of birth, interests, goals and allergies or medical needs.
 - **Consent, once**: the consent form asks "These answers are for:" with every child still needing it ticked. Untick anyone you'd like to answer for separately. You can withdraw consent for one child at a time under **Account › Your details**.
 - **Recording answer, once**: the same for recording in-person lessons: one answer for the children you tick.
 - **Setup** lists your own details once, and an **About …** step for each child still missing theirs.
@@ -119,13 +120,17 @@ Some organisations also offer **in-person lessons** with a teacher, bought a hal
 
 Click **Book lessons** on the course. You can book straight after creating your account: verifying your email and the consent form can wait until before the student's first AI lesson.
 
-1. If we don't know yet, tell us who's who: **your name** (the parent or guardian), and the **student's name** and date of birth. We show the school year it means. If the lessons are for you, put your own name in both.
-2. Choose the half term.
-3. Choose a teacher, if there's more than one. You'll see their photo, subjects and prices.
-4. Choose the lesson length.
-5. Choose **how many lessons each week**. Nothing is chosen until you pick one, and each choice shows how many lessons and the price for the half term, so pick 2 if you want two lessons a week.
-6. Tell the teacher when suits you, one line for each lesson a week, for example "Mondays after 4pm". If you mention more days than the lessons you've chosen, we ask whether you meant more.
-7. Check **Your booking** (it says how many lessons a week), then pay for the half term at checkout, by card, Apple Pay, Google Pay or Pay by Bank. Apple Pay shows in Safari or on an iPhone or iPad; Google Pay in Chrome or on Android with a card saved to Google.
+Booking takes a few short screens, one question each, with **Back** and **Next** (a question with only one answer, such as a course with one teacher, is skipped and shown at the end):
+
+1. **About this course**: what it covers and what's included.
+2. **Who are the lessons for?**: the first time, **your name** (the parent or guardian) and the **student's name** and date of birth (we show the school year it means). After that, choose one of your children, or **Someone new** to add another child to your account.
+3. **Which half term?**
+4. **Your teacher**: their photo, subjects, background check and prices (choose one, if there's more than one).
+5. **How long should each lesson be?**
+6. **How many lessons each week?** Nothing is chosen until you pick one, and each choice shows how many lessons and the price for the half term, so pick 2 if you want two lessons a week.
+7. **When suits you?**: one line for each lesson a week, for example "Mondays after 4pm" (optional: **Skip**).
+8. **Keeping your child safe**: who looks after safeguarding and how teachers are checked.
+9. **Check and pay**: every answer, each with **Change**, and the total. If you mentioned more days than the lessons you chose, we ask whether you meant more. Pay for the half term at checkout, by card, Apple Pay, Google Pay or Pay by Bank. Apple Pay shows in Safari or on an iPhone or iPad; Google Pay in Chrome or on Android with a card saved to Google.
 
 The price covers every teaching week of the half term, whenever you book. A half term is on sale until its last week starts.
 

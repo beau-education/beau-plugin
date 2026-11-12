@@ -329,7 +329,7 @@ Your organization can sell in-person lessons a half term at a time, alongside AI
 
 **Adding lessons**: a family can't book the same half term twice. If they need more lessons a week, they add them to their booking (from **My lessons**, or by choosing that half term on the booking page again) and pay for the extra lessons at the price per lesson they booked at, for the weeks left. The booking comes back under **To schedule** with the extra lessons, and the teacher is emailed with the family's note.
 
-**Calendar**: shows every teacher's lessons, bookings to schedule and blocked-out time. Choose a teacher to schedule for them, block out time for them (e.g. sick leave), or move one of their lessons. Blocking out time with booked lessons in it cancels those lessons after you confirm; they then wait to be rearranged, or refund the family from **Payments**.
+**Calendar**: shows every teacher's lessons, bookings to schedule and blocked-out time. With more than one teacher, each teacher's lessons are in their colour; with one teacher (or one chosen), each student's are. Filter by **Teacher** or **Student** above it. Choose a teacher to schedule for them, block out time for them (e.g. sick leave), or move one of their lessons. Blocking out time with booked lessons in it cancels those lessons after you confirm; they then wait to be rearranged, or refund the family from **Payments**.
 
 **Not yet available**: parents moving or cancelling a lesson themselves, paid extra lessons, automatic refunds for cancelled lessons, and reminders before each lesson.
 
@@ -350,7 +350,7 @@ Use search and filtering to find specific users.
 
 ### Managing Student Consent
 
-If parental consent is enabled (see **Settings > Students** tab), consent is automatically verified when the parent submits the built-in form. No manual verification is needed for the normal flow.
+If parental consent is enabled (see the **Settings › Families** tab), consent is automatically verified when the parent submits the built-in form. No manual verification is needed for the normal flow.
 
 However, you can manage consent manually from the student list:
 
@@ -767,8 +767,9 @@ As an admin, you have full access to all teacher functions:
 - As an admin you see every teacher's students; use the **Teacher** filter to see one teacher's class
 - Pause, resume or remove enrollments in bulk (removing keeps the student's lesson history; enrolling them again brings it back)
 
-### Students
-- Invite new students
+### Families (Students)
+- Invite new families (**Invite a family**; **Invite a student** in an organization that teaches adults)
+- A family with more than one child has a row per child, each with the parent's name and email
 - Each student's page shows their activity, scores, course progress, what they are working on and any flags needing attention
 - Assign resources and courses
 
@@ -880,7 +881,7 @@ A worry about a child is never a support case. The forms send people to your **s
 
 ### Setting Up Parental Consent
 
-1. Go to **Admin > Settings > Students**
+1. Go to **Admin > Settings > Families**
 2. Toggle **Require parental consent for students** to on
 3. Optionally add an introduction text explaining your AI tutoring programme
 4. Add any custom questions (text, textarea, or checkbox — mark as required if needed)
