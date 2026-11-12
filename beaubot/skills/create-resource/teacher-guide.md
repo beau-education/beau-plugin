@@ -480,13 +480,14 @@ From the student list action menu (three dots), you can:
 
 Click a student's name — in the student list or on **Class progress** — to open their page. It is one screen, read top to bottom:
 
-- **Header**: age, email, when they were last active, how many lessons they have done in the last 30 days, and when they joined.
-- **Needs attention** (only shown when something does): an unacknowledged welfare or conduct flag (click **Review** to open that lesson's transcript), no lessons for 14 days while lessons are still to do, or parental consent outstanding.
-- **Four numbers**: lessons completed (and how many this week), average score with its trend against the previous five lessons (shown once they have done ten), active weeks out of the last six, and unfinished attempts.
+- **Header**: age, email, when they were last active, how many lessons they have done in the last 30 days (in person and AI), and when they joined.
+- **Needs attention** (only shown when something does): an unacknowledged welfare or conduct flag (click **Review** to open that lesson's transcript), a no-show at one of their last two lessons in person, no AI lessons for 14 days while some are still to do (never shown for a student who's coming to their lessons in person), or parental consent outstanding.
+- **Four numbers**: for a student with lessons in person, lessons in person given (and how many are still to schedule), attendance, the next lesson, and AI lessons completed. Otherwise: AI lessons completed (and how many this week), average score with its trend against the previous five lessons (shown once they have done ten), active weeks out of the last six, and unfinished attempts.
 - **Homework**: the lessons you've set this student individually, with due dates — see **Homework** below.
-- **Courses**: one row per class course. Each lesson is a dot — filled in its score colour when completed, an amber ring when started but not finished, a grey ring when not started (hover for the lesson name and score). The row shows the next lesson, or when the course was completed, and the course's average score. The menu (three dots) has **Play** and **Copy Play URL**. Completed courses are folded away under **Completed**.
-- **From recent lessons**: **Working on** — the misconceptions the lesson grader noted in their last five lessons — and **Strengths** — the lesson objectives they met. Each item links to the lesson it came from.
-- **Recent lessons**: the last five completed lessons with score and the grader's summary. Click one to open its transcript. **All activity** opens the full activity log.
+- **Courses**: one row per course, labelled **In person** or **AI lessons**. An in-person course shows lessons given out of the total, no-shows, the next lesson and its state (as on Class progress). For an AI course: Each lesson is a dot — filled in its score colour when completed, an amber ring when started but not finished, a grey ring when not started (hover for the lesson name and score). The row shows the next lesson, or when the course was completed, and the course's average score. The menu (three dots) has **Play** and **Copy Play URL**. Completed courses are folded away under **Completed**.
+- **Lessons in person**: **Coming up** and **Past**, each with your private notes and the note sent home; click one to open the lesson.
+- **From AI lessons**: **Working on** — the misconceptions the lesson grader noted in their last five lessons — and **Strengths** — the lesson objectives they met. Each item links to the lesson it came from.
+- **AI lessons**: the last five completed AI lessons with score and the grader's summary. Click one to open its transcript. **All activity** opens the full activity log.
 
 Teachers see only the courses they teach a student in; administrators see all of them.
 
