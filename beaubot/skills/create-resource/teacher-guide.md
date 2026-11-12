@@ -411,6 +411,9 @@ If a booking won't go ahead, **Cancel booking** beside it cancels its lessons st
 
 If a family adds lessons a week to their booking (they pay for the extra lessons themselves), you get an email and the booking comes back under To schedule with the new lessons to arrange.
 
+### In-person students on Class progress
+**Class progress** includes your in-person students, each with lessons given and no-shows, the next lesson, and a state from their lessons: **Missed a lesson**, **To schedule**, **Gone quiet** (nothing for over two weeks in term time; breaks don't count), **On track** or **Completed**. AI lessons on an in-person course only change the state for a flag or overdue homework.
+
 ### Your lesson calendar
 Open **Calendar**. Each student's lessons are in their own colour (an admin looking at every teacher at once sees each teacher's colour instead). Click a student's name above the calendar, or choose them under **Student**, to see only their lessons.
 - **Click a lesson** to mark it attended, a no-show or cancelled, and to keep private notes on what you covered. **Cancelling asks one thing:** **Reschedule it later** (it's owed to the family, so the booking comes back under To schedule) or **Delete it** (no replacement, for example when you make it up with longer lessons: it comes off your calendar and the family's, and isn't owed). A deleted lesson can be restored from its page.

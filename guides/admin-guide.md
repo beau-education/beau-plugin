@@ -764,6 +764,7 @@ As an admin, you have full access to all teacher functions:
 
 ### Class progress
 - **Teaching > Class progress** shows every student in every course, sorted so that students who need attention (welfare or conduct flags, gone quiet, not started) come first
+- **In-person courses** are on it too, with a line like "In person: 3 of 6 given · 1 no-show" and the next lesson. Their state comes from the lessons themselves: **Missed a lesson** (a no-show at either of the last two), **To schedule** (paid lessons not on the calendar yet), **Gone quiet** (nothing given or booked for over two weeks in term time; half-term breaks and holidays don't count), **On track** and **Completed**. An open welfare concern from a lesson puts the student under **Needs attention**. If the course also has AI lessons, only an AI flag or homework past its due date changes the state: skipping optional AI lessons never makes a student who comes to their lessons "gone quiet".
 - As an admin you see every teacher's students; use the **Teacher** filter to see one teacher's class
 - Pause, resume or remove enrollments in bulk (removing keeps the student's lesson history; enrolling them again brings it back)
 
